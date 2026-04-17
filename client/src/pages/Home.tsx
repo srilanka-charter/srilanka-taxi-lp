@@ -55,18 +55,18 @@ const services = [
     image: LANKAME_IMG,
     badge: "rank-gold",
     badgeText: "BEST CHOICE",
-    price: "14,000円〜/日",
-    priceNote: "4日チャーター(SEDAN) 63,000円〜",
+    price: "15,000円〜/日",
+    priceNote: "5日チャーター(SEDAN) 77,000円〜\n利用日数が長くなるほど1日あたり金額は低下\n距離・車種・ドライバーにより金額変動",
     highlight: "大手商社出身の日本人が経営。政府公認ドライバーのみ採用し、業界最安値保証の定額プランを提供。",
     features: [
       "日本人スタッフ常駐・日本語で全対応",
-      "政府公認ドライバーのみ厳選採用",
+      "政府公認ドライバー中心に厳選採用",
       "業界最安値保証（定額・追加料金なし）",
       "観光地同行・説明できるプラチナプラン",
       "旅程の無料相談・カスタマイズ対応",
       "サファリ・アーユルヴェーダ手配可能",
     ],
-    pros: ["最安値保証で大手より大幅に安い", "プラチナプランで観光ガイド付き", "日本語ドライバーも在籍"],
+    pros: ["大手と同じ品質で大幅に安い", "プラチナプランで観光ガイド付き", "日本語ドライバーも在籍"],
     cons: ["繁忙期は早めの予約が必要"],
     rating: 5.0,
     reviewCount: "多数",
@@ -280,9 +280,9 @@ export default function Home() {
           >
             {[
               { num: "8", label: "世界遺産" },
-              { num: "14,000円〜", label: "1日チャーター" },
+              { num: "15,000円/日〜", label: "5日以上利用の場合" },
               { num: "1,000人+", label: "年間利用者" },
-              { num: "100%", label: "日本語対応" },
+              { num: "選択可能", label: "ガイドドライバー" },
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="font-display text-2xl sm:text-3xl font-bold" style={{ fontFamily: "'Bebas Neue', sans-serif", color: "#E8732A" }}>{stat.num}</div>
@@ -480,7 +480,7 @@ export default function Home() {
                       <div className="glass-card rounded-xl px-4 py-3 mb-5 inline-flex flex-col" style={{ border: `1px solid ${service.accentColor}30` }}>
                         <span className="font-montserrat text-xs tracking-wider uppercase" style={{ color: "#8A9BA8" }}>料金目安</span>
                         <span className="font-display text-2xl font-bold" style={{ fontFamily: "'Bebas Neue', sans-serif", color: service.accentColor }}>{service.price}</span>
-                        <span className="text-xs" style={{ color: "#8A9BA8" }}>{service.priceNote}</span>
+                        <span className="text-xs whitespace-pre-line" style={{ color: "#8A9BA8" }}>{service.priceNote}</span>
                       </div>
 
                       <p className="font-sans text-sm md:text-base leading-relaxed mb-5" style={{ color: "#B8C5D0" }}>{service.highlight}</p>
