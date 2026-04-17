@@ -3,6 +3,22 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   DESIGN SYSTEM: Modern Expedition — Dark Luxury Travel
+   
+   Color Philosophy:
+   - Background: Deep slate black (#0F1923) + deep navy (#0D1B2A)
+   - Primary Accent: Sri Lanka sunset orange (#E8732A)
+   - Secondary: Gold (#C9A84C)
+   - Text: Pure white (#FFFFFF) + light gray (#B8C5D0)
+   
+   Typography:
+   - Display: Bebas Neue (condensed bold) — impact & adventure
+   - Subheading: Noto Serif JP — authority & trust
+   - Body: Noto Sans JP — readability
+   - Accent: Montserrat — modern labels
+   ============================================================ */
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -43,74 +59,41 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --radius: 0.5rem;
+  /* Dark theme as default */
+  --background: oklch(0.12 0.02 240);
+  --foreground: oklch(0.95 0.005 240);
+  --card: oklch(0.16 0.025 240);
+  --card-foreground: oklch(0.95 0.005 240);
+  --popover: oklch(0.16 0.025 240);
+  --popover-foreground: oklch(0.95 0.005 240);
+  /* Orange accent */
+  --primary: oklch(0.62 0.18 38);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.22 0.03 240);
+  --secondary-foreground: oklch(0.85 0.01 240);
+  --muted: oklch(0.20 0.025 240);
+  --muted-foreground: oklch(0.65 0.015 240);
+  --accent: oklch(0.62 0.18 38);
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
+  --ring: oklch(0.62 0.18 38);
+  --chart-1: oklch(0.62 0.18 38);
+  --chart-2: oklch(0.72 0.15 60);
+  --chart-3: oklch(0.55 0.12 200);
+  --chart-4: oklch(0.65 0.10 150);
+  --chart-5: oklch(0.70 0.08 280);
+  --sidebar: oklch(0.14 0.022 240);
+  --sidebar-foreground: oklch(0.95 0.005 240);
+  --sidebar-primary: oklch(0.62 0.18 38);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.20 0.025 240);
+  --sidebar-accent-foreground: oklch(0.95 0.005 240);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --sidebar-ring: oklch(0.62 0.18 38);
 }
 
 @layer base {
@@ -119,6 +102,9 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #0F1923;
+    color: #F0F4F8;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -131,27 +117,17 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+  h1, h2, h3 {
+    font-family: 'Noto Serif JP', serif;
+  }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +138,105 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
+
+  /* Custom utility classes */
+  .font-display {
+    font-family: 'Bebas Neue', 'Montserrat', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-serif-jp {
+    font-family: 'Noto Serif JP', serif;
+  }
+
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .text-orange-accent {
+    color: #E8732A;
+  }
+
+  .text-gold-accent {
+    color: #C9A84C;
+  }
+
+  .bg-orange-accent {
+    background-color: #E8732A;
+  }
+
+  .bg-gold-accent {
+    background-color: #C9A84C;
+  }
+
+  .border-orange-accent {
+    border-color: #E8732A;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .orange-glow {
+    box-shadow: 0 0 30px rgba(232, 115, 42, 0.3);
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+  }
+
+  /* Rank badge styles */
+  .rank-gold {
+    background: linear-gradient(135deg, #C9A84C, #E8C96A, #C9A84C);
+    color: #1a0f00;
+  }
+  .rank-silver {
+    background: linear-gradient(135deg, #8A9BA8, #B8C5D0, #8A9BA8);
+    color: #1a1a2e;
+  }
+  .rank-bronze {
+    background: linear-gradient(135deg, #8B5E3C, #C47A3A, #8B5E3C);
+    color: #fff;
+  }
+
+  /* CTA button pulse animation */
+  @keyframes pulse-orange {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(232, 115, 42, 0.4); }
+    50% { box-shadow: 0 0 0 12px rgba(232, 115, 42, 0); }
+  }
+  .cta-pulse {
+    animation: pulse-orange 2s infinite;
+  }
+
+  /* Scroll reveal base */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger delays */
+  .delay-100 { transition-delay: 0.1s; }
+  .delay-200 { transition-delay: 0.2s; }
+  .delay-300 { transition-delay: 0.3s; }
+  .delay-400 { transition-delay: 0.4s; }
+  .delay-500 { transition-delay: 0.5s; }
 }
