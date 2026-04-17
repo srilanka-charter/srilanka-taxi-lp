@@ -548,6 +548,92 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== WARNING SECTION ===== */}
+      <section id="warning" className="py-20 md:py-28" style={{ background: "linear-gradient(135deg, #1a0a00 0%, #0D1B2A 50%, #1a0a00 100%)" }}>
+        <div className="max-w-5xl mx-auto px-4 md:px-8">
+          <RevealSection>
+            <div className="text-center mb-12">
+              <span className="font-montserrat text-xs font-bold tracking-widest uppercase mb-4 block" style={{ color: "#f87171" }}>WARNING</span>
+              <h2 className="font-serif-jp text-3xl sm:text-4xl font-bold text-white mb-4">
+                <span style={{ color: "#f87171" }}>価格が安いサービス</span>には気をつけて！
+              </h2>
+              <p className="font-sans text-sm md:text-base max-w-2xl mx-auto" style={{ color: "#B8C5D0" }}>
+                スリランカのタクシーチャーターは「安ければ良い」とは限りません。<br />
+                低価格サービスには、旅行を台無しにしかねない深刻なリスクが潜んでいます。
+              </p>
+            </div>
+          </RevealSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+            {[
+              {
+                icon: "💸",
+                title: "追加請求のリスク",
+                desc: "表示価格に距離制限が設けられているケースが多く、1日250km超えも珍しくない日本人観光客は毎日追加料金を請求される可能性があります。事前に総額が分からず、旅行中ずっと不安を抱えることになります。",
+              },
+              {
+                icon: "🚗",
+                title: "20年以上前の古い車が配車される",
+                desc: "スリランカでは輸入関税が高く、日本で200万円の車が現地では740万円に。安いドライバーは古い車を使い回しており、故障リスクや快適性の低下に直結します。",
+              },
+              {
+                icon: "⏰",
+                title: "待ち合わせ場所に現れない",
+                desc: "空港やホテルでの待ち合わせに連絡なく現れない、最悪の場合は最後まで来ないというトラブルも実際に発生しています。初めての土地で一人取り残される恐怖は計り知れません。",
+              },
+              {
+                icon: "🗺️",
+                title: "目的地間の移動しか担当しない",
+                desc: "質の低いドライバーは主要観光地への送迎のみで、ホテルから観光スポットへの細かい移動は別途手配が必要なケースも。費用の総額が結果的に上振れしてしまいます。",
+              },
+              {
+                icon: "🏪",
+                title: "キックバック目的で提携店に連れ回す",
+                desc: "低価格で利益を確保できないドライバーは、キックバックが得られる提携レストランやアーユルヴェーダ店に執拗に連れて行こうとします。本来の旅程が崩れる原因にもなります。",
+              },
+              {
+                icon: "📞",
+                title: "サポートが手厚くない",
+                desc: "安価なサービスはカスタマーサポートにコストをかけられません。旅程作成の相談や現地でのトラブル対応など、契約後は放置されるケースも。日本語サポートは期待できません。",
+              },
+            ].map((risk, i) => (
+              <RevealSection key={i} delay={i * 0.08}>
+                <div
+                  className="rounded-2xl p-5 flex gap-4"
+                  style={{
+                    background: "rgba(248, 113, 113, 0.05)",
+                    border: "1px solid rgba(248, 113, 113, 0.2)",
+                  }}
+                >
+                  <div className="text-3xl flex-shrink-0 mt-0.5">{risk.icon}</div>
+                  <div>
+                    <h3 className="font-serif-jp text-base font-bold text-white mb-2">{risk.title}</h3>
+                    <p className="font-sans text-xs leading-relaxed" style={{ color: "#B8C5D0" }}>{risk.desc}</p>
+                  </div>
+                </div>
+              </RevealSection>
+            ))}
+          </div>
+
+          <RevealSection delay={0.4}>
+            <div
+              className="rounded-2xl p-6 md:p-8 text-center"
+              style={{
+                background: "linear-gradient(135deg, rgba(232,115,42,0.15) 0%, rgba(201,168,76,0.1) 100%)",
+                border: "1px solid rgba(232, 115, 42, 0.4)",
+              }}
+            >
+              <p className="font-serif-jp text-lg md:text-xl font-bold text-white mb-2">
+                だからこそ、<span style={{ color: "#E8732A" }}>信頼できる3社</span>を厳選しました
+              </p>
+              <p className="font-sans text-sm" style={{ color: "#B8C5D0" }}>
+                以下で紹介する3サービスは、上記リスクをすべてクリアした安心・安全なサービスです。
+              </p>
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
       {/* ===== COMPARISON TABLE ===== */}
       <section id="compare" className="py-20 md:py-32" style={{ backgroundColor: "#0D1B2A" }}>
         <div className="max-w-6xl mx-auto px-4 md:px-8">
