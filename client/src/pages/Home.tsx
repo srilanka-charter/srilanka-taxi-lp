@@ -61,7 +61,7 @@ const services = [
     features: [
       "日本人スタッフ常駐・日本語で全対応",
       "政府公認ドライバー中心に厳選採用",
-      "業界最安値保証（定額・追加料金なし）",
+      "定額・追加料金なし",
       "観光地同行・説明できるプラチナプラン",
       "旅程の無料相談・カスタマイズ対応",
       "サファリ・アーユルヴェーダ手配可能",
@@ -146,7 +146,7 @@ const comparisonItems = [
   { feature: "日本語ドライバー", lankame: "◎ 在籍", lankaride: "◎ 多数在籍", sltcs: "◎ 在籍" },
   { feature: "政府公認ドライバー", lankame: "◎ 全員", lankaride: "◎ 多数", sltcs: "◎ 厳格審査通過" },
   { feature: "観光地同行・説明", lankame: "◎ プラチナプラン", lankaride: "◎ Pro Plan", sltcs: "○ 対応可" },
-  { feature: "最安値保証", lankame: "◎ 業界最安値保証", lankaride: "○ 競争力ある価格", sltcs: "◎ 業界最安値保証" },
+  { feature: "最安値保証", lankame: "◎ 高品質で業界最安水準", lankaride: "○ 競争力ある価格", sltcs: "○ " },
   { feature: "追加料金", lankame: "◎ 一切なし", lankaride: "◎ なし", sltcs: "◎ 一切なし" },
   { feature: "キャンセル規定", lankame: "○ 要確認", lankaride: "○ 要確認", sltcs: "◎ 7日前まで無料" },
   { feature: "旅程相談", lankame: "◎ 無料・丁寧", lankaride: "◎ 無料", sltcs: "◎ 無料" },
