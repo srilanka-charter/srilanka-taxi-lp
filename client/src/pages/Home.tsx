@@ -707,7 +707,7 @@ export default function Home() {
             {[
               {
                 icon: "💰",
-                title: "とにかくコストを抑えたい",
+                title: "大手品質をお手頃価格で",
                 service: "ランカミー",
                 reason: "業界最安値保証で、大手旅行代理店より大幅に安い。プラチナプランでも観光ガイド付きで割安。",
                 url: "https://srilankataxicharterservice.com/ja/",
