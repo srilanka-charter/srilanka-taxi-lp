@@ -55,8 +55,8 @@ const services = [
     image: LANKAME_IMG,
     badge: "rank-gold",
     badgeText: "BEST CHOICE",
-    price: "15,000円〜/日",
-    priceNote: "5日チャーター(SEDAN) 77,000円〜\n利用日数が長くなるほど1日あたり金額は低下\n距離・車種・ドライバーにより金額変動",
+    price: "15,000円(税込)〜/日",
+    priceNote: "5日チャーター(SEDAN) 77,000円(税込)〜\n利用日数が長くなるほど1日あたり金額は低下\n距離・車種・ドライバー・季節により金額変動",
     highlight: "大手商社出身の日本人が経営。政府公認ドライバーのみ採用し、業界最安値保証の定額プランを提供。",
     features: [
       "日本人スタッフ常駐・日本語で全対応",
@@ -86,8 +86,8 @@ const services = [
     image: LANKARIDE_IMG,
     badge: "rank-silver",
     badgeText: "RECOMMENDED",
-    price: "80,000円〜/5日",
-    priceNote: "7日チャーター(SEDAN) 109,000円〜",
+    price: "80,000円(税込)〜/5日",
+    priceNote: "7日チャーター(SEDAN) 109,000円(税込)〜",
     highlight: "スリランカ最大手Chari Travel and Tours Pvt Ltdとのマッチング。日本語ドライバーを多数抱え、品質面で高い評価。",
     features: [
       "日本人スタッフ常駐・日本語対応",
@@ -117,8 +117,8 @@ const services = [
     image: SLTCS_IMG,
     badge: "rank-bronze",
     badgeText: "TRUSTED",
-    price: "14,400円〜/日",
-    priceNote: "5日チャーター 72,000円〜（全部込み）",
+    price: "90,000円(税込)〜/日",
+    priceNote: "7日チャーター 126,000円〜（税込）",
     highlight: "香港拠点の日本人経営。毎年1,000人以上が利用する実績。時間・距離無制限の定額制で7日前まで完全無料キャンセル。",
     features: [
       "日本人スタッフ常駐・日本語ドライバー在籍",
@@ -280,7 +280,7 @@ export default function Home() {
           >
             {[
               { num: "8", label: "世界遺産" },
-              { num: "15,000円/日〜", label: "5日以上利用の場合" },
+              { num: "15,000円(税込)/日〜", label: "5日以上利用の場合" },
               { num: "1,000人+", label: "年間利用者" },
               { num: "選択可能", label: "ガイドドライバー" },
             ].map((stat, i) => (
