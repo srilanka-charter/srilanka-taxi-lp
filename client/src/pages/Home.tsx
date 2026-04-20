@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import ReviewCard from "@/components/ReviewCard";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, Star, Shield, Clock, Phone, CheckCircle, Award, Users, MapPin, ArrowRight, ExternalLink } from "lucide-react";
 
@@ -160,9 +161,17 @@ export default function Home() {
   const heroOpacity = useTransform(scrollY, [0, 400], [1, 0]);
   const [activeTab, setActiveTab] = useState(0);
 
-  // SEO: document.titleを動的に設定（Reactアプリのキーワード検出対策）
+  // SEO: document.titleとキーワードを動的に設定
   useEffect(() => {
-    document.title = 'スリランカ タクシーチャーターおすすめ3選｜ランカミー・ランカライド・SLTCS比較';
+    document.title = 'スリランカ タクシーチャーターおすすめ3選';
+    // キーワードmeta動的追加
+    let meta = document.querySelector('meta[name="keywords"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'keywords';
+      document.head.appendChild(meta);
+    }
+    meta.content = 'スリランカタクシーチャーター,スリランカカーチャーター,スリランカ観光タクシー,ランカミー,ランカライド,SLTCS,スリランカ旅行,プライベートドライバー';
   }, []);
 
   // Sticky CTA bar visibility
@@ -759,6 +768,122 @@ export default function Home() {
               </RevealSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== REVIEWS SECTION ===== */}
+      <section id="reviews" className="py-20 md:py-32" style={{ backgroundColor: "#0F1923" }}>
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
+          <RevealSection>
+            <div className="text-center mb-12">
+              <span className="font-montserrat text-xs font-bold tracking-widest uppercase mb-4 block" style={{ color: "#E8732A" }}>CUSTOMER REVIEWS</span>
+              <h2 className="font-serif-jp text-3xl sm:text-4xl font-bold text-white mb-4">
+                お客様の<span style={{ color: "#E8732A" }}>声</span>
+              </h2>
+              <p className="font-sans text-sm md:text-base" style={{ color: "#B8C5D0" }}>
+                実際にご利用いただいたお客様からのリアルな声をご紹介します
+              </p>
+            </div>
+          </RevealSection>
+
+          {/* ランカミー */}
+          <RevealSection delay={0.1}>
+            <div className="mb-10">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="rank-gold px-3 py-1 rounded-full font-montserrat text-xs font-bold">1位</div>
+                <span className="font-serif-jp text-lg font-bold text-white">ランカミー</span>
+                <span className="font-montserrat text-xs" style={{ color: "#C9A84C" }}>LankaMe</span>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <ReviewCard
+                  reviewer="K.Y様ご家族（日本）"
+                  date="2025年11月"
+                  driver="ランジェナ"
+                  title="海外15か国以上でお願いしたドライバーの中で1番でした"
+                  body="78才の母親を連れてのスリランカ11日旅行。Ranjanaさんは日本語力も申し分なく、母親のためにトイレ休憩を細かく取ってくれたり、遺跡を巡る際には手を取って階段を登るお手伝いをしてくれたりと、きめ細かな対応が素晴らしかったです。"
+                  service="lankame"
+                  accentColor="#C9A84C"
+                  badgeLabel="ランカミー"
+                />
+                <ReviewCard
+                  reviewer="N様ご一同（日本）"
+                  date="2026年1月"
+                  driver="ランジェナ"
+                  title="ランカミーさんを利用させて頂いて本当に良かったと感じています"
+                  body="安価な出費ではないので行く前は悩んでの申し込みでしたが、オペレーターの佐藤さまが非常にスピーディーかつ丁寧にご案内くださいました。Ranjannaさんのホスピタリティは120点！どうすれば良い旅になるか常に私達と同じ立場に立ってくださいました。"
+                  service="lankame"
+                  accentColor="#C9A84C"
+                  badgeLabel="ランカミー"
+                />
+              </div>
+            </div>
+          </RevealSection>
+
+          {/* ランカライド */}
+          <RevealSection delay={0.15}>
+            <div className="mb-10">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="rank-silver px-3 py-1 rounded-full font-montserrat text-xs font-bold">2位</div>
+                <span className="font-serif-jp text-lg font-bold text-white">ランカライド</span>
+                <span className="font-montserrat text-xs" style={{ color: "#7BA7BC" }}>LankaRide</span>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <ReviewCard
+                  reviewer="T様ご夫婦（日本）"
+                  date="2026年2月"
+                  driver="チャリ"
+                  title="チャリさんのおかげで深く楽しめた、思い出に残るスリランカ旅"
+                  body="ドライバーと一緒にタクシーを回る旅行は今回が初めてでしたが、効率的に深く各都市の素晴しさを肌で感じることができました。シーギリヤで詳しく説明いただけてうれしかったです。アーユルヴェーダのオプションを追加したり、柔軟にプランを変更したりできたのも楽しかったです。"
+                  service="lankaride"
+                  accentColor="#7BA7BC"
+                  badgeLabel="ランカライド"
+                />
+                <ReviewCard
+                  reviewer="A様御一行（日本）"
+                  date="2026年1月"
+                  driver="ラニル"
+                  title="言葉の壁ゼロでストレスフリー！過去イチ最高な旅行になりました"
+                  body="日本語ドライバーのラニルさんにお願いしたおかげで、控えめに言って「過去イチ」最高な旅行になりました。「あそこで写真撮りたい！」「ちょっとローカルなスーパー寄ってみたい！」という急なワガママにも笑顔で柔軟に対応してくれました。"
+                  service="lankaride"
+                  accentColor="#7BA7BC"
+                  badgeLabel="ランカライド"
+                />
+              </div>
+            </div>
+          </RevealSection>
+
+          {/* SLTCS */}
+          <RevealSection delay={0.2}>
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="rank-bronze px-3 py-1 rounded-full font-montserrat text-xs font-bold">3位</div>
+                <span className="font-serif-jp text-lg font-bold text-white">SLTCS</span>
+                <span className="font-montserrat text-xs" style={{ color: "#C47A3A" }}>スリランカタクシーチャーターサービス</span>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <ReviewCard
+                  reviewer="T様ご家族（日本）"
+                  date="2025年8月"
+                  driver="プリヤンタ"
+                  title="毎日が感動の連続でした。スリランカが大好きになりました！"
+                  body="6日間でシーギリヤ、キャンディ、ヌワラエリヤ、ゴールを巡りました。時間に正確で安全運転、常に私たちの体調や気分を気にかけてくれました。最初の計画にはなかった絶景スポットにも連れて行ってくれて、旅がより豊かになりました。"
+                  service="sltcs"
+                  accentColor="#C47A3A"
+                  badgeLabel="SLTCS"
+                />
+                <ReviewCard
+                  reviewer="S様ご夫婦（日本）"
+                  date="2025年10月"
+                  driver="タリンダ"
+                  title="これ以上は望めないほど素晴らしい体験でした！！"
+                  body="タリンダさんは親切で忍耐強く、私たちの希望を丁寧に聞いてくれました。日本語もとても上手で、コミュニケーションは常にスムーズ。時間厳守で、安全運転にも感謝します。タリンダさんを強くおすすめします。"
+                  service="sltcs"
+                  accentColor="#C47A3A"
+                  badgeLabel="SLTCS"
+                />
+              </div>
+            </div>
+          </RevealSection>
         </div>
       </section>
 
