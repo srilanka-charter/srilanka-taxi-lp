@@ -110,10 +110,10 @@ const services = [
   {
     rank: 3,
     rankLabel: "3位",
-    name: "スリランカタクシーチャーターサービス",
+    name: "SLTCS",
     nameEn: "SLTCS",
     tagline: "5年の実績・業界最安値・24時間予約可能",
-    url: "https://srilanka-charter.com/",
+    url: "https://sltcs.srilanka-charter.com",
     image: SLTCS_IMG,
     badge: "rank-bronze",
     badgeText: "TRUSTED",
@@ -726,7 +726,7 @@ export default function Home() {
                 title: "キャンセルの柔軟性を重視",
                 service: "SLTCS",
                 reason: "7日前まで完全無料キャンセル。急なコース変更も無料。旅程が確定していない方に最適。",
-                url: "https://srilanka-charter.com/",
+                url: "https://sltcs.srilanka-charter.com",
                 color: "#C47A3A",
               },
             ].map((item, i) => (
