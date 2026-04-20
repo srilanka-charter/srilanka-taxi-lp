@@ -160,6 +160,11 @@ export default function Home() {
   const heroOpacity = useTransform(scrollY, [0, 400], [1, 0]);
   const [activeTab, setActiveTab] = useState(0);
 
+  // SEO: document.titleを動的に設定（Reactアプリのキーワード検出対策）
+  useEffect(() => {
+    document.title = 'スリランカ タクシーチャーターおすすめ3選｜ランカミー・ランカライド・SLTCS比較';
+  }, []);
+
   // Sticky CTA bar visibility
   const [showStickyBar, setShowStickyBar] = useState(false);
   useEffect(() => {
