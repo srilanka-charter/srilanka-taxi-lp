@@ -79,12 +79,43 @@ const services = [
   {
     rank: 2,
     rankLabel: "2位",
+    name: "SLTCS",
+    nameEn: "SLTCS",
+    tagline: "業界最安値 × 時間・距離無制限の定額制",
+    url: "https://sltcs.srilanka-charter.com",
+    image: SLTCS_IMG,
+    badge: "rank-silver",
+    badgeText: "BEST VALUE",
+    price: "72,000円(税込)〜/5日",
+    priceNote: "7日チャーター 99,000円〜(税込)",
+    highlight: "香港拠点の日本人経営。毎年1,000人以上が利用する実績。業界最安値水準の定額制で、時間・距離無制限。7日前まで完全無料キャンセル。",
+    features: [
+      "日本人スタッフ常駐・日本語ドライバー在籍",
+      "業界最安値水準（全部込み定額）",
+      "時間・距離無制限・追加料金なし",
+      "7日前まで完全無料キャンセル",
+      "急なコース変更も完全無料",
+      "法人・ビジネス利用も対応",
+    ],
+    pros: ["業界最安値水準で圧倒的コスパ", "キャンセル料が7日前まで無料", "時間・距離無制限の明瞭定額", "毎年1,000人以上の実績"],
+    cons: ["香港拠点のため一部対応に時差あり"],
+    rating: 4.7,
+    reviewCount: "1,000人以上/年",
+    ctaText: "SLTCSに問い合わせる",
+    ctaColor: "bg-orange-700 hover:bg-orange-600",
+    accentColor: "#C47A3A",
+    borderColor: "border-orange-700/50",
+    glowColor: "rgba(196, 122, 58, 0.2)",
+  },
+  {
+    rank: 3,
+    rankLabel: "3位",
     name: "ランカライド",
     nameEn: "LankaRide",
     tagline: "現地最大手とのマッチングプラットフォーム",
     url: "https://srilankacarhirewithprivatedriver.com/ja/",
     image: LANKARIDE_IMG,
-    badge: "rank-silver",
+    badge: "rank-bronze",
     badgeText: "RECOMMENDED",
     price: "80,000円(税込)〜/5日",
     priceNote: "7日チャーター(SEDAN) 109,000円(税込)〜",
@@ -107,37 +138,6 @@ const services = [
     borderColor: "border-slate-400/50",
     glowColor: "rgba(184, 197, 208, 0.2)",
   },
-  {
-    rank: 3,
-    rankLabel: "3位",
-    name: "SLTCS",
-    nameEn: "SLTCS",
-    tagline: "5年の実績・業界最安値・24時間予約可能",
-    url: "https://sltcs.srilanka-charter.com",
-    image: SLTCS_IMG,
-    badge: "rank-bronze",
-    badgeText: "TRUSTED",
-    price: "90,000円(税込)〜/日",
-    priceNote: "7日チャーター 126,000円〜（税込）",
-    highlight: "香港拠点の日本人経営。毎年1,000人以上が利用する実績。時間・距離無制限の定額制で7日前まで完全無料キャンセル。",
-    features: [
-      "日本人スタッフ常駐・日本語ドライバー在籍",
-      "業界最安値保証（全部込み）",
-      "時間・距離無制限・追加料金なし",
-      "7日前まで完全無料キャンセル",
-      "急なコース変更も完全無料",
-      "法人・ビジネス利用も対応",
-    ],
-    pros: ["キャンセル料が7日前まで無料", "時間・距離無制限の明瞭定額", "毎年1,000人以上の実績"],
-    cons: ["香港拠点のため一部対応に時差あり"],
-    rating: 4.7,
-    reviewCount: "1,000人以上/年",
-    ctaText: "SLTCSに問い合わせる",
-    ctaColor: "bg-orange-700 hover:bg-orange-600",
-    accentColor: "#C47A3A",
-    borderColor: "border-orange-700/50",
-    glowColor: "rgba(196, 122, 58, 0.2)",
-  },
 ];
 
 // Comparison table data
@@ -146,7 +146,7 @@ const comparisonItems = [
   { feature: "日本語ドライバー", lankame: "◎ 在籍", lankaride: "◎ 多数在籍", sltcs: "◎ 在籍" },
   { feature: "政府公認ドライバー", lankame: "◎ 全員", lankaride: "◎ 多数", sltcs: "◎ 厳格審査通過" },
   { feature: "観光地同行・説明", lankame: "◎ プラチナプラン", lankaride: "◎ Pro Plan", sltcs: "○ 対応可" },
-  { feature: "最安値保証", lankame: "◎ 高品質で業界最安水準", lankaride: "○ 競争力ある価格", sltcs: "○ " },
+  { feature: "最安値保証", lankame: "◎ 高品質で業界最安水準", lankaride: "○ 競争力ある価格", sltcs: "◎ 業界最安値水準" },
   { feature: "追加料金", lankame: "◎ 一切なし", lankaride: "◎ なし", sltcs: "◎ 一切なし" },
   { feature: "キャンセル規定", lankame: "○ 要確認", lankaride: "○ 要確認", sltcs: "◎ 7日前まで無料" },
   { feature: "旅程相談", lankame: "◎ 無料・丁寧", lankaride: "◎ 無料", sltcs: "◎ 無料" },
@@ -674,11 +674,11 @@ export default function Home() {
                     </th>
                     <th className="px-4 py-4 text-center" style={{ width: "25%" }}>
                       <div className="rank-silver inline-block px-3 py-1 rounded-full font-montserrat text-xs font-bold mb-1">2位</div>
-                      <div className="font-serif-jp text-sm font-bold text-white">ランカライド</div>
+                      <div className="font-serif-jp text-sm font-bold text-white">SLTCS</div>
                     </th>
                     <th className="px-4 py-4 text-center" style={{ width: "25%" }}>
                       <div className="rank-bronze inline-block px-3 py-1 rounded-full font-montserrat text-xs font-bold mb-1">3位</div>
-                      <div className="font-serif-jp text-sm font-bold text-white">SLTCS</div>
+                      <div className="font-serif-jp text-sm font-bold text-white">ランカライド</div>
                     </th>
                   </tr>
                 </thead>
@@ -735,10 +735,10 @@ export default function Home() {
                 color: "#B8C5D0",
               },
               {
-                icon: "🔄",
-                title: "キャンセルの柔軟性を重視",
+                icon: "💴",
+                title: "とにかく費用を抑えたい",
                 service: "SLTCS",
-                reason: "7日前まで完全無料キャンセル。急なコース変更も無料。旅程が確定していない方に最適。",
+                reason: "業界最安値水準で圧倒的コスパ。7日前まで完全無料キャンセル・時間距離無制限の定額制で、とにかくコストを抑えたい方に最適。",
                 url: "https://sltcs.srilanka-charter.com",
                 color: "#C47A3A",
               },
