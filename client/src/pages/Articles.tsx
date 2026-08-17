@@ -16,6 +16,15 @@ const transportArticle = {
   readTime: "読了約8分",
 };
 
+const taxiCharterArticle = {
+  title: "スリランカのタクシーチャーターとは？料金・使い方・選び方を個人旅行向けに解説",
+  description: "ランカミーの料金目安を参考に、専用車を使う場面、車種・プランの選び方、予約前の確認ポイントを解説します。",
+  image: "/manus-storage/charter-3_51d499c2.png",
+  href: "/articles/sri-lanka-taxi-charter-guide",
+  category: "transport",
+  readTime: "読了約9分",
+};
+
 function categoryFromSearch() {
   const query = new URLSearchParams(window.location.search);
   return query.get("category") || "transport";
@@ -24,7 +33,7 @@ function categoryFromSearch() {
 export default function Articles() {
   const activeCategory = categoryFromSearch();
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
-  const articles = activeCategory === "transport" ? [transportArticle] : [];
+  const articles = activeCategory === "transport" ? [taxiCharterArticle, transportArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;
@@ -47,7 +56,7 @@ export default function Articles() {
             {articles.map((article) => (
               <Link key={article.href} href={article.href} className="group border overflow-hidden transition-colors hover:border-orange-300/60" style={{ borderColor: "rgba(255,255,255,0.14)", backgroundColor: "#0F1D2A" }}>
                 <div className="aspect-[16/9] overflow-hidden">
-                  <img src={article.image} alt="茶畑を走るスリランカの列車" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img src={article.image} alt={article.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-6 md:p-7">
                   <div className="flex items-center gap-3 mb-4 text-[10px] font-montserrat font-bold tracking-[0.16em]" style={{ color: "#E8732A" }}>
