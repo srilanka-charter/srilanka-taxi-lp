@@ -10,8 +10,8 @@ import { MediaHeader } from "@/components/MediaHeader";
 const ARTICLE_TITLE = "スリランカで空港送迎は必要？コロンボ空港からホテルまでの移動方法を比較";
 
 const images = {
-  hero: "/manus-storage/article-airport-transfer-hero_fd800259.jpg",
-  luggage: "/manus-storage/article-airport-transfer-luggage_acbf095c.jpg",
+  hero: "/manus-storage/airport-van-handoff_9dd233a9.png",
+  meetGreet: "/manus-storage/airport-meet-greet_07203dc5.png",
 };
 
 const faqs = [
@@ -92,7 +92,7 @@ export default function ArticleAirportTransfer() {
       <MediaHeader activeCategory="transport" />
       <main>
         <section className="relative overflow-hidden" style={{ minHeight: "min(680px, 78svh)" }}>
-          <img src={images.hero} alt="バンダラナイケ国際空港で旅行者を迎える専用車送迎" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={images.hero} alt="コロンボ空港の到着車寄せで旅行者を専用車へ案内するドライバー" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(7,16,26,0.95) 0%, rgba(7,16,26,0.74) 48%, rgba(7,16,26,0.15) 100%), linear-gradient(0deg, #0A1520 0%, transparent 38%)" }} />
           <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-8 min-h-[inherit] flex items-end pb-16 md:pb-20">
             <div className="max-w-3xl">
@@ -161,6 +161,21 @@ export default function ArticleAirportTransfer() {
             ))}
           </div>
 
+          <Heading label="SMOOTH ARRIVAL">タクシーチャーターなら、待ち合わせから出発までをスムーズに進めやすい</Heading>
+          <div className="grid md:grid-cols-[1.03fr_0.97fr] gap-7 items-start">
+            <figure>
+              <div className="h-72 md:h-[25rem] overflow-hidden" style={{ backgroundColor: "#132434" }}><img src={images.meetGreet} alt="コロンボ空港の到着ロビーでネームボードを持つ送迎ドライバーと旅行者" className="w-full h-full object-cover" loading="lazy" /></div>
+              <figcaption className="mt-2 text-[11px] leading-relaxed" style={{ color: "#8EA0AE" }}>到着ロビーでの待ち合わせ場所を決めておけば、荷物を受け取った後の動きがわかりやすくなります。</figcaption>
+            </figure>
+            <div>
+              <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>到着直後は、入国審査、荷物の受け取り、現地SIMや両替など、やることが重なります。事前予約のタクシーチャーターなら、航空便と合流場所を共有したうえでドライバーと会えるため、空港でタクシーを探したり、配車アプリが確定するまで待ったりする時間を減らしやすくなります。</p>
+              <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>特に、初めてのスリランカ、深夜便、家族旅行、到着日から次の都市へ向かう旅では、移動の手順が決まっていること自体が大きな安心材料です。スムーズさと時間効率を重視するなら、空港送迎はタクシーチャーターで事前に整えておく方法がおすすめです。</p>
+              <div className="border-l-2 pl-5 py-1 mt-7" style={{ borderColor: "#E8732A" }}>
+                <p className="font-serif-jp text-base leading-8 text-white">到着ロビーで合流し、荷物を車へ積み込み、そのままホテルや次の目的地へ。<br />「到着後の手配」を省けることが、専用車送迎の一番の効率です。</p>
+              </div>
+            </div>
+          </div>
+
           <Heading label="FOR WHOM">空港送迎を事前予約したい4つのケース</Heading>
           <div className="space-y-4">
             {[
@@ -177,21 +192,13 @@ export default function ArticleAirportTransfer() {
           </div>
 
           <Heading label="LUGGAGE & COMFORT">荷物がある到着日こそ、車種と合流方法を確認する</Heading>
-          <div className="grid md:grid-cols-[1.08fr_0.92fr] gap-7 items-start">
-            <div>
-              <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>スーツケースが多い、ベビーカーがある、複数人で同じホテルへ向かう。到着日には、移動時間だけでなく荷物をどう扱うかも旅の快適さを左右します。送迎を予約するなら、人数と荷物の数を正確に伝え、車種に余裕があるかを確認しましょう。</p>
-              <ul className="space-y-3 mt-6 font-sans text-sm leading-7" style={{ color: "#C7D3DB" }}>
-                <li className="flex gap-3"><Check size={17} className="shrink-0 mt-1" style={{ color: "#E8732A" }} />航空便名と到着予定時刻を伝える。</li>
-                <li className="flex gap-3"><Check size={17} className="shrink-0 mt-1" style={{ color: "#E8732A" }} />人数、子どもの年齢、スーツケースの数を伝える。</li>
-                <li className="flex gap-3"><Check size={17} className="shrink-0 mt-1" style={{ color: "#E8732A" }} />到着遅延時の連絡方法と待機ルールを確認する。</li>
-                <li className="flex gap-3"><Check size={17} className="shrink-0 mt-1" style={{ color: "#E8732A" }} />料金に含まれる範囲と、追加料金の条件を確認する。</li>
-              </ul>
-            </div>
-            <figure>
-              <div className="h-64 md:h-80 overflow-hidden" style={{ backgroundColor: "#132434" }}><img src={images.luggage} alt="空港でスーツケースを専用車へ積み込む送迎ドライバー" className="w-full h-full object-cover" loading="lazy" /></div>
-              <figcaption className="mt-2 text-[11px] leading-relaxed" style={{ color: "#8EA0AE" }}>人数と荷物に余裕のある車種を選ぶと、到着日の移動がスムーズです。</figcaption>
-            </figure>
-          </div>
+          <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>スーツケースが多い、ベビーカーがある、複数人で同じホテルへ向かう。到着日には、移動時間だけでなく荷物をどう扱うかも旅の快適さを左右します。送迎を予約するなら、人数と荷物の数を正確に伝え、車種に余裕があるかを確認しましょう。</p>
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mt-6 font-sans text-sm leading-7" style={{ color: "#C7D3DB" }}>
+            <li className="flex gap-3"><Check size={17} className="shrink-0 mt-1" style={{ color: "#E8732A" }} />航空便名と到着予定時刻を伝える。</li>
+            <li className="flex gap-3"><Check size={17} className="shrink-0 mt-1" style={{ color: "#E8732A" }} />人数、子どもの年齢、スーツケースの数を伝える。</li>
+            <li className="flex gap-3"><Check size={17} className="shrink-0 mt-1" style={{ color: "#E8732A" }} />到着遅延時の連絡方法と待機ルールを確認する。</li>
+            <li className="flex gap-3"><Check size={17} className="shrink-0 mt-1" style={{ color: "#E8732A" }} />料金に含まれる範囲と、追加料金の条件を確認する。</li>
+          </ul>
 
           <Heading label="AIRPORT TO TOUR">空港送迎を、周遊旅行のスタートにする</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>スリランカの個人旅行では、空港からホテルへ行くだけでなく、到着後の移動をどう旅程へつなぐかが重要です。空港からニゴンボで一泊して翌日から周遊するのか、コロンボへ向かうのか、キャンディやシーギリヤ方面へ進むのかによって、最適な手段は変わります。</p>
