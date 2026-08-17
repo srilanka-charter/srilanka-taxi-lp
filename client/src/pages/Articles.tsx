@@ -61,6 +61,24 @@ const tukTukArticle = {
   readTime: "読了約8分",
 };
 
+const uberArticle = {
+  title: "スリランカでUBERは実用的？都市間移動も可能？",
+  description: "Uberのメリットと、都市間・長距離で確認したい配車・追加費用・旅程の注意点、タクシーチャーターとの使い分けを解説します。",
+  image: "/manus-storage/charter-1_ee4f51c5.png",
+  href: "/articles/sri-lanka-uber-guide",
+  category: "transport",
+  readTime: "読了約8分",
+};
+
+const pickMeArticle = {
+  title: "スリランカのPickMe完全ガイド｜使い方・Uber比較・都市間移動での注意点",
+  description: "スリランカ発の配車アプリPickMeの使い方、Uberとの比較、都市間移動での注意点とタクシーチャーターとの使い分けを解説します。",
+  image: "/manus-storage/tuktuk-2_12590549.jpg",
+  href: "/articles/sri-lanka-pickme-guide",
+  category: "transport",
+  readTime: "読了約8分",
+};
+
 function categoryFromSearch() {
   const query = new URLSearchParams(window.location.search);
   return query.get("category") || "transport";
@@ -69,7 +87,7 @@ function categoryFromSearch() {
 export default function Articles() {
   const activeCategory = categoryFromSearch();
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
-  const articles = activeCategory === "transport" ? [tukTukArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : [];
+  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;
