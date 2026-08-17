@@ -231,10 +231,17 @@ export default function Home() {
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-2 md:px-8"
         style={{ backgroundColor: "rgba(15, 25, 35, 0.95)", backdropFilter: "blur(10px)", borderBottom: "1px solid rgba(232, 115, 42, 0.3)" }}
       >
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           <span className="font-montserrat text-xs font-semibold tracking-widest uppercase" style={{ color: "#E8732A" }}>SRI LANKA</span>
           <span className="text-white font-serif-jp text-sm font-semibold hidden sm:block">タクシーチャーターおすすめ3選</span>
         </div>
+        <nav className="hidden xl:flex items-center justify-center gap-1" aria-label="記事カテゴリー">
+          {[
+            ["移動手段", "transport"], ["モデルコース", "itinerary"], ["個人旅行ガイド", "travel-guide"], ["観光地情報", "destinations"], ["現地情報", "local-info"],
+          ].map(([label, category]) => (
+            <a key={category} href={`/articles?category=${category}`} className="px-2.5 py-1.5 text-[10px] font-montserrat font-bold tracking-[0.05em] transition-colors hover:text-white" style={{ color: "#B8C5D0" }}>{label}</a>
+          ))}
+        </nav>
         <a
           href="#ranking"
           className="cta-pulse font-montserrat text-xs font-bold tracking-wider uppercase px-4 py-2 rounded-full transition-all"
