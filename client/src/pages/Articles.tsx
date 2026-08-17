@@ -10,7 +10,7 @@ import { MediaHeader, mediaCategories } from "@/components/MediaHeader";
 const transportArticle = {
   title: "スリランカの移動手段は何が正解？列車・トゥクトゥク・ローカルバス・専用車を比較",
   description: "列車・トゥクトゥク・ローカルバス・専用車を、旅の目的と移動距離から使い分けるための実践ガイドです。",
-  image: "/manus-storage/tuktuk-1_9860c65d.jpg",
+  image: "/manus-storage/transport-van-thumb_7e18c597.png",
   href: "/articles/sri-lanka-transport-guide",
   category: "transport",
   readTime: "読了約8分",

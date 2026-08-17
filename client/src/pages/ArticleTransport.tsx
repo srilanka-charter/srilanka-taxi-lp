@@ -10,7 +10,7 @@ import { MediaHeader } from "@/components/MediaHeader";
 const ARTICLE_TITLE = "スリランカの移動手段は何が正解？列車・トゥクトゥク・ローカルバス・専用車を比較";
 
 const images = {
-  transportHero: "/manus-storage/tuktuk-1_9860c65d.jpg",
+  transportHero: "/manus-storage/transport-van-thumb_7e18c597.png",
   trainScenery: "/manus-storage/train-1_47ef775a.jpg",
   tukTukRide: "/manus-storage/tuktuk-1_9860c65d.jpg",
   tukTukStreet: "/manus-storage/tuktuk-2_12590549.jpg",
@@ -116,7 +116,7 @@ export default function ArticleTransport() {
       <MediaHeader activeCategory="transport" />
       <main>
         <section className="relative overflow-hidden" style={{ minHeight: "min(680px, 78svh)" }}>
-          <img src={images.transportHero} alt="スリランカの町を走るトゥクトゥク" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={images.transportHero} alt="スリランカの個人旅行で使えるシルバーのバン" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(7,16,26,0.94) 0%, rgba(7,16,26,0.7) 48%, rgba(7,16,26,0.18) 100%), linear-gradient(0deg, #0A1520 0%, transparent 36%)" }} />
           <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-8 min-h-[inherit] flex items-end pb-16 md:pb-20">
             <div className="max-w-3xl">
