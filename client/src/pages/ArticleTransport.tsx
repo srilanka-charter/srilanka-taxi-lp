@@ -21,10 +21,10 @@ const images = {
   busRed: "/manus-storage/bus-2_7bb3a877.png",
 };
 
-function Figure({ src, alt, caption, className = "" }: { src: string; alt: string; caption: string; className?: string }) {
+function Figure({ src, alt, caption, className = "", mediaClassName = "h-64 md:h-72" }: { src: string; alt: string; caption: string; className?: string; mediaClassName?: string }) {
   return (
     <figure className={className}>
-      <div className="overflow-hidden" style={{ backgroundColor: "#132434" }}>
+      <div className={`overflow-hidden ${mediaClassName}`} style={{ backgroundColor: "#132434" }}>
         <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
       </div>
       <figcaption className="mt-2 text-[11px] leading-relaxed" style={{ color: "#8EA0AE" }}>{caption}</figcaption>
@@ -99,33 +99,33 @@ export default function ArticleTransport() {
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>コロンボと主要観光地を結ぶ鉄道は、スリランカを象徴する旅の体験の一つです。とくに山岳部へ向かう列車は、茶畑や緑の景色を車窓から楽しめるため、「移動の時間」自体を思い出にしたい日に向いています。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>一方で、快適な設備がある車両や速い列車は一部の路線に限られ、主要区間以外では時間にゆとりを持つ必要があります。駅までの移動、荷物の運搬、到着後のホテルへの移動をあらかじめ組み込んでおくと、列車の魅力を心から楽しめます。[1]</p>
           <div className="grid sm:grid-cols-2 gap-5 mt-8">
-            <Figure src={images.trainHero} alt="茶畑の中を走る列車" caption="山岳部の列車は、風景を味わう時間として旅程に入れたい体験です。" className="aspect-[4/3] [&>div]:h-[calc(100%-28px)]" />
-            <Figure src={images.trainView} alt="列車の窓から高原を眺める旅行者" caption="座席・予約・駅までの移動を事前に整えると、旅の満足度が上がります。" className="aspect-[4/3] [&>div]:h-[calc(100%-28px)]" />
+            <Figure src={images.trainHero} alt="茶畑の中を走る列車" caption="山岳部の列車は、風景を味わう時間として旅程に入れたい体験です。" />
+            <Figure src={images.trainView} alt="列車の窓から高原を眺める旅行者" caption="座席・予約・駅までの移動を事前に整えると、旅の満足度が上がります。" />
           </div>
 
           <Heading label="TUKTUK">トゥクトゥク：短距離を、旅らしい寄り道に変える</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>町に着いてからカフェへ向かう、海辺のホテルからレストランへ行く、少し離れた展望台へ寄る。そんな短距離なら、トゥクトゥクは便利で楽しい選択肢です。風や音を間近に感じるので、街の空気を味わうにはぴったりです。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>観光局もトゥクトゥクを町・都市部の短い移動や小旅行に適した手段として案内しています。メーターがない車両もあるため、乗車前に料金を確認する習慣をつけましょう。[1]</p>
-          <div className="grid md:grid-cols-[1.15fr_.85fr] gap-5 mt-8">
-            <Figure src={images.tukTukRide} alt="乗客とドライバーが乗った青いトゥクトゥク" caption="短い区間を楽しみながら移動するなら、トゥクトゥクがよく似合います。" className="aspect-[4/3] [&>div]:h-[calc(100%-28px)]" />
-            <Figure src={images.tukTukStreet} alt="木陰に停まる赤いトゥクトゥク" caption="町の移動は、現地ならではの乗り物を選ぶ楽しさもあります。" className="aspect-[3/4] [&>div]:h-[calc(100%-28px)]" />
+          <div className="grid sm:grid-cols-2 gap-5 mt-8">
+            <Figure src={images.tukTukRide} alt="乗客とドライバーが乗った青いトゥクトゥク" caption="短い区間を楽しみながら移動するなら、トゥクトゥクがよく似合います。" />
+            <Figure src={images.tukTukStreet} alt="木陰に停まる赤いトゥクトゥク" caption="町の移動は、現地ならではの乗り物を選ぶ楽しさもあります。" />
           </div>
 
           <Heading label="LOCAL BUS">ローカルバス：時間に余裕がある日にこそ面白い</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>島内を広く結ぶローカルバスは、現地の人の暮らしに最も近い移動手段です。予定を詰め込みすぎず、途中下車や乗り換えも含めて旅を楽しめる人には、印象に残る体験になります。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>ただし、都市部では混雑することがあり、運行のリズムや道路事情によって所要時間を読みづらい場面もあります。到着時刻が決まっている移動や、長時間の移動を伴う日は、バスだけに頼らない設計が安心です。[1]</p>
           <div className="grid sm:grid-cols-2 gap-5 mt-8">
-            <Figure src={images.busBlue} alt="道路を走る青いローカルバス" caption="主要な町をつなぐローカルバス。時間に余白を持たせて利用しましょう。" className="aspect-[4/3] [&>div]:h-[calc(100%-28px)]" />
-            <Figure src={images.busRed} alt="装飾された赤いローカルバス" caption="地域ごとに異なるバスの表情も、ローカル移動ならではの魅力です。" className="aspect-[4/3] [&>div]:h-[calc(100%-28px)]" />
+            <Figure src={images.busBlue} alt="道路を走る青いローカルバス" caption="主要な町をつなぐローカルバス。時間に余白を持たせて利用しましょう。" />
+            <Figure src={images.busRed} alt="装飾された赤いローカルバス" caption="地域ごとに異なるバスの表情も、ローカル移動ならではの魅力です。" />
           </div>
 
           <Heading label="PRIVATE CHARTER">専用車チャーター：旅程を「できること」に変える移動手段</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>専用車の価値は、単に「楽に移動できる」ことだけではありません。ホテルを出て、途中で景色の良い場所に寄り、遺跡を訪ね、ランチをとり、次の街へ進む。目的地が点在するスリランカでは、移動の選択肢がそのまま旅程の自由度になります。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>観光局も、道路が狭く交通が混み合うことで島内移動が時間を要する場合があると案内しています。複数都市をめぐる個人旅行、家族旅行、荷物が多い日、列車の駅前後をつなぐ日には、専用車を旅の「軸」に置くと計画がぐっと安定します。[1]</p>
-          <div className="grid md:grid-cols-3 gap-5 mt-8">
-            <Figure src={images.charterVan} alt="スリランカで使われるシルバーのバン" caption="人数や荷物に応じた車両を選べます。" className="aspect-[4/3] [&>div]:h-[calc(100%-28px)]" />
-            <Figure src={images.charterSafari} alt="サファリジープと象を楽しむ旅行者" caption="サファリなど、体験をつなぐ日にも相性が良い選択です。" className="aspect-[3/4] [&>div]:h-[calc(100%-28px)]" />
-            <Figure src={images.charterSigiriya} alt="シーギリヤロックを背景にした旅行者とドライバー" caption="遠方の観光地も、立ち寄りながら無理なくめぐれます。" className="aspect-[4/3] [&>div]:h-[calc(100%-28px)]" />
+          <div className="grid sm:grid-cols-2 gap-5 mt-8">
+            <Figure src={images.charterVan} alt="スリランカで使われるシルバーのバン" caption="人数や荷物に応じた車両を選べます。" />
+            <Figure src={images.charterSafari} alt="サファリジープと象を楽しむ旅行者" caption="サファリなど、体験をつなぐ日にも相性が良い選択です。" />
+            <Figure src={images.charterSigiriya} alt="シーギリヤロックを背景にした旅行者とドライバー" caption="遠方の観光地も、立ち寄りながら無理なくめぐれます。" className="sm:col-span-2" />
           </div>
 
           <Heading label="ITINERARY DESIGN">個人旅行でおすすめの組み合わせ</Heading>

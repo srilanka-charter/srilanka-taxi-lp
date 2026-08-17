@@ -225,29 +225,29 @@ export default function Home() {
 
       {/* ===== STICKY CTA BAR ===== */}
       <motion.div
-        initial={{ y: -80 }}
-        animate={{ y: showStickyBar ? 0 : -80 }}
+        initial={false}
+        animate={{ y: 0 }}
         transition={{ duration: 0.3 }}
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-2 md:px-8"
-        style={{ backgroundColor: "rgba(15, 25, 35, 0.95)", backdropFilter: "blur(10px)", borderBottom: "1px solid rgba(232, 115, 42, 0.3)" }}
+        className="fixed top-0 left-0 right-0 z-50 flex items-center gap-2 h-12 md:h-14 px-3 md:px-6"
+        style={{ backgroundColor: showStickyBar ? "rgba(8, 18, 28, 0.98)" : "rgba(8, 18, 28, 0.9)", backdropFilter: "blur(14px)", borderBottom: "1px solid rgba(255, 255, 255, 0.1)" }}
       >
-        <div className="flex items-center gap-2 shrink-0">
-          <span className="font-montserrat text-xs font-semibold tracking-widest uppercase" style={{ color: "#E8732A" }}>SRI LANKA</span>
-          <span className="text-white font-serif-jp text-sm font-semibold hidden sm:block">タクシーチャーターおすすめ3選</span>
+        <div className="hidden 2xl:flex items-center gap-2 shrink-0 pr-3 border-r" style={{ borderColor: "rgba(255,255,255,0.16)" }}>
+          <span className="font-montserrat text-[10px] font-semibold tracking-[0.16em] uppercase" style={{ color: "#E8732A" }}>SRI LANKA</span>
+          <span className="text-white font-serif-jp text-xs font-semibold">旅行メディア</span>
         </div>
-        <nav className="hidden xl:flex items-center justify-center gap-1" aria-label="記事カテゴリー">
+        <nav className="flex min-w-0 flex-1 items-center justify-start gap-0 overflow-x-auto" aria-label="記事カテゴリー">
           {[
             ["移動手段", "transport"], ["モデルコース", "itinerary"], ["個人旅行ガイド", "travel-guide"], ["観光地情報", "destinations"], ["現地情報", "local-info"],
           ].map(([label, category]) => (
-            <a key={category} href={`/articles?category=${category}`} className="px-2.5 py-1.5 text-[10px] font-montserrat font-bold tracking-[0.05em] transition-colors hover:text-white" style={{ color: "#B8C5D0" }}>{label}</a>
+            <a key={category} href={`/articles?category=${category}`} className="shrink-0 px-3 md:px-4 py-3 text-[11px] md:text-xs font-montserrat font-bold tracking-[0.05em] transition-colors hover:text-white" style={{ color: "#D3DEE5" }}>{label}</a>
           ))}
         </nav>
         <a
           href="#ranking"
-          className="cta-pulse font-montserrat text-xs font-bold tracking-wider uppercase px-4 py-2 rounded-full transition-all"
+          className="shrink-0 font-montserrat text-[10px] md:text-xs font-bold tracking-wider uppercase px-3 md:px-4 py-2 rounded-full transition-all"
           style={{ backgroundColor: "#E8732A", color: "#fff" }}
         >
-          サービスを見る
+          <span className="hidden sm:inline">サービスを見る</span><span className="sm:hidden">比較</span>
         </a>
       </motion.div>
 
