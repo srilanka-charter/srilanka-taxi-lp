@@ -52,6 +52,15 @@ const longDistanceBusArticle = {
   readTime: "読了約9分",
 };
 
+const tukTukArticle = {
+  title: "スリランカのトゥクトゥク完全ガイド｜乗り方・料金・配車アプリ・安全な使い方",
+  description: "トゥクトゥクの乗り方、料金確認、配車アプリ、人数・荷物、安全な使い方と専用車との使い分けを解説します。",
+  image: "/manus-storage/tuktuk-1_9860c65d.jpg",
+  href: "/articles/sri-lanka-tuk-tuk-guide",
+  category: "transport",
+  readTime: "読了約8分",
+};
+
 function categoryFromSearch() {
   const query = new URLSearchParams(window.location.search);
   return query.get("category") || "transport";
@@ -60,7 +69,7 @@ function categoryFromSearch() {
 export default function Articles() {
   const activeCategory = categoryFromSearch();
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
-  const articles = activeCategory === "transport" ? [longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : [];
+  const articles = activeCategory === "transport" ? [tukTukArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;

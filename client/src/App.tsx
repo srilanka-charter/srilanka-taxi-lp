@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import ArticleAirportTransfer from "./pages/ArticleAirportTransfer";
 import ArticleLongDistanceBus from "./pages/ArticleLongDistanceBus";
 import ArticleTeaTrain from "./pages/ArticleTeaTrain";
+import ArticleTukTuk from "./pages/ArticleTukTuk";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ArticleTaxiCharter from "./pages/ArticleTaxiCharter";
 import ArticleTransport from "./pages/ArticleTransport";
@@ -22,6 +23,7 @@ function Router() {
       <Route path={"/articles/colombo-airport-transfer-guide"} component={ArticleAirportTransfer} />
       <Route path={"/articles/sri-lanka-tea-train-nine-arch-bridge"} component={ArticleTeaTrain} />
       <Route path={"/articles/sri-lanka-long-distance-bus-guide"} component={ArticleLongDistanceBus} />
+      <Route path={"/articles/sri-lanka-tuk-tuk-guide"} component={ArticleTukTuk} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
