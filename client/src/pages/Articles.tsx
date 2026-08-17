@@ -34,6 +34,15 @@ const airportTransferArticle = {
   readTime: "読了約8分",
 };
 
+const teaTrainArticle = {
+  title: "スリランカ紅茶列車の乗り方・予約・ナインアーチブリッジ完全ガイド｜エッラ観光の絶景ルート",
+  description: "紅茶列車の乗り方・予約、ナインアーチブリッジの見どころ、エッラ観光を効率よく楽しむ専用車との組み合わせを解説します。",
+  image: "/manus-storage/train-1_47ef775a.jpg",
+  href: "/articles/sri-lanka-tea-train-nine-arch-bridge",
+  category: "transport",
+  readTime: "読了約10分",
+};
+
 function categoryFromSearch() {
   const query = new URLSearchParams(window.location.search);
   return query.get("category") || "transport";
@@ -42,7 +51,7 @@ function categoryFromSearch() {
 export default function Articles() {
   const activeCategory = categoryFromSearch();
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
-  const articles = activeCategory === "transport" ? [airportTransferArticle, taxiCharterArticle, transportArticle] : [];
+  const articles = activeCategory === "transport" ? [teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;
