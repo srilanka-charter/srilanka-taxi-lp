@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { ChevronDown, Star, Shield, Clock, Phone, CheckCircle, Award, Users, MapPin, ArrowRight, ExternalLink } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, Star, Shield, Clock, Phone, CheckCircle, Award, Users, MapPin, ArrowRight, ExternalLink } from "lucide-react";
 
 /* ============================================================
    DESIGN: Modern Expedition — Dark Luxury Travel LP
    
    Sections:
-   1. Hero — Full-screen with parallax
+   1. Hero — Full-screen cinematic image slider, editorial left-aligned typography
    2. Why Charter — Problem/Solution with comparison image
    3. Ranking — 3 service cards with detailed info
    4. Comparison Table — Feature comparison
@@ -14,7 +14,36 @@ import { ChevronDown, Star, Shield, Clock, Phone, CheckCircle, Award, Users, Map
    6. Footer
    ============================================================ */
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663529989815/af4PKUY2YLtuM7VvgtZTdw/hero-srilanka-L6v9rdyiQKSNBXXQsMyUAM.webp";
+const HERO_SLIDES = [
+  {
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663529989815/af4PKUY2YLtuM7VvgtZTdw/hero-srilanka-L6v9rdyiQKSNBXXQsMyUAM.webp",
+    location: "CULTURAL TRIANGLE · 01 / 04",
+    eyebrow: "SRI LANKA PRIVATE CHARTER",
+    title: "スリランカを\n専用車で、自由に。",
+    description: "日本語対応の専用車で、憧れの絶景を自分たちのペースで。",
+  },
+  {
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663529989815/BHJpmNEJeYmvs6JETpsBKm/hero_train-e4cT44tSVSFMse7HoCf8pK.webp",
+    location: "HILL COUNTRY · 02 / 04",
+    eyebrow: "A JOURNEY THROUGH TEA COUNTRY",
+    title: "移動さえ、\n旅のハイライトに。",
+    description: "茶畑、列車、山あいの町。次の目的地まで、美しい時間が続きます。",
+  },
+  {
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663529989815/BHJpmNEJeYmvs6JETpsBKm/hero_safari-JViTbLqQxwmS9rhf9nSVyM.webp",
+    location: "YALA NATIONAL PARK · 03 / 04",
+    eyebrow: "WILDLIFE, AT YOUR OWN PACE",
+    title: "空港からサファリまで。\n自由な旅程を、ひとつに。",
+    description: "長距離移動も観光も、専用車だから予定に縛られません。",
+  },
+  {
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663529989815/BHJpmNEJeYmvs6JETpsBKm/hero_surfing-6iWVFB3AcyCRfbJVEa6GUh.webp",
+    location: "SOUTH COAST · 04 / 04",
+    eyebrow: "THE ROAD TO THE INDIAN OCEAN",
+    title: "海風を感じる、\n南部海岸への道。",
+    description: "行きたい場所を、行きたい順番で。あなただけのスリランカへ。",
+  },
+];
 const WHY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663529989815/af4PKUY2YLtuM7VvgtZTdw/srilanka-why-FohivTqgkv5nbp7J2RCAP5.webp";
 const LANKAME_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663529989815/af4PKUY2YLtuM7VvgtZTdw/lankame-service-UzLuTxvg7SSRaNH9dU9HnY.webp";
 const LANKARIDE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663529989815/af4PKUY2YLtuM7VvgtZTdw/lankaride-service-fGCtGBg6LPxFHh7mvfqjXs.webp";
@@ -159,6 +188,7 @@ export default function Home() {
   const heroY = useTransform(scrollY, [0, 600], [0, 150]);
   const heroOpacity = useTransform(scrollY, [0, 400], [1, 0]);
   const [activeTab, setActiveTab] = useState(0);
+  const [activeHeroSlide, setActiveHeroSlide] = useState(0);
 
   // SEO: document.titleとキーワードを動的に設定
   useEffect(() => {
@@ -181,6 +211,13 @@ export default function Home() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveHeroSlide((current) => (current + 1) % HERO_SLIDES.length);
+    }, 6500);
+    return () => window.clearInterval(intervalId);
   }, []);
 
   return (
@@ -208,116 +245,67 @@ export default function Home() {
       </motion.div>
 
       {/* ===== HERO SECTION ===== */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background image with parallax */}
-        <motion.div
-          style={{ y: heroY }}
-          className="absolute inset-0 w-full h-full"
-        >
-          <div
-            className="absolute inset-0 w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${HERO_IMG})` }}
-          />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(15,25,35,0.3) 0%, rgba(15,25,35,0.6) 60%, rgba(15,25,35,1) 100%)" }} />
+      <section className="relative min-h-[740px] h-[100svh] overflow-hidden" aria-label="スリランカ タクシーチャーターの魅力">
+        <motion.div style={{ y: heroY }} className="absolute inset-0 scale-105">
+          {HERO_SLIDES.map((slide, index) => (
+            <motion.div
+              key={slide.image}
+              initial={false}
+              animate={{ opacity: index === activeHeroSlide ? 1 : 0, scale: index === activeHeroSlide ? 1 : 1.06 }}
+              transition={{ opacity: { duration: 1.25, ease: "easeInOut" }, scale: { duration: 7, ease: "linear" } }}
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${slide.image})` }}
+              aria-hidden={index !== activeHeroSlide}
+            />
+          ))}
         </motion.div>
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(4,13,24,0.94) 0%, rgba(6,16,28,0.74) 38%, rgba(8,18,30,0.28) 72%, rgba(7,16,26,0.58) 100%), linear-gradient(0deg, rgba(5,14,24,0.9) 0%, rgba(5,14,24,0) 38%, rgba(5,14,24,0.36) 100%)" }} />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-orange-300/70 to-transparent" />
 
-        {/* Hero content */}
-        <motion.div
-          style={{ opacity: heroOpacity }}
-          className="relative z-10 text-center px-4 max-w-5xl mx-auto"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-4"
-          >
-            <span className="font-montserrat text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border" style={{ color: "#E8732A", borderColor: "#E8732A" }}>
-              SRI LANKA TAXI CHARTER GUIDE 2025-2026
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-4"
-            style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.02em" }}
-          >
-            スリランカ
-            <br />
-            <span style={{ color: "#E8732A" }}>タクシーチャーター</span>
-            <br />
-            おすすめ3選
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.7 }}
-            className="font-serif-jp text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto"
-            style={{ color: "#B8C5D0" }}
-          >
-            日本語対応・政府公認ドライバー・定額制。<br />
-            安心して旅を任せられる厳選3サービスを徹底比較。
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.9 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <a
-              href="#ranking"
-              className="cta-pulse font-montserrat font-bold tracking-wider uppercase px-8 py-4 rounded-full text-white transition-all hover:scale-105 text-sm md:text-base"
-              style={{ backgroundColor: "#E8732A", boxShadow: "0 0 30px rgba(232, 115, 42, 0.4)" }}
-            >
-              ランキングを見る
-            </a>
-            <a
-              href="#why"
-              className="font-montserrat font-semibold tracking-wider uppercase px-8 py-4 rounded-full border transition-all hover:bg-white/10 text-sm md:text-base"
-              style={{ color: "#B8C5D0", borderColor: "rgba(184, 197, 208, 0.4)" }}
-            >
-              なぜチャーターが必要？
-            </a>
-          </motion.div>
-
-          {/* Stats row */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-wrap justify-center gap-8 mt-12"
-          >
-            {[
-              { num: "8", label: "世界遺産" },
-              { num: "15,000円(税込)/日〜", label: "5日以上利用の場合" },
-              { num: "1,000人+", label: "年間利用者" },
-              { num: "選択可能", label: "ガイドドライバー" },
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="font-display text-2xl sm:text-3xl font-bold" style={{ fontFamily: "'Bebas Neue', sans-serif", color: "#E8732A" }}>{stat.num}</div>
-                <div className="font-montserrat text-xs tracking-wider" style={{ color: "#B8C5D0" }}>{stat.label}</div>
+        <motion.div style={{ opacity: heroOpacity }} className="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-10 flex items-center">
+          <div className="max-w-3xl pt-12 md:pt-0">
+            <motion.div key={`copy-${activeHeroSlide}`} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }}>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="h-px w-10 md:w-16" style={{ backgroundColor: "#E8732A" }} />
+                <span className="font-montserrat text-[10px] md:text-xs font-bold tracking-[0.24em] uppercase" style={{ color: "#F1A368" }}>
+                  {HERO_SLIDES[activeHeroSlide].eyebrow}
+                </span>
               </div>
-            ))}
-          </motion.div>
+              <p className="font-montserrat text-[10px] md:text-xs tracking-[0.2em] uppercase mb-5" style={{ color: "#B8C5D0" }}>
+                {HERO_SLIDES[activeHeroSlide].location}
+              </p>
+              <h1 className="font-serif-jp text-[2.7rem] sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.2] tracking-tight text-white whitespace-pre-line mb-6" style={{ textShadow: "0 5px 32px rgba(0,0,0,0.32)" }}>
+                {HERO_SLIDES[activeHeroSlide].title}
+              </h1>
+              <p className="font-sans text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mb-8" style={{ color: "#D6DEE5" }}>
+                {HERO_SLIDES[activeHeroSlide].description}
+              </p>
+            </motion.div>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <a href="#ranking" className="font-montserrat text-xs font-bold tracking-[0.14em] uppercase px-6 py-4 text-center transition-transform duration-200 hover:-translate-y-0.5" style={{ backgroundColor: "#E8732A", color: "#fff", boxShadow: "0 12px 30px rgba(0,0,0,0.25)" }}>
+                おすすめ3社を比較する
+              </a>
+              <a href="#why" className="font-montserrat text-xs font-bold tracking-[0.14em] uppercase px-6 py-4 border text-center transition-colors duration-200 hover:bg-white/10" style={{ borderColor: "rgba(255,255,255,0.35)", color: "#fff" }}>
+                チャーターの魅力を見る
+              </a>
+            </div>
+          </div>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          style={{ color: "#B8C5D0" }}
-        >
-          <span className="font-montserrat text-xs tracking-widest uppercase">Scroll</span>
-          <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
-            <ChevronDown size={20} />
-          </motion.div>
-        </motion.div>
+        <div className="absolute z-20 right-5 md:right-10 bottom-16 md:bottom-20 flex items-center gap-3">
+          <button type="button" onClick={() => setActiveHeroSlide((current) => (current - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)} className="w-10 h-10 border flex items-center justify-center transition-colors hover:bg-white hover:text-[#0F1923]" style={{ borderColor: "rgba(255,255,255,0.4)", color: "#fff" }} aria-label="前のスライド"><ChevronLeft size={18} /></button>
+          <button type="button" onClick={() => setActiveHeroSlide((current) => (current + 1) % HERO_SLIDES.length)} className="w-10 h-10 border flex items-center justify-center transition-colors hover:bg-white hover:text-[#0F1923]" style={{ borderColor: "rgba(255,255,255,0.4)", color: "#fff" }} aria-label="次のスライド"><ChevronRight size={18} /></button>
+        </div>
+        <div className="absolute z-20 left-6 md:left-10 bottom-12 md:bottom-14 flex items-center gap-3">
+          <span className="font-montserrat text-[10px] tracking-[0.18em] text-white/70">SCENE</span>
+          {HERO_SLIDES.map((slide, index) => (
+            <button key={slide.location} type="button" onClick={() => setActiveHeroSlide(index)} className="h-[2px] transition-all duration-300" style={{ width: index === activeHeroSlide ? "58px" : "20px", backgroundColor: index === activeHeroSlide ? "#E8732A" : "rgba(255,255,255,0.38)" }} aria-label={`${index + 1}枚目のスライド`} />
+          ))}
+        </div>
+        <div className="absolute z-20 left-1/2 -translate-x-1/2 bottom-4 flex flex-col items-center gap-1 text-white/60">
+          <span className="font-montserrat text-[9px] tracking-[0.22em] uppercase">Scroll to explore</span>
+          <ChevronDown size={16} />
+        </div>
       </section>
 
       {/* ===== WHY CHARTER SECTION ===== */}
@@ -561,81 +549,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== WARNING SECTION ===== */}
-      <section id="warning" className="py-20 md:py-28" style={{ background: "linear-gradient(135deg, #1a0a00 0%, #0D1B2A 50%, #1a0a00 100%)" }}>
-        <div className="max-w-5xl mx-auto px-4 md:px-8">
+      {/* ===== WARNING SECTION · DESIGN: editorial risk index, no emoji iconography ===== */}
+      <section id="warning" className="relative overflow-hidden py-24 md:py-32" style={{ background: "radial-gradient(circle at 8% 0%, rgba(166,58,46,0.18), transparent 29%), radial-gradient(circle at 92% 100%, rgba(201,168,76,0.11), transparent 26%), #0B1620" }}>
+        <div className="absolute inset-y-0 left-[8%] w-px" style={{ background: "linear-gradient(to bottom, transparent, rgba(248,113,113,0.34), transparent)" }} />
+        <div className="absolute inset-y-0 right-[8%] w-px" style={{ background: "linear-gradient(to bottom, transparent, rgba(232,115,42,0.22), transparent)" }} />
+        <div className="relative max-w-5xl mx-auto px-4 md:px-8">
           <RevealSection>
-            <div className="text-center mb-12">
-              <span className="font-montserrat text-xs font-bold tracking-widest uppercase mb-4 block" style={{ color: "#f87171" }}>WARNING</span>
-              <h2 className="font-serif-jp text-3xl sm:text-4xl font-bold text-white mb-4">
+            <div className="text-center mb-14">
+              <div className="flex items-center justify-center gap-3 mb-5">
+                <span className="h-px w-8" style={{ backgroundColor: "#F87171" }} />
+                <span className="font-montserrat text-[10px] font-bold tracking-[0.24em] uppercase" style={{ color: "#F87171" }}>TRAVEL ADVISORY</span>
+                <span className="h-px w-8" style={{ backgroundColor: "#F87171" }} />
+              </div>
+              <h2 className="font-serif-jp text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5">
                 <span style={{ color: "#f87171" }}>価格が安いサービス</span>には気をつけて！
               </h2>
-              <p className="font-sans text-sm md:text-base max-w-2xl mx-auto" style={{ color: "#B8C5D0" }}>
+              <p className="font-sans text-sm md:text-base leading-relaxed max-w-2xl mx-auto" style={{ color: "#B8C5D0" }}>
                 スリランカのタクシーチャーターは「安ければ良い」とは限りません。<br />
                 低価格サービスには、旅行を台無しにしかねない深刻なリスクが潜んでいます。
               </p>
             </div>
           </RevealSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px mb-10" style={{ backgroundColor: "rgba(248,113,113,0.22)" }}>
             {[
-              {
-                icon: "💸",
-                title: "追加請求のリスク",
-                desc: "表示価格に距離制限が設けられているケースが多く、1日250km超えも珍しくない日本人観光客は毎日追加料金を請求される可能性があります。事前に総額が分からず、旅行中ずっと不安を抱えることになります。",
-              },
-              {
-                icon: "🚗",
-                title: "20年以上前の古い車が配車される",
-                desc: "スリランカでは輸入関税が高く、日本で200万円の車が現地では740万円に。安いドライバーは古い車を使い回しており、故障リスクや快適性の低下に直結します。",
-              },
-              {
-                icon: "⏰",
-                title: "待ち合わせ場所に現れない",
-                desc: "空港やホテルでの待ち合わせに連絡なく現れない、最悪の場合は最後まで来ないというトラブルも実際に発生しています。初めての土地で一人取り残される恐怖は計り知れません。",
-              },
-              {
-                icon: "🗺️",
-                title: "目的地間の移動しか担当しない",
-                desc: "質の低いドライバーは主要観光地への送迎のみで、ホテルから観光スポットへの細かい移動は別途手配が必要なケースも。費用の総額が結果的に上振れしてしまいます。",
-              },
-              {
-                icon: "🏪",
-                title: "キックバック目的で提携店に連れ回す",
-                desc: "低価格で利益を確保できないドライバーは、キックバックが得られる提携レストランやアーユルヴェーダ店に執拗に連れて行こうとします。本来の旅程が崩れる原因にもなります。",
-              },
-              {
-                icon: "📞",
-                title: "サポートが手厚くない",
-                desc: "安価なサービスはカスタマーサポートにコストをかけられません。旅程作成の相談や現地でのトラブル対応など、契約後は放置されるケースも。日本語サポートは期待できません。",
-              },
+              { number: "01", title: "追加請求のリスク", desc: "表示価格に距離制限が設けられているケースが多く、1日250km超えも珍しくない日本人観光客は毎日追加料金を請求される可能性があります。事前に総額が分からず、旅行中ずっと不安を抱えることになります。" },
+              { number: "02", title: "20年以上前の古い車が配車される", desc: "スリランカでは輸入関税が高く、日本で200万円の車が現地では740万円に。安いドライバーは古い車を使い回しており、故障リスクや快適性の低下に直結します。" },
+              { number: "03", title: "待ち合わせ場所に現れない", desc: "空港やホテルでの待ち合わせに連絡なく現れない、最悪の場合は最後まで来ないというトラブルも実際に発生しています。初めての土地で一人取り残される恐怖は計り知れません。" },
+              { number: "04", title: "目的地間の移動しか担当しない", desc: "質の低いドライバーは主要観光地への送迎のみで、ホテルから観光スポットへの細かい移動は別途手配が必要なケースも。費用の総額が結果的に上振れしてしまいます。" },
+              { number: "05", title: "キックバック目的で提携店に連れ回す", desc: "低価格で利益を確保できないドライバーは、キックバックが得られる提携レストランやアーユルヴェーダ店に執拗に連れて行こうとします。本来の旅程が崩れる原因にもなります。" },
+              { number: "06", title: "サポートが手厚くない", desc: "安価なサービスはカスタマーサポートにコストをかけられません。旅程作成の相談や現地でのトラブル対応など、契約後は放置されるケースも。日本語サポートは期待できません。" },
             ].map((risk, i) => (
-              <RevealSection key={i} delay={i * 0.08}>
-                <div
-                  className="rounded-2xl p-5 flex gap-4"
-                  style={{
-                    background: "rgba(248, 113, 113, 0.05)",
-                    border: "1px solid rgba(248, 113, 113, 0.2)",
-                  }}
-                >
-                  <div className="text-3xl flex-shrink-0 mt-0.5">{risk.icon}</div>
-                  <div>
-                    <h3 className="font-serif-jp text-base font-bold text-white mb-2">{risk.title}</h3>
-                    <p className="font-sans text-xs leading-relaxed" style={{ color: "#B8C5D0" }}>{risk.desc}</p>
+              <RevealSection key={risk.number} delay={i * 0.08}>
+                <div className="group min-h-full p-6 md:p-7 transition-colors duration-300 hover:bg-white/[0.045]" style={{ background: "rgba(10, 21, 32, 0.82)" }}>
+                  <div className="flex items-start justify-between gap-5 mb-5">
+                    <span className="font-display text-4xl leading-none" style={{ color: "rgba(248,113,113,0.66)" }}>{risk.number}</span>
+                    <span className="mt-1 h-px flex-1 max-w-[96px]" style={{ backgroundColor: "rgba(248,113,113,0.3)" }} />
                   </div>
+                  <h3 className="font-serif-jp text-lg font-bold text-white mb-3 leading-relaxed">{risk.title}</h3>
+                  <p className="font-sans text-xs md:text-sm leading-7" style={{ color: "#B8C5D0" }}>{risk.desc}</p>
                 </div>
               </RevealSection>
             ))}
           </div>
 
           <RevealSection delay={0.4}>
-            <div
-              className="rounded-2xl p-6 md:p-8 text-center"
-              style={{
-                background: "linear-gradient(135deg, rgba(232,115,42,0.15) 0%, rgba(201,168,76,0.1) 100%)",
-                border: "1px solid rgba(232, 115, 42, 0.4)",
-              }}
-            >
+            <div className="relative overflow-hidden border px-6 py-8 md:px-10 md:py-9 text-center" style={{ background: "linear-gradient(100deg, rgba(201,168,76,0.16) 0%, rgba(232,115,42,0.08) 50%, rgba(201,168,76,0.14) 100%)", borderColor: "rgba(201, 168, 76, 0.5)" }}>
+              <div className="absolute top-0 left-0 h-px w-28" style={{ backgroundColor: "#C9A84C" }} />
+              <div className="absolute bottom-0 right-0 h-px w-28" style={{ backgroundColor: "#C9A84C" }} />
+              <span className="font-montserrat text-[10px] font-bold tracking-[0.2em] uppercase block mb-3" style={{ color: "#C9A84C" }}>A CONSIDERED CHOICE</span>
               <p className="font-serif-jp text-lg md:text-xl font-bold text-white mb-2">
                 だからこそ、<span style={{ color: "#E8732A" }}>信頼できる3社</span>を厳選しました
               </p>
@@ -693,8 +655,8 @@ export default function Home() {
                     >
                       <td className="px-4 py-3 font-sans text-sm font-semibold" style={{ color: "#B8C5D0" }}>{item.feature}</td>
                       <td className="px-4 py-3 text-center font-sans text-xs" style={{ color: item.lankame.startsWith("◎") ? "#C9A84C" : "#B8C5D0" }}>{item.lankame}</td>
-                      <td className="px-4 py-3 text-center font-sans text-xs" style={{ color: item.lankaride.startsWith("◎") ? "#B8C5D0" : "#8A9BA8" }}>{item.lankaride}</td>
                       <td className="px-4 py-3 text-center font-sans text-xs" style={{ color: item.sltcs.startsWith("◎") ? "#C47A3A" : "#B8C5D0" }}>{item.sltcs}</td>
+                      <td className="px-4 py-3 text-center font-sans text-xs" style={{ color: item.lankaride.startsWith("◎") ? "#B8C5D0" : "#8A9BA8" }}>{item.lankaride}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -704,63 +666,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== HOW TO CHOOSE ===== */}
-      <section className="py-20 md:py-28" style={{ backgroundColor: "#0F1923" }}>
+      {/* ===== HOW TO CHOOSE · DESIGN: numbered editorial cards, no emoji iconography ===== */}
+      <section className="relative overflow-hidden py-24 md:py-32" style={{ backgroundColor: "#0F1923" }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24" style={{ background: "linear-gradient(to bottom, rgba(232,115,42,0.8), transparent)" }} />
         <div className="max-w-5xl mx-auto px-4 md:px-8">
           <RevealSection>
-            <div className="text-center mb-12">
-              <span className="font-montserrat text-xs font-bold tracking-widest uppercase mb-4 block" style={{ color: "#E8732A" }}>HOW TO CHOOSE</span>
-              <h2 className="font-serif-jp text-3xl sm:text-4xl font-bold text-white mb-4">
+            <div className="text-center mb-14">
+              <span className="font-montserrat text-[10px] font-bold tracking-[0.24em] uppercase mb-4 block" style={{ color: "#E8732A" }}>HOW TO CHOOSE</span>
+              <h2 className="font-serif-jp text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
                 あなたに合った<span style={{ color: "#E8732A" }}>選び方</span>
               </h2>
             </div>
           </RevealSection>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 border-t border-l" style={{ borderColor: "rgba(255,255,255,0.14)" }}>
             {[
-              {
-                icon: "💰",
-                title: "大手品質をお手頃価格で",
-                service: "ランカミー",
-                reason: "業界最安値保証で、大手旅行代理店より大幅に安い。プラチナプランでも観光ガイド付きで割安。",
-                url: "https://srilankataxicharterservice.com/ja/",
-                color: "#C9A84C",
-              },
-              {
-                icon: "🗣️",
-                title: "日本語ドライバーが多い方がいい",
-                service: "ランカライド",
-                reason: "日本語ドライバーを最も多く抱えるサービス。スリランカ最大手との連携で品質も安定。",
-                url: "https://srilankacarhirewithprivatedriver.com/ja/",
-                color: "#B8C5D0",
-              },
-              {
-                icon: "💴",
-                title: "とにかく費用を抑えたい",
-                service: "SLTCS",
-                reason: "業界最安値水準で圧倒的コスパ。7日前まで完全無料キャンセル・時間距離無制限の定額制で、とにかくコストを抑えたい方に最適。",
-                url: "https://sltcs.srilanka-charter.com",
-                color: "#C47A3A",
-              },
+              { number: "01", label: "QUALITY FIRST", title: "大手品質をお手頃価格で", service: "ランカミー", reason: "業界最安値保証で、大手旅行代理店より大幅に安い。プラチナプランでも観光ガイド付きで割安。", url: "https://srilankataxicharterservice.com/ja/", color: "#C9A84C" },
+              { number: "02", label: "LANGUAGE SUPPORT", title: "日本語ドライバーが多い方がいい", service: "ランカライド", reason: "日本語ドライバーを最も多く抱えるサービス。スリランカ最大手との連携で品質も安定。", url: "https://srilankacarhirewithprivatedriver.com/ja/", color: "#B8C5D0" },
+              { number: "03", label: "BEST VALUE", title: "とにかく費用を抑えたい", service: "SLTCS", reason: "業界最安値水準で圧倒的コスパ。7日前まで完全無料キャンセル・時間距離無制限の定額制で、とにかくコストを抑えたい方に最適。", url: "https://sltcs.srilanka-charter.com", color: "#C47A3A" },
             ].map((item, i) => (
-              <RevealSection key={i} delay={i * 0.15}>
-                <div
-                  className="glass-card rounded-2xl p-6 h-full flex flex-col"
-                  style={{ border: `1px solid ${item.color}30` }}
-                >
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="font-serif-jp text-lg font-bold text-white mb-3">{item.title}</h3>
-                  <div className="font-montserrat text-xs font-bold tracking-wider uppercase mb-2" style={{ color: item.color }}>
-                    → {item.service}
+              <RevealSection key={item.number} delay={i * 0.15}>
+                <div className="group min-h-[340px] border-r border-b p-7 md:p-8 h-full flex flex-col transition-colors duration-300 hover:bg-white/[0.035]" style={{ borderColor: "rgba(255,255,255,0.14)" }}>
+                  <div className="flex items-start justify-between mb-9">
+                    <span className="font-display text-5xl leading-none" style={{ color: item.color }}>{item.number}</span>
+                    <span className="font-montserrat text-[9px] font-bold tracking-[0.18em] pt-1" style={{ color: item.color }}>{item.label}</span>
                   </div>
-                  <p className="font-sans text-sm leading-relaxed mb-5 flex-grow" style={{ color: "#8A9BA8" }}>{item.reason}</p>
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 font-montserrat text-xs font-bold tracking-wider uppercase transition-all hover:gap-2"
-                    style={{ color: item.color }}
-                  >
+                  <h3 className="font-serif-jp text-lg md:text-xl font-bold text-white leading-relaxed mb-4">{item.title}</h3>
+                  <div className="flex items-center gap-2 font-montserrat text-[11px] font-bold tracking-[0.12em] uppercase mb-4" style={{ color: item.color }}>
+                    <span className="h-px w-6" style={{ backgroundColor: item.color }} /> {item.service}
+                  </div>
+                  <p className="font-sans text-sm leading-7 mb-7 flex-grow" style={{ color: "#9BAAB5" }}>{item.reason}</p>
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-montserrat text-[11px] font-bold tracking-[0.12em] uppercase transition-all hover:gap-3" style={{ color: item.color }}>
                     詳細を見る <ArrowRight size={12} />
                   </a>
                 </div>
