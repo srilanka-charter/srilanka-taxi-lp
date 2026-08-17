@@ -79,6 +79,33 @@ const pickMeArticle = {
   readTime: "読了約8分",
 };
 
+const itinerary5DaysArticle = {
+  title: "スリランカ旅行5日間モデルコース｜初めてでも世界遺産を満喫する王道ルート",
+  description: "シーギリヤ、ダンブッラ、ポロンナルワ、アヌラーダプラを無理なくめぐる5日間の王道ルートを解説します。",
+  image: "/manus-storage/sigiriya-1_60f050bc.jpg",
+  href: "/articles/sri-lanka-5-day-itinerary",
+  category: "itinerary",
+  readTime: "読了約10分",
+};
+
+const itinerary7DaysArticle = {
+  title: "スリランカ旅行7日間モデルコース｜シーギリヤ・キャンディ・ゴールをめぐる旅",
+  description: "文化三角地帯、キャンディ、紅茶列車、サファリ、ゴールをつなぐ7日間の周遊ルートを紹介します。",
+  image: "/manus-storage/galle_46cff405.jpg",
+  href: "/articles/sri-lanka-7-day-itinerary",
+  category: "itinerary",
+  readTime: "読了約11分",
+};
+
+const itinerary4DaysArticle = {
+  title: "スリランカ旅行3泊4日モデルコース｜短期間で見どころを絞る効率的な旅程",
+  description: "空港送迎を起点に、シーギリヤ、ダンブッラ、キャンディを効率よくめぐる短期旅行のモデルコースです。",
+  image: "/manus-storage/sigiriya-2_c47ed17b.jpg",
+  href: "/articles/sri-lanka-4-day-itinerary",
+  category: "itinerary",
+  readTime: "読了約9分",
+};
+
 function categoryFromSearch() {
   const query = new URLSearchParams(window.location.search);
   return query.get("category") || "transport";
@@ -87,7 +114,7 @@ function categoryFromSearch() {
 export default function Articles() {
   const activeCategory = categoryFromSearch();
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
-  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : [];
+  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : activeCategory === "itinerary" ? [itinerary7DaysArticle, itinerary5DaysArticle, itinerary4DaysArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;
@@ -114,7 +141,7 @@ export default function Articles() {
                 </div>
                 <div className="p-6 md:p-7">
                   <div className="flex items-center gap-3 mb-4 text-[10px] font-montserrat font-bold tracking-[0.16em]" style={{ color: "#E8732A" }}>
-                    <span>移動手段</span><span className="h-px w-6" style={{ backgroundColor: "rgba(232,115,42,0.65)" }} /><span style={{ color: "#91A1AE" }}>{article.readTime}</span>
+                    <span>{category.label}</span><span className="h-px w-6" style={{ backgroundColor: "rgba(232,115,42,0.65)" }} /><span style={{ color: "#91A1AE" }}>{article.readTime}</span>
                   </div>
                   <h2 className="font-serif-jp text-xl md:text-2xl font-bold leading-relaxed text-white mb-4">{article.title}</h2>
                   <p className="font-sans text-sm leading-7 mb-6" style={{ color: "#B8C5D0" }}>{article.description}</p>

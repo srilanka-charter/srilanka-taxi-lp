@@ -9,6 +9,7 @@ import ArticleTeaTrain from "./pages/ArticleTeaTrain";
 import ArticleTukTuk from "./pages/ArticleTukTuk";
 import ArticleUber from "./pages/ArticleUber";
 import ArticlePickMe from "./pages/ArticlePickMe";
+import { ArticleItineraryFiveDays, ArticleItineraryFourDays, ArticleItinerarySevenDays } from "./pages/ArticleItineraries";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ArticleTaxiCharter from "./pages/ArticleTaxiCharter";
 import ArticleTransport from "./pages/ArticleTransport";
@@ -28,6 +29,9 @@ function Router() {
       <Route path={"/articles/sri-lanka-tuk-tuk-guide"} component={ArticleTukTuk} />
       <Route path={"/articles/sri-lanka-uber-guide"} component={ArticleUber} />
       <Route path={"/articles/sri-lanka-pickme-guide"} component={ArticlePickMe} />
+      <Route path={"/articles/sri-lanka-5-day-itinerary"} component={ArticleItineraryFiveDays} />
+      <Route path={"/articles/sri-lanka-7-day-itinerary"} component={ArticleItinerarySevenDays} />
+      <Route path={"/articles/sri-lanka-4-day-itinerary"} component={ArticleItineraryFourDays} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
