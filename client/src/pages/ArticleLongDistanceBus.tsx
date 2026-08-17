@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowRight, Banknote, BusFront, Check, Clock3, Luggage, MapPinned } from "lucide-react";
 import { MediaHeader } from "@/components/MediaHeader";
+import { TransportRelatedLinks } from "@/components/TransportRelatedLinks";
 
 const ARTICLE_TITLE = "スリランカの長距離バス完全ガイド｜乗り方・料金・注意点と専用車との使い分け";
 
@@ -134,6 +135,8 @@ export default function ArticleLongDistanceBus() {
 
           <Heading label="FAQ">スリランカ長距離バスでよくある質問</Heading>
           <div className="divide-y border-y" style={{ borderColor: "rgba(255,255,255,0.14)" }}>{faqs.map((faq, index) => <details key={faq.question} className="group py-5"><summary className="cursor-pointer list-none flex items-start gap-4 font-serif-jp font-bold text-white"><span className="font-montserrat text-[10px] tracking-[0.16em] mt-1" style={{ color: "#E8732A" }}>Q{String(index + 1).padStart(2, "0")}</span><span className="flex-1 leading-7">{faq.question}</span><span className="text-xl leading-none transition-transform group-open:rotate-45" style={{ color: "#E8732A" }}>+</span></summary><p className="font-sans text-sm leading-8 mt-4 pl-10" style={{ color: "#C7D3DB" }}>{faq.answer}</p></details>)}</div>
+
+          <TransportRelatedLinks current="bus" />
 
           <section className="relative overflow-hidden mt-16 md:mt-20 p-7 md:p-10 border" style={{ borderColor: "rgba(232,115,42,0.55)", background: "linear-gradient(110deg, rgba(232,115,42,0.16), rgba(201,168,76,0.10) 48%, rgba(9,22,34,0.65)), #102132" }}><div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)", backgroundSize: "22px 22px" }} /><div className="relative z-10 max-w-2xl"><div className="flex items-center gap-3 mb-4"><span className="h-px w-10" style={{ backgroundColor: "#E8732A" }} /><span className="font-montserrat text-[10px] font-bold tracking-[0.22em]" style={{ color: "#F1A368" }}>PLAN THE RIGHT MOVE</span></div><h2 className="font-serif-jp text-2xl md:text-3xl font-bold text-white leading-relaxed">移動日に合わせて、<br />最適な1台を選ぼう。</h2><p className="font-sans text-sm md:text-base leading-8 mt-5" style={{ color: "#D7E1E7" }}>料金の分かりやすさ、日本語対応、ドライバー品質、キャンセル条件を比べて、スリランカ個人旅行に合うタクシーチャーターを選びませんか。</p><a href="/#ranking" className="inline-flex items-center gap-3 mt-7 px-6 py-4 font-montserrat text-xs font-bold tracking-[0.12em] text-white transition-transform hover:-translate-y-0.5" style={{ backgroundColor: "#E8732A", boxShadow: "0 12px 26px rgba(0,0,0,0.25)" }}>タクシーチャーターおすすめ3選を比較する <ArrowRight size={15} /></a></div></section>
 

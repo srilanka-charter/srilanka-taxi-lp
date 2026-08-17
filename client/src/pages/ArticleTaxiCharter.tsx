@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowRight, CalendarDays, CarFront, Check, MapPinned, ShieldCheck, Users } from "lucide-react";
 import { MediaHeader } from "@/components/MediaHeader";
+import { TransportRelatedLinks } from "@/components/TransportRelatedLinks";
 
 const ARTICLE_TITLE = "スリランカのタクシーチャーターとは？料金・使い方・選び方を個人旅行向けに解説";
 
@@ -226,6 +227,8 @@ export default function ArticleTaxiCharter() {
               </details>
             ))}
           </div>
+
+          <TransportRelatedLinks current="charter" />
 
           <section className="relative overflow-hidden mt-16 md:mt-20 p-7 md:p-10 border" style={{ borderColor: "rgba(232,115,42,0.55)", background: "linear-gradient(110deg, rgba(232,115,42,0.16), rgba(201,168,76,0.10) 48%, rgba(9,22,34,0.65)), #102132" }}>
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)", backgroundSize: "22px 22px" }} />

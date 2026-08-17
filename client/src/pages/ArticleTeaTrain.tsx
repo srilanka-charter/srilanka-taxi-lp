@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowRight, CalendarDays, Check, Clock3, MapPinned, TrainFront } from "lucide-react";
 import { MediaHeader } from "@/components/MediaHeader";
+import { TransportRelatedLinks } from "@/components/TransportRelatedLinks";
 
 const ARTICLE_TITLE = "スリランカ紅茶列車の乗り方・予約・ナインアーチブリッジ完全ガイド｜エッラ観光の絶景ルート";
 
@@ -232,6 +233,8 @@ export default function ArticleTeaTrain() {
               <details key={faq.question} className="group py-5"><summary className="cursor-pointer list-none flex items-start gap-4 font-serif-jp font-bold text-white"><span className="font-montserrat text-[10px] tracking-[0.16em] mt-1" style={{ color: "#E8732A" }}>Q{String(index + 1).padStart(2, "0")}</span><span className="flex-1 leading-7">{faq.question}</span><span className="text-xl leading-none transition-transform group-open:rotate-45" style={{ color: "#E8732A" }}>+</span></summary><p className="font-sans text-sm leading-8 mt-4 pl-10" style={{ color: "#C7D3DB" }}>{faq.answer}</p></details>
             ))}
           </div>
+
+          <TransportRelatedLinks current="tea-train" />
 
           <section className="relative overflow-hidden mt-16 md:mt-20 p-7 md:p-10 border" style={{ borderColor: "rgba(232,115,42,0.55)", background: "linear-gradient(110deg, rgba(232,115,42,0.16), rgba(201,168,76,0.10) 48%, rgba(9,22,34,0.65)), #102132" }}>
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)", backgroundSize: "22px 22px" }} />
