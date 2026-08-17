@@ -130,7 +130,7 @@ const services = [
     ],
     pros: ["日本語ドライバーが豊富", "現地最大手との連携で安定品質", "Pro Planで観光地同行可能", "事前に料金がきまり定額制"],
     cons: ["シーズンによって価格変動あり"],
-    rating: 4.8,
+    rating: 4.5,
     reviewCount: "多数",
     ctaText: "ランカライドに問い合わせる",
     ctaColor: "bg-slate-500 hover:bg-slate-400",
