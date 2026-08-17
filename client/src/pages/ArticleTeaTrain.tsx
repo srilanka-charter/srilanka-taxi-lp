@@ -12,6 +12,7 @@ const ARTICLE_TITLE = "スリランカ紅茶列車の乗り方・予約・ナイ
 const images = {
   hero: "/manus-storage/train-1_47ef775a.jpg",
   window: "/manus-storage/train-2_f8e3345f.jpg",
+  nineArch: "/manus-storage/nine-arch-bridge-user_f4d03ed9.jpg",
   charter: "/manus-storage/charter-3_51d499c2.png",
 };
 
@@ -141,6 +142,20 @@ export default function ArticleTeaTrain() {
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>旅程では、キャンディ〜エッラの全区間に乗る方法だけでなく、宿泊地と予定に合わせて一部区間だけ取り入れる方法もあります。長距離移動をすべて列車に任せるのではなく、ホテル移動や駅との接続を専用車で支えると、荷物がある日でも楽しみやすくなります。</p>
           <div className="grid sm:grid-cols-2 gap-5 mt-8"><Figure src={images.hero} alt="山岳部を走るスリランカ紅茶列車" caption="車窓の景色を味わうために、移動時間そのものを旅程に入れたい体験です。" /><Figure src={images.window} alt="紅茶列車の窓から高原を眺める旅行者" caption="駅まで・駅からの動線を整えると、列車の時間を落ち着いて楽しめます。" /></div>
 
+          <Heading label="WHICH SECTION">紅茶列車はどの区間に乗る？旅程から選ぶ3つの考え方</Heading>
+          <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>紅茶列車は「キャンディからエッラまで必ず全区間乗るべき」というものではありません。宿泊地、荷物、到着日の時間、ナインアーチブリッジを見たいかどうかを踏まえて、景色を楽しむ区間を選ぶのが実用的です。特に初めてのスリランカ個人旅行では、列車に乗ることを目的にしつつ、前後の移動に余白を残しましょう。</p>
+          <div className="overflow-x-auto border mt-7" style={{ borderColor: "rgba(255,255,255,0.15)" }}>
+            <table className="w-full min-w-[710px] text-left">
+              <thead style={{ backgroundColor: "rgba(232,115,42,0.12)" }}><tr className="font-montserrat text-[11px] tracking-[0.12em]" style={{ color: "#F1A368" }}><th className="px-5 py-4">旅の組み方</th><th className="px-5 py-4">向いている人</th><th className="px-5 py-4">旅程のポイント</th></tr></thead>
+              <tbody className="font-sans text-sm" style={{ color: "#D7E0E6" }}>
+                <tr className="border-t" style={{ borderColor: "rgba(255,255,255,0.1)" }}><td className="px-5 py-4 font-bold">キャンディ〜エッラをじっくり乗る</td><td className="px-5 py-4">列車体験を旅の主役にしたい人</td><td className="px-5 py-4">前後の日程に余裕を持ち、到着後はエッラ泊にする。</td></tr>
+                <tr className="border-t" style={{ borderColor: "rgba(255,255,255,0.1)" }}><td className="px-5 py-4 font-bold">高原区間だけを選ぶ</td><td className="px-5 py-4">周遊のなかで景色を楽しみたい人</td><td className="px-5 py-4">駅まで・駅からを専用車でつなぎ、乗車時間を絞る。</td></tr>
+                <tr className="border-t" style={{ borderColor: "rgba(255,255,255,0.1)" }}><td className="px-5 py-4 font-bold">エッラ滞在と組み合わせる</td><td className="px-5 py-4">ナインアーチブリッジも見たい人</td><td className="px-5 py-4">列車の乗車日と橋を見に行く日を分けると、予定に余白ができる。</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="font-sans text-[15px] md:text-base leading-8 mt-6" style={{ color: "#C7D3DB" }}>全区間を乗る場合も、一部区間だけを選ぶ場合も、駅の周辺で荷物を抱えて移動しない設計が重要です。宿泊先から駅への送迎、下車後のホテルへの移動、観光地への立ち寄りまでを事前に決めておけば、列車の景色に集中できます。</p>
+
           <Heading label="RESERVATION">紅茶列車の予約：希望の列車・日付を早めに確認する</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>座席を確保したい場合は、Sri Lanka Railwaysの公式予約サイトで、希望する列車・日付・座席の状況を確認しましょう。公式案内では、予約は指定した列車と日付にのみ有効で、全額の支払い後に確定するとされています。[1]</p>
           <div className="mt-7 border" style={{ borderColor: "rgba(232,115,42,0.42)", backgroundColor: "rgba(232,115,42,0.06)" }}>
@@ -154,9 +169,24 @@ export default function ArticleTeaTrain() {
             ))}
           </div>
 
+          <Heading label="ON THE DAY">紅茶列車に乗る当日、失敗しにくくする5つの準備</Heading>
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 font-sans text-sm leading-7" style={{ color: "#C7D3DB" }}>
+            {[
+              "予約情報・乗車日・乗車駅を、出発前日にもう一度確認する。",
+              "駅までの送迎は、列車の出発時刻より余裕を持って手配する。",
+              "荷物が多い日は、下車後のホテルまでの移動も先に決めておく。",
+              "飲み物・軽食・羽織り・モバイルバッテリーを準備する。",
+              "窓辺やドア付近で写真を撮る場合も、周囲の安全と混雑に配慮する。",
+              "天候・運行状況が変わっても困らないよう、その後の予定に余白を残す。",
+            ].map((item) => <div key={item} className="flex gap-3"><Check size={17} className="shrink-0 mt-1" style={{ color: "#E8732A" }} />{item}</div>)}
+          </div>
+          <p className="font-sans text-[15px] md:text-base leading-8 mt-7" style={{ color: "#C7D3DB" }}>紅茶列車は、速さよりも風景と旅の時間を味わう乗り物です。予定を分刻みに組むより、少しの遅れや予定変更にも対応できる一日をつくる方が、結果的に満足度が高くなります。</p>
+
           <Heading label="NINE ARCH BRIDGE">ナインアーチブリッジ：エッラで見たい、森に架かる9つのアーチ</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>ナインアーチブリッジは、エッラ周辺の緑深い谷に架かる石造りの鉄道橋です。アーチを描く橋を、山岳列車がゆっくり通過する景色は、紅茶列車の旅とあわせて体験したいハイライトの一つです。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>列車が通る時刻は前後することがあるため、記事やSNSに出ている時刻だけを前提にせず、当日にエッラ駅・宿泊先・現地スタッフで確認しましょう。現地の実体験情報でも、時間にゆとりを持って待つことが勧められています。[2]</p>
+          <Figure src={images.nineArch} alt="スリランカのナインアーチブリッジと緑に囲まれた渓谷" caption="緑豊かな谷に架かるナインアーチブリッジ。列車が通る時間だけでなく、橋そのものの景観も見どころです。" className="mt-8" />
+          <p className="font-sans text-[15px] md:text-base leading-8 mt-6" style={{ color: "#C7D3DB" }}>橋を見に行く時間は、列車が通過する瞬間だけに絞らないのがおすすめです。晴れた昼の青空、雲がかかる山の空気、橋のアーチがつくる陰影など、時間帯や天候で景色は変わります。列車を待つ場合は、周囲の安全に注意し、線路や橋の上では現地の状況・案内に従って行動してください。</p>
           <div className="grid sm:grid-cols-2 gap-4 mt-7">
             {[
               ["ビューポイントで待つ", "列車が通るまで時間がかかることを見込み、日陰・飲み物・歩きやすい靴を準備します。"],
@@ -164,6 +194,16 @@ export default function ArticleTeaTrain() {
               ["エッラの宿を拠点にする", "早朝や夕方の光を狙うなら、エッラに泊まり、専用車やトゥクトゥクで移動すると調整しやすくなります。"],
               ["天候で予定を柔軟にする", "山岳部は天候が変わりやすいため、橋・列車・ハイキングを入れ替えられる余白を残します。"],
             ].map(([title, text]) => <div key={title} className="border-l-2 py-4 pl-5" style={{ borderColor: "#E8732A" }}><h2 className="font-serif-jp font-bold text-white mb-2">{title}</h2><p className="font-sans text-sm leading-7" style={{ color: "#C7D3DB" }}>{text}</p></div>)}
+          </div>
+
+          <Heading label="GETTING AROUND ELLA">ナインアーチブリッジの前後は、エッラをどう回る？</Heading>
+          <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>ナインアーチブリッジは、エッラ駅や町なかのホテルから徒歩、トゥクトゥク、専用車などでアクセスを考える場所です。歩くこと自体を楽しめる日なら散策を組み込み、荷物がある日・雨が心配な日・複数の観光地を回る日なら、車で移動をつなぐと無理がありません。</p>
+          <div className="space-y-4 mt-7">
+            {[
+              ["列車を降りたその日に行く場合", "エッラ駅からホテルへ荷物を預けてから向かうか、送迎車に荷物を預けられるようにしておくと動きやすくなります。"],
+              ["橋とリトルアダムスピークを回る場合", "暑い時間帯や天候を見ながら順番を調整できるよう、車での移動を組み合わせると一日の使い方に幅が出ます。"],
+              ["橋で列車を待ちたい場合", "その後の食事やホテルへの帰着を詰め込みすぎず、予定を後ろ倒しできる余白を残すのが安心です。"],
+            ].map(([title, text]) => <div key={title} className="grid md:grid-cols-[210px_1fr] gap-3 border-b pb-5" style={{ borderColor: "rgba(255,255,255,0.12)" }}><h2 className="font-serif-jp font-bold text-white">{title}</h2><p className="font-sans text-sm leading-7" style={{ color: "#C7D3DB" }}>{text}</p></div>)}
           </div>
 
           <Heading label="SMART CONNECTION">紅茶列車と専用車を組み合わせると、旅程がぐっとスムーズになる</Heading>
