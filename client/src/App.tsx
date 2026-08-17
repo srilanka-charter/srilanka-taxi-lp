@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import ArticleAirportTransfer from "./pages/ArticleAirportTransfer";
+import ArticleLongDistanceBus from "./pages/ArticleLongDistanceBus";
 import ArticleTeaTrain from "./pages/ArticleTeaTrain";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ArticleTaxiCharter from "./pages/ArticleTaxiCharter";
@@ -20,6 +21,7 @@ function Router() {
       <Route path={"/articles/sri-lanka-taxi-charter-guide"} component={ArticleTaxiCharter} />
       <Route path={"/articles/colombo-airport-transfer-guide"} component={ArticleAirportTransfer} />
       <Route path={"/articles/sri-lanka-tea-train-nine-arch-bridge"} component={ArticleTeaTrain} />
+      <Route path={"/articles/sri-lanka-long-distance-bus-guide"} component={ArticleLongDistanceBus} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

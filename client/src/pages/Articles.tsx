@@ -43,6 +43,15 @@ const teaTrainArticle = {
   readTime: "読了約10分",
 };
 
+const longDistanceBusArticle = {
+  title: "スリランカの長距離バス完全ガイド｜乗り方・料金・注意点と専用車との使い分け",
+  description: "長距離バスの種類、乗り方、料金・支払い、荷物、予約、専用車との使い分けを個人旅行者向けに解説します。",
+  image: "/manus-storage/bus-2_7bb3a877.png",
+  href: "/articles/sri-lanka-long-distance-bus-guide",
+  category: "transport",
+  readTime: "読了約9分",
+};
+
 function categoryFromSearch() {
   const query = new URLSearchParams(window.location.search);
   return query.get("category") || "transport";
@@ -51,7 +60,7 @@ function categoryFromSearch() {
 export default function Articles() {
   const activeCategory = categoryFromSearch();
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
-  const articles = activeCategory === "transport" ? [teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : [];
+  const articles = activeCategory === "transport" ? [longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;
