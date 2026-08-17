@@ -10,7 +10,8 @@ import { MediaHeader } from "@/components/MediaHeader";
 const ARTICLE_TITLE = "スリランカの移動手段は何が正解？列車・トゥクトゥク・ローカルバス・専用車を比較";
 
 const images = {
-  trainHero: "/manus-storage/train-1_47ef775a.jpg",
+  transportHero: "/manus-storage/tuktuk-1_9860c65d.jpg",
+  trainScenery: "/manus-storage/train-1_47ef775a.jpg",
   tukTukRide: "/manus-storage/tuktuk-1_9860c65d.jpg",
   tukTukStreet: "/manus-storage/tuktuk-2_12590549.jpg",
   trainView: "/manus-storage/train-2_f8e3345f.jpg",
@@ -115,7 +116,7 @@ export default function ArticleTransport() {
       <MediaHeader activeCategory="transport" />
       <main>
         <section className="relative overflow-hidden" style={{ minHeight: "min(680px, 78svh)" }}>
-          <img src={images.trainHero} alt="茶畑を走るスリランカの列車" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={images.transportHero} alt="スリランカの町を走るトゥクトゥク" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(7,16,26,0.94) 0%, rgba(7,16,26,0.7) 48%, rgba(7,16,26,0.18) 100%), linear-gradient(0deg, #0A1520 0%, transparent 36%)" }} />
           <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-8 min-h-[inherit] flex items-end pb-16 md:pb-20">
             <div className="max-w-3xl">
@@ -173,7 +174,7 @@ export default function ArticleTransport() {
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>コロンボと主要観光地を結ぶ鉄道は、スリランカを象徴する旅の体験の一つです。とくに山岳部へ向かう列車は、茶畑や緑の景色を車窓から楽しめるため、「移動の時間」自体を思い出にしたい日に向いています。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>一方で、快適な設備がある車両や速い列車は一部の路線に限られ、主要区間以外では時間にゆとりを持つ必要があります。駅までの移動、荷物の運搬、到着後のホテルへの移動をあらかじめ組み込んでおくと、列車の魅力を心から楽しめます。[1]</p>
           <div className="grid sm:grid-cols-2 gap-5 mt-8">
-            <Figure src={images.trainHero} alt="茶畑の中を走る列車" caption="山岳部の列車は、風景を味わう時間として旅程に入れたい体験です。" />
+            <Figure src={images.trainScenery} alt="茶畑の中を走る列車" caption="山岳部の列車は、風景を味わう時間として旅程に入れたい体験です。" />
             <Figure src={images.trainView} alt="列車の窓から高原を眺める旅行者" caption="座席・予約・駅までの移動を事前に整えると、旅の満足度が上がります。" />
           </div>
 
