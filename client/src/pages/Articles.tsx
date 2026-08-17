@@ -25,6 +25,15 @@ const taxiCharterArticle = {
   readTime: "読了約9分",
 };
 
+const airportTransferArticle = {
+  title: "スリランカで空港送迎は必要？コロンボ空港からホテルまでの移動方法を比較",
+  description: "空港タクシー・配車アプリ・ホテル送迎・事前予約の専用車を比較。到着時間や旅の条件に合う空港送迎の選び方を解説します。",
+  image: "/manus-storage/article-airport-transfer-hero_fd800259.jpg",
+  href: "/articles/colombo-airport-transfer-guide",
+  category: "transport",
+  readTime: "読了約8分",
+};
+
 function categoryFromSearch() {
   const query = new URLSearchParams(window.location.search);
   return query.get("category") || "transport";
@@ -33,7 +42,7 @@ function categoryFromSearch() {
 export default function Articles() {
   const activeCategory = categoryFromSearch();
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
-  const articles = activeCategory === "transport" ? [taxiCharterArticle, transportArticle] : [];
+  const articles = activeCategory === "transport" ? [airportTransferArticle, taxiCharterArticle, transportArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;
