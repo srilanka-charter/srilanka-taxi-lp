@@ -235,7 +235,7 @@ export default function Home() {
           <span className="font-montserrat text-[10px] font-semibold tracking-[0.16em] uppercase" style={{ color: "#E8732A" }}>SRI LANKA</span>
           <span className="text-white font-serif-jp text-xs font-semibold">旅行メディア</span>
         </div>
-        <nav className="flex min-w-0 flex-1 items-center justify-start gap-0 overflow-x-auto" aria-label="記事カテゴリー">
+        <nav className="flex min-w-0 flex-1 items-center justify-end gap-0 overflow-x-auto" aria-label="記事カテゴリー">
           {[
             ["移動手段", "transport"], ["モデルコース", "itinerary"], ["個人旅行ガイド", "travel-guide"], ["観光地情報", "destinations"], ["現地情報", "local-info"],
           ].map(([label, category]) => (
