@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowRight, BusFront, CarFront, Check, Clock3, Compass, ExternalLink, MapPinned, TrainFront } from "lucide-react";
 import { MediaHeader } from "@/components/MediaHeader";
-import { TransportRelatedLinks } from "@/components/TransportRelatedLinks";
 
 const ARTICLE_TITLE = "スリランカの移動手段は何が正解？列車・トゥクトゥク・ローカルバス・専用車を比較";
 
@@ -173,6 +172,7 @@ export default function ArticleTransport() {
 
           <Heading label="TRAIN">列車：景色を味わうために選びたい移動手段</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>コロンボと主要観光地を結ぶ鉄道は、スリランカを象徴する旅の体験の一つです。とくに山岳部へ向かう列車は、茶畑や緑の景色を車窓から楽しめるため、「移動の時間」自体を思い出にしたい日に向いています。</p>
+          <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>紅茶列車の乗り方、予約、ナインアーチブリッジを含めたエッラの回り方は、<Link href="/articles/sri-lanka-tea-train-nine-arch-bridge" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">紅茶列車・ナインアーチブリッジ完全ガイド</Link>で詳しく紹介しています。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>一方で、快適な設備がある車両や速い列車は一部の路線に限られ、主要区間以外では時間にゆとりを持つ必要があります。駅までの移動、荷物の運搬、到着後のホテルへの移動をあらかじめ組み込んでおくと、列車の魅力を心から楽しめます。[1]</p>
           <div className="grid sm:grid-cols-2 gap-5 mt-8">
             <Figure src={images.trainScenery} alt="茶畑の中を走る列車" caption="山岳部の列車は、風景を味わう時間として旅程に入れたい体験です。" />
@@ -181,6 +181,7 @@ export default function ArticleTransport() {
 
           <Heading label="TUKTUK">トゥクトゥク：短距離を、旅らしい寄り道に変える</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>町に着いてからカフェへ向かう、海辺のホテルからレストランへ行く、少し離れた展望台へ寄る。そんな短距離なら、トゥクトゥクは便利で楽しい選択肢です。風や音を間近に感じるので、街の空気を味わうにはぴったりです。</p>
+          <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>料金の確認、配車アプリとの違い、荷物がある日の考え方まで知りたい方は、<Link href="/articles/sri-lanka-tuk-tuk-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">トゥクトゥクの乗り方・料金ガイド</Link>もあわせてご覧ください。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>観光局もトゥクトゥクを町・都市部の短い移動や小旅行に適した手段として案内しています。メーターがない車両もあるため、乗車前に料金を確認する習慣をつけましょう。[1]</p>
           <div className="grid sm:grid-cols-2 gap-5 mt-8">
             <Figure src={images.tukTukRide} alt="乗客とドライバーが乗った青いトゥクトゥク" caption="短い区間を楽しみながら移動するなら、トゥクトゥクがよく似合います。" />
@@ -189,10 +190,12 @@ export default function ArticleTransport() {
 
           <Heading label="RIDE HAILING">配車アプリ・タクシー：市内の移動を予定に合わせて組み立てる</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>コロンボなどの都市部や空港周辺では、配車アプリやタクシーも選択肢になります。レストランへの往復、駅からホテルまで、トゥクトゥクに乗るには荷物が多いときなどに便利です。流しのタクシーやトゥクトゥクを使う場合は、観光局も出発前に料金を確認することを勧めています。[1]</p>
+          <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>都市部の配車アプリを使うなら、<Link href="/articles/sri-lanka-uber-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">Uberの実用性と都市間移動の注意点</Link>、または現地発アプリの<Link href="/articles/sri-lanka-pickme-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">PickMe完全ガイド</Link>で、短距離と長距離の使い分けを確認しましょう。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>ただし、配車アプリは場所や時間帯によって車両の見つかりやすさが変わります。空港到着直後、早朝・夜間、地方のホテル、複数都市をまたぐ移動では「その場で呼ぶ」前提にせず、送迎や専用車をあらかじめ確保しておくと予定が立てやすくなります。</p>
 
           <Heading label="LOCAL BUS">ローカルバス：時間に余裕がある日にこそ面白い</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>島内を広く結ぶローカルバスは、現地の人の暮らしに最も近い移動手段です。予定を詰め込みすぎず、途中下車や乗り換えも含めて旅を楽しめる人には、印象に残る体験になります。</p>
+          <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>路線の種類、乗り方、荷物・混雑・予約の注意点は、<Link href="/articles/sri-lanka-long-distance-bus-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">スリランカの長距離バス完全ガイド</Link>で解説しています。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>ただし、都市部では混雑することがあり、運行のリズムや道路事情によって所要時間を読みづらい場面もあります。到着時刻が決まっている移動や、長時間の移動を伴う日は、バスだけに頼らない設計が安心です。[1]</p>
           <div className="grid sm:grid-cols-2 gap-5 mt-8">
             <Figure src={images.busBlue} alt="道路を走る青いローカルバス" caption="主要な町をつなぐローカルバス。時間に余白を持たせて利用しましょう。" />
@@ -217,6 +220,7 @@ export default function ArticleTransport() {
 
           <Heading label="PRIVATE CHARTER">専用車チャーター：旅程を「できること」に変える移動手段</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>専用車の価値は、単に「楽に移動できる」ことだけではありません。ホテルを出て、途中で景色の良い場所に寄り、遺跡を訪ね、ランチをとり、次の街へ進む。目的地が点在するスリランカでは、移動の選択肢がそのまま旅程の自由度になります。</p>
+          <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>専用車の料金目安、予約方法、車種の選び方は、<Link href="/articles/sri-lanka-taxi-charter-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">タクシーチャーターの使い方ガイド</Link>へ。到着初日の移動から計画する場合は、<Link href="/articles/colombo-airport-transfer-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">コロンボ空港送迎の比較記事</Link>も参考になります。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>観光局も、道路が狭く交通が混み合うことで島内移動が時間を要する場合があると案内しています。複数都市をめぐる個人旅行、家族旅行、荷物が多い日、列車の駅前後をつなぐ日には、専用車を旅の「軸」に置くと計画がぐっと安定します。[1]</p>
           <div className="grid sm:grid-cols-2 gap-5 mt-8">
             <Figure src={images.charterVan} alt="スリランカで使われるシルバーのバン" caption="人数や荷物に応じた車両を選べます。" />
@@ -282,8 +286,6 @@ export default function ArticleTransport() {
               </details>
             ))}
           </div>
-
-          <TransportRelatedLinks current="hub" />
 
           <section className="relative overflow-hidden mt-16 md:mt-20 p-7 md:p-10 border" style={{ borderColor: "rgba(232,115,42,0.55)", background: "linear-gradient(110deg, rgba(232,115,42,0.16), rgba(201,168,76,0.10) 48%, rgba(9,22,34,0.65)), #102132" }}>
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)`, backgroundSize: "22px 22px" }} />

@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowRight, CalendarDays, Check, Clock3, MapPinned, TrainFront } from "lucide-react";
 import { MediaHeader } from "@/components/MediaHeader";
-import { TransportRelatedLinks } from "@/components/TransportRelatedLinks";
 
 const ARTICLE_TITLE = "スリランカ紅茶列車の乗り方・予約・ナインアーチブリッジ完全ガイド｜エッラ観光の絶景ルート";
 
@@ -212,6 +211,7 @@ export default function ArticleTeaTrain() {
             <Figure src={images.charter} alt="シーギリヤロックを背景にしたスリランカ旅行者とドライバー" caption="駅の前後やエッラ周辺の観光を専用車でつなぐと、荷物がある日も移動を整えやすくなります。" />
             <div>
               <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>紅茶列車は、景色を楽しむためにこそ使いたい移動手段です。一方で、駅までの早朝移動、駅からホテルへの送迎、荷物の保管、ナインアーチブリッジと他の観光地を同日に回ることまで列車だけで完結させようとすると、予定が慌ただしくなることがあります。</p>
+          <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>列車・トゥクトゥク・バス・専用車を旅程ごとにどう組み合わせるかは、<Link href="/articles/sri-lanka-transport-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">スリランカの移動手段を比較する総合ガイド</Link>で全体像を確認できます。専用車の予約前には、<Link href="/articles/sri-lanka-taxi-charter-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">タクシーチャーターの料金・使い方</Link>もご覧ください。</p>
               <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>おすすめは、列車に乗る区間を旅のハイライトとして確保し、その前後をタクシーチャーターで支える方法です。駅への送迎、エッラのホテル、ナインアーチブリッジ、リトルアダムスピーク、ラーワナ滝などを一日の流れに組み込みやすく、移動待ちを減らして景色や体験に時間を使えます。</p>
               <div className="border-l-2 pl-5 py-1 mt-7" style={{ borderColor: "#E8732A" }}><p className="font-serif-jp text-base leading-8 text-white">列車は「絶景を楽しむ時間」、専用車は「旅程をつなぐ時間」。<br />役割を分けることが、エッラ観光を効率よく楽しむコツです。</p></div>
             </div>
@@ -233,8 +233,6 @@ export default function ArticleTeaTrain() {
               <details key={faq.question} className="group py-5"><summary className="cursor-pointer list-none flex items-start gap-4 font-serif-jp font-bold text-white"><span className="font-montserrat text-[10px] tracking-[0.16em] mt-1" style={{ color: "#E8732A" }}>Q{String(index + 1).padStart(2, "0")}</span><span className="flex-1 leading-7">{faq.question}</span><span className="text-xl leading-none transition-transform group-open:rotate-45" style={{ color: "#E8732A" }}>+</span></summary><p className="font-sans text-sm leading-8 mt-4 pl-10" style={{ color: "#C7D3DB" }}>{faq.answer}</p></details>
             ))}
           </div>
-
-          <TransportRelatedLinks current="tea-train" />
 
           <section className="relative overflow-hidden mt-16 md:mt-20 p-7 md:p-10 border" style={{ borderColor: "rgba(232,115,42,0.55)", background: "linear-gradient(110deg, rgba(232,115,42,0.16), rgba(201,168,76,0.10) 48%, rgba(9,22,34,0.65)), #102132" }}>
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)", backgroundSize: "22px 22px" }} />

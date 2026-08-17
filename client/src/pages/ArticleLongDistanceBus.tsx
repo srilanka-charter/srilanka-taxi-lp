@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowRight, Banknote, BusFront, Check, Clock3, Luggage, MapPinned } from "lucide-react";
 import { MediaHeader } from "@/components/MediaHeader";
-import { TransportRelatedLinks } from "@/components/TransportRelatedLinks";
 
 const ARTICLE_TITLE = "スリランカの長距離バス完全ガイド｜乗り方・料金・注意点と専用車との使い分け";
 
@@ -131,12 +130,11 @@ export default function ArticleLongDistanceBus() {
 
           <Heading label="WHEN TO CHARTER">長距離バスと専用車、どう使い分ける？</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>バスと専用車は、どちらか一つだけを選ぶ必要はありません。旅のなかにバス体験を入れながら、難しい移動日だけ専用車を使うと、予算と快適性のバランスを取りやすくなります。</p>
+          <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>バス・列車・配車アプリ・専用車を移動距離と旅程から比べたい場合は、<Link href="/articles/sri-lanka-transport-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">スリランカの移動手段は何が正解？</Link>で全体を確認できます。</p>
           <div className="grid md:grid-cols-[0.95fr_1.05fr] gap-7 items-start mt-8"><Figure src={images.van} alt="スリランカ個人旅行で使えるシルバーのバン" caption="荷物・複数の立ち寄り・到着時刻を重視する日は、専用車が旅程を支えます。" /><div><h2 className="font-serif-jp text-xl font-bold text-white leading-relaxed">バスを旅の体験にし、<br />専用車を旅程の土台にする。</h2><p className="font-sans text-[15px] leading-8 mt-5" style={{ color: "#C7D3DB" }}>予算を抑えたい短〜中距離、予定に余裕がある日、町の空気を味わいたい日は長距離バスへ。一方、空港から遠方へ向かう日、複数の遺跡を回る日、家族や荷物が多い日、ホテル移動と観光を一日に組み込みたい日は、タクシーチャーターが効率的です。</p><div className="border-l-2 pl-5 py-1 mt-7" style={{ borderColor: "#E8732A" }}><p className="font-serif-jp text-base leading-8 text-white">「安く移動する日」と「時間を買う日」を分ける。<br />それが、個人旅行で無理をしない長距離移動の考え方です。</p></div></div></div>
 
           <Heading label="FAQ">スリランカ長距離バスでよくある質問</Heading>
           <div className="divide-y border-y" style={{ borderColor: "rgba(255,255,255,0.14)" }}>{faqs.map((faq, index) => <details key={faq.question} className="group py-5"><summary className="cursor-pointer list-none flex items-start gap-4 font-serif-jp font-bold text-white"><span className="font-montserrat text-[10px] tracking-[0.16em] mt-1" style={{ color: "#E8732A" }}>Q{String(index + 1).padStart(2, "0")}</span><span className="flex-1 leading-7">{faq.question}</span><span className="text-xl leading-none transition-transform group-open:rotate-45" style={{ color: "#E8732A" }}>+</span></summary><p className="font-sans text-sm leading-8 mt-4 pl-10" style={{ color: "#C7D3DB" }}>{faq.answer}</p></details>)}</div>
-
-          <TransportRelatedLinks current="bus" />
 
           <section className="relative overflow-hidden mt-16 md:mt-20 p-7 md:p-10 border" style={{ borderColor: "rgba(232,115,42,0.55)", background: "linear-gradient(110deg, rgba(232,115,42,0.16), rgba(201,168,76,0.10) 48%, rgba(9,22,34,0.65)), #102132" }}><div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)", backgroundSize: "22px 22px" }} /><div className="relative z-10 max-w-2xl"><div className="flex items-center gap-3 mb-4"><span className="h-px w-10" style={{ backgroundColor: "#E8732A" }} /><span className="font-montserrat text-[10px] font-bold tracking-[0.22em]" style={{ color: "#F1A368" }}>PLAN THE RIGHT MOVE</span></div><h2 className="font-serif-jp text-2xl md:text-3xl font-bold text-white leading-relaxed">移動日に合わせて、<br />最適な1台を選ぼう。</h2><p className="font-sans text-sm md:text-base leading-8 mt-5" style={{ color: "#D7E1E7" }}>料金の分かりやすさ、日本語対応、ドライバー品質、キャンセル条件を比べて、スリランカ個人旅行に合うタクシーチャーターを選びませんか。</p><a href="/#ranking" className="inline-flex items-center gap-3 mt-7 px-6 py-4 font-montserrat text-xs font-bold tracking-[0.12em] text-white transition-transform hover:-translate-y-0.5" style={{ backgroundColor: "#E8732A", boxShadow: "0 12px 26px rgba(0,0,0,0.25)" }}>タクシーチャーターおすすめ3選を比較する <ArrowRight size={15} /></a></div></section>
 

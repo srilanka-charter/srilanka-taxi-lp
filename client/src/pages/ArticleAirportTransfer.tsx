@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowRight, CarFront, Check, Clock3, MapPinned, ShieldCheck } from "lucide-react";
 import { MediaHeader } from "@/components/MediaHeader";
-import { TransportRelatedLinks } from "@/components/TransportRelatedLinks";
 
 const ARTICLE_TITLE = "スリランカで空港送迎は必要？コロンボ空港からホテルまでの移動方法を比較";
 
@@ -219,8 +218,6 @@ export default function ArticleAirportTransfer() {
               </details>
             ))}
           </div>
-
-          <TransportRelatedLinks current="airport" />
 
           <section className="relative overflow-hidden mt-16 md:mt-20 p-7 md:p-10 border" style={{ borderColor: "rgba(232,115,42,0.55)", background: "linear-gradient(110deg, rgba(232,115,42,0.16), rgba(201,168,76,0.10) 48%, rgba(9,22,34,0.65)), #102132" }}>
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)", backgroundSize: "22px 22px" }} />
