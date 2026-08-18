@@ -142,6 +142,24 @@ const itineraryWomenTravelArticle = {
   readTime: "読了約11分",
 };
 
+const preparationGuideArticle = {
+  title: "スリランカ個人旅行の準備完全ガイド｜出発前に必要なことを時系列で解説",
+  description: "ETA、航空券、ホテル、通信、保険、空港送迎、都市間移動まで、個人旅行の準備を時系列で整理します。",
+  image: "/manus-storage/sri-lanka-preparation-timeline_f73b2f7a.png",
+  href: "/articles/sri-lanka-independent-travel-preparation-guide",
+  category: "travel-guide",
+  readTime: "読了約11分",
+};
+
+const bestSeasonGuideArticle = {
+  title: "スリランカ旅行のベストシーズンはいつ？地域別の気候とおすすめ時期",
+  description: "南西海岸、東海岸、文化三角地帯、高原を、季節と旅の目的から選ぶためのガイドです。",
+  image: "/manus-storage/sri-lanka-season-compass_0505bbe5.png",
+  href: "/articles/sri-lanka-best-time-to-visit-by-region",
+  category: "travel-guide",
+  readTime: "読了約10分",
+};
+
 function categoryFromLocation(location: string) {
   if (typeof window !== "undefined") {
     const queryCategory = new URLSearchParams(window.location.search).get("category");
@@ -155,7 +173,7 @@ export default function Articles() {
   const [location] = useLocation();
   const activeCategory = categoryFromLocation(location);
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
-  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : activeCategory === "itinerary" ? [itineraryWomenTravelArticle, itineraryYalaArticle, itineraryTeaTrainArticle, itineraryColomboWestArticle, itinerary7DaysArticle, itinerary5DaysArticle, itinerary4DaysArticle] : [];
+  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : activeCategory === "itinerary" ? [itineraryWomenTravelArticle, itineraryYalaArticle, itineraryTeaTrainArticle, itineraryColomboWestArticle, itinerary7DaysArticle, itinerary5DaysArticle, itinerary4DaysArticle] : activeCategory === "travel-guide" ? [bestSeasonGuideArticle, preparationGuideArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;
