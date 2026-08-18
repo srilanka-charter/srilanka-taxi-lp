@@ -80,6 +80,16 @@ const templatePath = join(outputRoot, "index.html");
 if (!existsSync(templatePath)) throw new Error("Vite build output was not found. Run vite build before prerendering.");
 const template = readFileSync(templatePath, "utf8");
 
+const appSource = readFileSync(join(projectRoot, "client", "src", "App.tsx"), "utf8");
+const routedPublicPaths = [...appSource.matchAll(/path=\{?"([^"]+)"\}?/g)]
+  .map((match) => match[1])
+  .filter((path) => path !== "/404" && path !== "/articles" && !path.includes(":"));
+const sitemapPaths = new Set(pages.map((page) => page.path));
+const missingSitemapEntries = routedPublicPaths.filter((path) => !sitemapPaths.has(path));
+if (missingSitemapEntries.length > 0) {
+  throw new Error(`Add the following public routes to the prerender and sitemap page manifest: ${missingSitemapEntries.join(", ")}`);
+}
+
 for (const page of pages) {
   const markup = renderToString(<Router ssrPath={page.path}><App /></Router>);
   if (!markup.includes("<h1")) throw new Error(`Prerender output for ${page.path} does not include an H1`);
