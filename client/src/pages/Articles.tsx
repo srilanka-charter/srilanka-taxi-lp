@@ -1,9 +1,9 @@
 /**
  * Design system: dark editorial travel media with category-first discovery.
- * Category selections filter the index via URL query parameters so each header link stays shareable.
+ * Category selections use canonical path URLs so each index page has a unique, crawlable address.
  */
 import { useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ArrowRight, BookOpen } from "lucide-react";
 import { MediaHeader, mediaCategories } from "@/components/MediaHeader";
 
@@ -106,18 +106,30 @@ const itinerary4DaysArticle = {
   readTime: "読了約9分",
 };
 
-function categoryFromSearch() {
-  const query = new URLSearchParams(window.location.search);
-  return query.get("category") || "transport";
+function categoryFromLocation(location: string) {
+  if (typeof window !== "undefined") {
+    const queryCategory = new URLSearchParams(window.location.search).get("category");
+    if (queryCategory) return queryCategory;
+  }
+  const pathCategory = location.split("/").filter(Boolean)[1];
+  return pathCategory || "transport";
 }
 
 export default function Articles() {
-  const activeCategory = categoryFromSearch();
+  const [location] = useLocation();
+  const activeCategory = categoryFromLocation(location);
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
   const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : activeCategory === "itinerary" ? [itinerary7DaysArticle, itinerary5DaysArticle, itinerary4DaysArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;
+    const description = `スリランカ旅行の${category.label}に関する実用ガイドです。旅程と移動手段を自分の旅行スタイルに合わせて選べます。`;
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) { meta = document.createElement("meta"); meta.name = "description"; document.head.appendChild(meta); }
+    meta.content = description;
+    let canonical = document.getElementById("category-canonical") as HTMLLinkElement | null;
+    if (!canonical) { canonical = document.createElement("link"); canonical.id = "category-canonical"; canonical.rel = "canonical"; document.head.appendChild(canonical); }
+    canonical.href = `https://srilankataxicharter.com/articles/${category.key}`;
   }, [category.label]);
 
   return (

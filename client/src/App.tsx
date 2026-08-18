@@ -15,6 +15,7 @@ import ArticleTaxiCharter from "./pages/ArticleTaxiCharter";
 import ArticleTransport from "./pages/ArticleTransport";
 import Articles from "./pages/Articles";
 import Home from "./pages/Home";
+import EditorialPolicy from "./pages/EditorialPolicy";
 
 function Router() {
   return (
@@ -32,6 +33,8 @@ function Router() {
       <Route path={"/articles/sri-lanka-5-day-itinerary"} component={ArticleItineraryFiveDays} />
       <Route path={"/articles/sri-lanka-7-day-itinerary"} component={ArticleItinerarySevenDays} />
       <Route path={"/articles/sri-lanka-4-day-itinerary"} component={ArticleItineraryFourDays} />
+      <Route path={"/articles/:category"} component={Articles} />
+      <Route path={"/editorial-policy"} component={EditorialPolicy} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

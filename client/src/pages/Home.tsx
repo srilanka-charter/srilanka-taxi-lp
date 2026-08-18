@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useInView, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, ChevronLeft, ChevronRight, Star, Shield, Clock, Phone, CheckCircle, Award, Users, MapPin, ArrowRight, ExternalLink } from "lucide-react";
 
 /* ============================================================
@@ -239,7 +239,7 @@ export default function Home() {
           {[
             ["移動手段", "transport"], ["モデルコース", "itinerary"], ["個人旅行ガイド", "travel-guide"], ["観光地情報", "destinations"], ["現地情報", "local-info"],
           ].map(([label, category]) => (
-            <a key={category} href={`/articles?category=${category}`} className="shrink-0 px-3 md:px-4 py-3 text-[11px] md:text-xs font-montserrat font-bold tracking-[0.05em] transition-colors hover:text-white" style={{ color: "#D3DEE5" }}>{label}</a>
+            <a key={category} href={`/articles/${category}`} className="shrink-0 px-3 md:px-4 py-3 text-[11px] md:text-xs font-montserrat font-bold tracking-[0.05em] transition-colors hover:text-white" style={{ color: "#D3DEE5" }}>{label}</a>
           ))}
         </nav>
         <a
@@ -254,17 +254,17 @@ export default function Home() {
       {/* ===== HERO SECTION ===== */}
       <section className="relative min-h-[740px] h-[100svh] overflow-hidden" aria-label="スリランカ タクシーチャーターの魅力">
         <motion.div style={{ y: heroY }} className="absolute inset-0 scale-105">
-          {HERO_SLIDES.map((slide, index) => (
+          <AnimatePresence initial={false}>
             <motion.div
-              key={slide.image}
-              initial={false}
-              animate={{ opacity: index === activeHeroSlide ? 1 : 0, scale: index === activeHeroSlide ? 1 : 1.06 }}
-              transition={{ opacity: { duration: 1.25, ease: "easeInOut" }, scale: { duration: 7, ease: "linear" } }}
+              key={HERO_SLIDES[activeHeroSlide].image}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.7, ease: "easeInOut" }}
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${slide.image})` }}
-              aria-hidden={index !== activeHeroSlide}
+              style={{ backgroundImage: `url(${HERO_SLIDES[activeHeroSlide].image})` }}
             />
-          ))}
+          </AnimatePresence>
         </motion.div>
         <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(4,13,24,0.94) 0%, rgba(6,16,28,0.74) 38%, rgba(8,18,30,0.28) 72%, rgba(7,16,26,0.58) 100%), linear-gradient(0deg, rgba(5,14,24,0.9) 0%, rgba(5,14,24,0) 38%, rgba(5,14,24,0.36) 100%)" }} />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-orange-300/70 to-transparent" />
@@ -769,6 +769,9 @@ export default function Home() {
               <div className="font-sans text-xs" style={{ color: "#8A9BA8" }}>スリランカ タクシーチャーターおすすめ3選</div>
             </div>
             <div className="flex flex-wrap gap-4 justify-center md:justify-end">
+              <a href="/editorial-policy" className="font-sans text-xs hover:underline transition-all" style={{ color: "#8A9BA8" }}>
+                比較方針・掲載基準
+              </a>
               {services.map((s, i) => (
                 <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" className="font-sans text-xs hover:underline transition-all" style={{ color: "#8A9BA8" }}>
                   {s.name}

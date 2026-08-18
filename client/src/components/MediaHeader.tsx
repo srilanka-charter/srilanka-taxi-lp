@@ -38,7 +38,7 @@ export function MediaHeader({ activeCategory }: MediaHeaderProps) {
             return (
               <Link
                 key={category.key}
-                href={`/articles?category=${category.key}`}
+                href={`/articles/${category.key}`}
                 className="relative px-4 md:px-5 py-3.5 text-xs font-montserrat font-bold tracking-[0.08em] transition-colors whitespace-nowrap"
                 style={{ color: isActive ? "#fff" : "#91A1AE" }}
               >

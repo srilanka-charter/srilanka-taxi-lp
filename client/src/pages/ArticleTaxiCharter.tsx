@@ -108,7 +108,7 @@ export default function ArticleTaxiCharter() {
           <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(7,16,26,0.95) 0%, rgba(7,16,26,0.74) 50%, rgba(7,16,26,0.18) 100%), linear-gradient(0deg, #0A1520 0%, transparent 38%)" }} />
           <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-8 min-h-[inherit] flex items-end pb-16 md:pb-20">
             <div className="max-w-3xl">
-              <Link href="/articles?category=transport" className="inline-flex items-center gap-2 mb-8 text-xs font-montserrat font-bold tracking-[0.12em] hover:text-white" style={{ color: "#B8C5D0" }}>
+              <Link href="/articles/transport" className="inline-flex items-center gap-2 mb-8 text-xs font-montserrat font-bold tracking-[0.12em] hover:text-white" style={{ color: "#B8C5D0" }}>
                 <ArrowLeft size={14} /> 移動手段の記事一覧へ
               </Link>
               <div className="flex items-center gap-3 mb-5"><span className="h-px w-12" style={{ backgroundColor: "#E8732A" }} /><span className="font-montserrat text-[10px] font-bold tracking-[0.24em]" style={{ color: "#F1A368" }}>PRIVATE CHARTER GUIDE · 02</span></div>

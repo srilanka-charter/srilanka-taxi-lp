@@ -1,6 +1,7 @@
 import express from "express";
 import { createServer } from "http";
 import path from "path";
+import fs from "fs";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -16,10 +17,25 @@ async function startServer() {
       ? path.resolve(__dirname, "public")
       : path.resolve(__dirname, "..", "dist", "public");
 
-  app.use(express.static(staticPath));
+  app.use(express.static(staticPath, { index: false, redirect: false }));
 
-  // Handle client-side routing - serve index.html for all routes
-  app.get("*", (_req, res) => {
+  app.get("*", (req, res) => {
+    const requestedCategory = typeof req.query.category === "string" ? req.query.category : undefined;
+    const categoryKeys = new Set(["transport", "itinerary", "travel-guide", "destinations", "local-info"]);
+    if (req.path === "/articles" && requestedCategory && categoryKeys.has(requestedCategory)) {
+      res.redirect(301, `/articles/${requestedCategory}`);
+      return;
+    }
+    if (req.path === "/articles") {
+      res.redirect(301, "/articles/transport");
+      return;
+    }
+    const normalizedPath = req.path === "/" ? "" : req.path.replace(/^\/+|\/+$/g, "");
+    const prerenderedPath = normalizedPath ? path.join(staticPath, normalizedPath, "index.html") : path.join(staticPath, "index.html");
+    if (fs.existsSync(prerenderedPath)) {
+      res.sendFile(prerenderedPath);
+      return;
+    }
     res.sendFile(path.join(staticPath, "index.html"));
   });
 
