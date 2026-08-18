@@ -11,6 +11,7 @@ type Page = {
   keywords: string;
   image?: string;
   article?: boolean;
+  faq?: { question: string; answer: string }[];
 };
 
 const siteUrl = "https://srilankataxicharter.com";
@@ -36,6 +37,9 @@ const pages: Page[] = [
   { path: "/articles/sri-lanka-5-day-itinerary", title: "スリランカ旅行5日間モデルコース｜初めてでも世界遺産を満喫する王道ルート", description: "シーギリヤ、ダンブッラ、ポロンナルワ、アヌラーダプラをめぐるスリランカ5日間モデルコースを解説します。", keywords: "スリランカ モデルコース 5日,スリランカ旅行 5日間", image: "/manus-storage/sigiriya-1_60f050bc.jpg", article: true },
   { path: "/articles/sri-lanka-7-day-itinerary", title: "スリランカ旅行7日間モデルコース｜シーギリヤ・キャンディ・ゴールをめぐる旅", description: "シーギリヤ、キャンディ、紅茶列車、サファリ、ゴールをめぐるスリランカ7日間モデルコースを解説します。", keywords: "スリランカ モデルコース 7日,スリランカ旅行 7日間", image: "/manus-storage/galle_46cff405.jpg", article: true },
   { path: "/articles/sri-lanka-4-day-itinerary", title: "スリランカ旅行3泊4日モデルコース｜短期間で見どころを絞る効率的な旅程", description: "シーギリヤ、ダンブッラ、キャンディを効率よくめぐるスリランカ3泊4日モデルコースを解説します。", keywords: "スリランカ 3泊4日 モデルコース,スリランカ旅行 4日間", image: "/manus-storage/sigiriya-2_c47ed17b.jpg", article: true },
+  { path: "/articles/colombo-western-sri-lanka-2-night-3-day-itinerary", title: "コロンボ発・スリランカ西部をめぐる2泊3日モデルコース", description: "コロンボ発でスリランカ西部をめぐる2泊3日モデルコース。空港送迎、ネゴンボ、コロンボ市内、短期間の専用車の使い方を個人旅行向けに解説します。", keywords: "コロンボ 観光 モデルコース,スリランカ コロンボ 2泊3日,コロンボ発 専用車", image: "/manus-storage/article-airport-transfer-hero_fd800259.jpg", article: true, faq: [{ question: "コロンボ発の2泊3日で専用車は必要ですか？", answer: "必須ではありません。ただし、空港送迎、ホテル変更、市内の複数エリアを回る日をまとめるなら、乗り換えや荷物移動を減らせる専用車が便利です。" }, { question: "ネゴンボとコロンボはどちらに泊まるのがおすすめですか？", answer: "到着便の後に休息を優先するならネゴンボ、コロンボ市内観光を中心にするならコロンボが向いています。到着時刻と翌日の予定で選びましょう。" }, { question: "この日程を南部海岸旅行とつなげられますか？", answer: "可能です。帰国する代わりに、コロンボからゴールや南部海岸のホテルへ進むよう、DAY 3を組み替えることができます。" }] },
+  { path: "/articles/sri-lanka-tea-train-itinerary", title: "紅茶列車に乗るスリランカ旅行モデルコース｜乗車区間と送迎の組み方", description: "スリランカ紅茶列車を旅の主役にするモデルコース。キャンディ、高原、ヌワラエリヤ、エッラの移動、乗車区間、駅送迎、荷物の扱いを解説します。", keywords: "スリランカ 紅茶列車 モデルコース,スリランカ 紅茶列車 送迎,キャンディ エッラ モデルコース", image: "/manus-storage/train-1_47ef775a.jpg", article: true, faq: [{ question: "紅茶列車はどの区間に乗るのがおすすめですか？", answer: "旅程の起点と宿泊地によって異なります。景色を楽しむことを優先するなら、乗車時間の長さだけでなく、駅までの送迎、降車後のホテル移動、荷物の扱いまで一緒に決めましょう。" }, { question: "紅茶列車は事前予約した方がよいですか？", answer: "座席を確保したい場合は、Sri Lanka Railwaysの公式オンライン予約で状況を確認しましょう。予約は支払い完了後に確定するため、チケットの条件と運行状況を乗車前にも確認します。" }, { question: "列車に大きなスーツケースを持ち込んでもよいですか？", answer: "持ち込むことはできますが、車内・ホームでの移動負担を考える必要があります。駅からホテルまでの送迎車を手配し、荷物を持って長距離を歩かない計画にするのがおすすめです。" }] },
+  { path: "/articles/yala-national-park-safari-itinerary", title: "ヤーラ国立公園サファリを入れたスリランカ旅行モデルコース", description: "ヤーラ国立公園サファリを入れたスリランカ旅行モデルコース。サファリ許可、ティッサマハラーマ滞在、ゴール・南部海岸との組み合わせ、専用車の使い方を解説します。", keywords: "ヤーラ国立公園 モデルコース,ヤーラ サファリ 旅行,スリランカ サファリ 専用車", image: "/manus-storage/safari_ddff1136.png", article: true, faq: [{ question: "ヤーラのサファリは何泊で組むのがおすすめですか？", answer: "早朝サファリを楽しむなら、ティッサマハラーマ周辺に前泊する旅程が組みやすいでしょう。サファリ当日は疲れやすいため、終了後の長距離移動も余裕を持たせます。" }, { question: "ヤーラ国立公園の許可は事前に必要ですか？", answer: "野生動物保護局は、国立公園の許可を訪問前に予約できるオンラインサービスを案内しています。許可数には上限があるため、訪問日・人数・車両が決まったら早めに確認しましょう。" }, { question: "サファリ当日にゴールまで移動できますか？", answer: "可能ですが、早朝出発・サファリ・休憩の後に長距離移動となります。ゴール旧市街をしっかり歩きたい場合は、到着後は休息を優先し、散策は翌朝に回すと無理がありません。" }] },
 ];
 
 Object.assign(globalThis, { React });
@@ -50,7 +54,8 @@ function schemaFor(page: Page) {
   const main = page.article
     ? { "@type": "Article", headline: page.title, description: page.description, mainEntityOfPage: absoluteUrl(page.path), inLanguage: "ja", author: organization, publisher: organization, ...(page.image ? { image: absoluteUrl(page.image) } : {}) }
     : { "@type": page.path.startsWith("/articles/") ? "CollectionPage" : "WebPage", name: page.title, description: page.description, url: absoluteUrl(page.path), inLanguage: "ja" };
-  return JSON.stringify({ "@context": "https://schema.org", "@graph": [website, organization, main] }).replace(/</g, "\\u003c");
+  const faq = page.article && page.faq ? { "@type": "FAQPage", mainEntity: page.faq.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) } : undefined;
+  return JSON.stringify({ "@context": "https://schema.org", "@graph": [website, organization, main, ...(faq ? [faq] : [])] }).replace(/</g, "\\u003c");
 }
 
 function injectSeo(template: string, page: Page, markup: string) {

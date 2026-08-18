@@ -106,6 +106,33 @@ const itinerary4DaysArticle = {
   readTime: "読了約9分",
 };
 
+const itineraryColomboWestArticle = {
+  title: "コロンボ発・スリランカ西部をめぐる2泊3日モデルコース",
+  description: "空港送迎を起点に、ネゴンボとコロンボ市内を無理なくつなぐ短期滞在のモデルコースです。",
+  image: "/manus-storage/article-airport-transfer-hero_fd800259.jpg",
+  href: "/articles/colombo-western-sri-lanka-2-night-3-day-itinerary",
+  category: "itinerary",
+  readTime: "読了約9分",
+};
+
+const itineraryTeaTrainArticle = {
+  title: "紅茶列車に乗るスリランカ旅行モデルコース｜乗車区間と送迎の組み方",
+  description: "キャンディ、高原、エッラを紅茶列車と専用車でつなぐ、駅送迎・荷物運搬まで考えた旅程を解説します。",
+  image: "/manus-storage/train-1_47ef775a.jpg",
+  href: "/articles/sri-lanka-tea-train-itinerary",
+  category: "itinerary",
+  readTime: "読了約10分",
+};
+
+const itineraryYalaArticle = {
+  title: "ヤーラ国立公園サファリを入れたスリランカ旅行モデルコース",
+  description: "早朝サファリ、ティッサマハラーマ、ゴールを無理なくつなぐ、専用車を活かした周遊ルートです。",
+  image: "/manus-storage/safari_ddff1136.png",
+  href: "/articles/yala-national-park-safari-itinerary",
+  category: "itinerary",
+  readTime: "読了約10分",
+};
+
 function categoryFromLocation(location: string) {
   if (typeof window !== "undefined") {
     const queryCategory = new URLSearchParams(window.location.search).get("category");
@@ -119,7 +146,7 @@ export default function Articles() {
   const [location] = useLocation();
   const activeCategory = categoryFromLocation(location);
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
-  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : activeCategory === "itinerary" ? [itinerary7DaysArticle, itinerary5DaysArticle, itinerary4DaysArticle] : [];
+  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : activeCategory === "itinerary" ? [itineraryYalaArticle, itineraryTeaTrainArticle, itineraryColomboWestArticle, itinerary7DaysArticle, itinerary5DaysArticle, itinerary4DaysArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;

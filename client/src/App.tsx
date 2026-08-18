@@ -10,6 +10,7 @@ import ArticleTukTuk from "./pages/ArticleTukTuk";
 import ArticleUber from "./pages/ArticleUber";
 import ArticlePickMe from "./pages/ArticlePickMe";
 import { ArticleItineraryFiveDays, ArticleItineraryFourDays, ArticleItinerarySevenDays } from "./pages/ArticleItineraries";
+import { ArticleItineraryColomboWest, ArticleItineraryTeaTrain, ArticleItineraryYalaSafari } from "./pages/ArticleItinerarySpecials";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ArticleTaxiCharter from "./pages/ArticleTaxiCharter";
 import ArticleTransport from "./pages/ArticleTransport";
@@ -33,6 +34,9 @@ function Router() {
       <Route path={"/articles/sri-lanka-5-day-itinerary"} component={ArticleItineraryFiveDays} />
       <Route path={"/articles/sri-lanka-7-day-itinerary"} component={ArticleItinerarySevenDays} />
       <Route path={"/articles/sri-lanka-4-day-itinerary"} component={ArticleItineraryFourDays} />
+      <Route path={"/articles/colombo-western-sri-lanka-2-night-3-day-itinerary"} component={ArticleItineraryColomboWest} />
+      <Route path={"/articles/sri-lanka-tea-train-itinerary"} component={ArticleItineraryTeaTrain} />
+      <Route path={"/articles/yala-national-park-safari-itinerary"} component={ArticleItineraryYalaSafari} />
       <Route path={"/articles/:category"} component={Articles} />
       <Route path={"/editorial-policy"} component={EditorialPolicy} />
       <Route path={"/404"} component={NotFound} />
