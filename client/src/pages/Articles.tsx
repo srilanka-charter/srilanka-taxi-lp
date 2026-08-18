@@ -133,6 +133,15 @@ const itineraryYalaArticle = {
   readTime: "読了約10分",
 };
 
+const itineraryWomenTravelArticle = {
+  title: "スリランカ女子旅モデルコース｜安全性と写真映えを両立する6日間プラン",
+  description: "シーギリヤ、キャンディ、紅茶列車、ゴールをつなぎ、空港送迎・ホテル移動・撮影時間を無理なく組み立てる6日間プランです。",
+  image: "/manus-storage/sigiriya-2_c47ed17b.jpg",
+  href: "/articles/sri-lanka-women-travel-6-day-itinerary",
+  category: "itinerary",
+  readTime: "読了約11分",
+};
+
 function categoryFromLocation(location: string) {
   if (typeof window !== "undefined") {
     const queryCategory = new URLSearchParams(window.location.search).get("category");
@@ -146,7 +155,7 @@ export default function Articles() {
   const [location] = useLocation();
   const activeCategory = categoryFromLocation(location);
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
-  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : activeCategory === "itinerary" ? [itineraryYalaArticle, itineraryTeaTrainArticle, itineraryColomboWestArticle, itinerary7DaysArticle, itinerary5DaysArticle, itinerary4DaysArticle] : [];
+  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : activeCategory === "itinerary" ? [itineraryWomenTravelArticle, itineraryYalaArticle, itineraryTeaTrainArticle, itineraryColomboWestArticle, itinerary7DaysArticle, itinerary5DaysArticle, itinerary4DaysArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;
