@@ -178,6 +178,24 @@ const tripBudgetGuideArticle = {
   readTime: "読了約10分",
 };
 
+const safetyWomenGuideArticle = {
+  title: "スリランカ旅行の治安は大丈夫？女性・一人旅が知っておくべき安全対策",
+  description: "女性・一人旅のために、夜間移動、宿、配車アプリ、通信、緊急時までの安全対策を整理します。",
+  image: "/manus-storage/sri-lanka-female-safety-street_bc4903a9.png",
+  href: "/articles/sri-lanka-safety-women-solo-travel-guide",
+  category: "travel-guide",
+  readTime: "読了約18分",
+};
+
+const packingListGuideArticle = {
+  title: "スリランカ旅行の持ち物リスト｜季節・世界遺産・サファリ別の必需品",
+  description: "渡航書類、通信、寺院の服装、高原・海岸・サファリの準備まで、旅程に沿って持ち物を整理します。",
+  image: "/manus-storage/sri-lanka-packing-hero_23e412c4.png",
+  href: "/articles/sri-lanka-packing-list-guide",
+  category: "travel-guide",
+  readTime: "読了約17分",
+};
+
 function categoryFromLocation(location: string) {
   if (typeof window !== "undefined") {
     const queryCategory = new URLSearchParams(window.location.search).get("category");
@@ -191,7 +209,7 @@ export default function Articles() {
   const [location] = useLocation();
   const activeCategory = categoryFromLocation(location);
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
-  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : activeCategory === "itinerary" ? [itineraryWomenTravelArticle, itineraryYalaArticle, itineraryTeaTrainArticle, itineraryColomboWestArticle, itinerary7DaysArticle, itinerary5DaysArticle, itinerary4DaysArticle] : activeCategory === "travel-guide" ? [tripBudgetGuideArticle, tripDurationGuideArticle, bestSeasonGuideArticle, preparationGuideArticle] : [];
+  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : activeCategory === "itinerary" ? [itineraryWomenTravelArticle, itineraryYalaArticle, itineraryTeaTrainArticle, itineraryColomboWestArticle, itinerary7DaysArticle, itinerary5DaysArticle, itinerary4DaysArticle] : activeCategory === "travel-guide" ? [packingListGuideArticle, safetyWomenGuideArticle, tripBudgetGuideArticle, tripDurationGuideArticle, bestSeasonGuideArticle, preparationGuideArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;

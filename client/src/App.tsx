@@ -13,6 +13,7 @@ import { ArticleItineraryFiveDays, ArticleItineraryFourDays, ArticleItinerarySev
 import { ArticleItineraryColomboWest, ArticleItineraryTeaTrain, ArticleItineraryWomenTravel, ArticleItineraryYalaSafari } from "./pages/ArticleItinerarySpecials";
 import { ArticleBestSeasonByRegion, ArticleIndependentTravelPreparation } from "./pages/ArticleTravelGuides";
 import { ArticleTripBudgetGuide, ArticleTripDurationGuide } from "./pages/ArticleTravelPlanning";
+import { ArticlePackingListGuide, ArticleTripSafetyWomenGuide } from "./pages/ArticleSafetyAndPacking";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ArticleTaxiCharter from "./pages/ArticleTaxiCharter";
 import ArticleTransport from "./pages/ArticleTransport";
@@ -44,6 +45,8 @@ function Router() {
       <Route path={"/articles/sri-lanka-best-time-to-visit-by-region"} component={ArticleBestSeasonByRegion} />
       <Route path={"/articles/sri-lanka-trip-duration-guide"} component={ArticleTripDurationGuide} />
       <Route path={"/articles/sri-lanka-trip-budget-guide"} component={ArticleTripBudgetGuide} />
+      <Route path={"/articles/sri-lanka-safety-women-solo-travel-guide"} component={ArticleTripSafetyWomenGuide} />
+      <Route path={"/articles/sri-lanka-packing-list-guide"} component={ArticlePackingListGuide} />
       <Route path={"/articles/:category"} component={Articles} />
       <Route path={"/editorial-policy"} component={EditorialPolicy} />
       <Route path={"/404"} component={NotFound} />
