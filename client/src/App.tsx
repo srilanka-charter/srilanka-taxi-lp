@@ -14,6 +14,7 @@ import { ArticleItineraryColomboWest, ArticleItineraryTeaTrain, ArticleItinerary
 import { ArticleBestSeasonByRegion, ArticleIndependentTravelPreparation } from "./pages/ArticleTravelGuides";
 import { ArticleTripBudgetGuide, ArticleTripDurationGuide } from "./pages/ArticleTravelPlanning";
 import { ArticlePackingListGuide, ArticleTripSafetyWomenGuide } from "./pages/ArticleSafetyAndPacking";
+import { ArticleKandyTempleGuide, ArticleSigiriyaRockGuide } from "./pages/ArticleDestinations";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ArticleTaxiCharter from "./pages/ArticleTaxiCharter";
 import ArticleTransport from "./pages/ArticleTransport";
@@ -47,6 +48,8 @@ function Router() {
       <Route path={"/articles/sri-lanka-trip-budget-guide"} component={ArticleTripBudgetGuide} />
       <Route path={"/articles/sri-lanka-safety-women-solo-travel-guide"} component={ArticleTripSafetyWomenGuide} />
       <Route path={"/articles/sri-lanka-packing-list-guide"} component={ArticlePackingListGuide} />
+      <Route path={"/articles/sigiriya-rock-access-highlights-mysteries-guide"} component={ArticleSigiriyaRockGuide} />
+      <Route path={"/articles/kandy-temple-of-the-tooth-guide"} component={ArticleKandyTempleGuide} />
       <Route path={"/articles/:category"} component={Articles} />
       <Route path={"/editorial-policy"} component={EditorialPolicy} />
       <Route path={"/404"} component={NotFound} />

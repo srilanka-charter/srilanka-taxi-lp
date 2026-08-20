@@ -196,6 +196,24 @@ const packingListGuideArticle = {
   readTime: "読了約17分",
 };
 
+const sigiriyaRockGuideArticle = {
+  title: "シーギリヤロックの行き方・見所・謎を完全解説｜登頂前に知りたい歴史と観光のコツ",
+  description: "行き方、登頂の順路、壁画・獅子門・頂上の見所、歴史に残る謎、服装と旅程の組み方を解説します。",
+  image: "/manus-storage/sigiriya-1_60f050bc.jpg",
+  href: "/articles/sigiriya-rock-access-highlights-mysteries-guide",
+  category: "destinations",
+  readTime: "読了約20分",
+};
+
+const kandyTempleGuideArticle = {
+  title: "キャンディ仏歯寺完全ガイド｜見どころ・参拝マナー・服装・行き方を解説",
+  description: "仏歯寺の意味、見どころ、参拝マナー、服装、プージャの考え方、キャンディでの回り方を解説します。",
+  image: "/manus-storage/kandy-1_5ad18432.jpg",
+  href: "/articles/kandy-temple-of-the-tooth-guide",
+  category: "destinations",
+  readTime: "読了約18分",
+};
+
 function categoryFromLocation(location: string) {
   if (typeof window !== "undefined") {
     const queryCategory = new URLSearchParams(window.location.search).get("category");
@@ -209,7 +227,7 @@ export default function Articles() {
   const [location] = useLocation();
   const activeCategory = categoryFromLocation(location);
   const category = mediaCategories.find((item) => item.key === activeCategory) ?? mediaCategories[0];
-  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : activeCategory === "itinerary" ? [itineraryWomenTravelArticle, itineraryYalaArticle, itineraryTeaTrainArticle, itineraryColomboWestArticle, itinerary7DaysArticle, itinerary5DaysArticle, itinerary4DaysArticle] : activeCategory === "travel-guide" ? [packingListGuideArticle, safetyWomenGuideArticle, tripBudgetGuideArticle, tripDurationGuideArticle, bestSeasonGuideArticle, preparationGuideArticle] : [];
+  const articles = activeCategory === "transport" ? [pickMeArticle, tukTukArticle, uberArticle, longDistanceBusArticle, teaTrainArticle, airportTransferArticle, taxiCharterArticle, transportArticle] : activeCategory === "itinerary" ? [itineraryWomenTravelArticle, itineraryYalaArticle, itineraryTeaTrainArticle, itineraryColomboWestArticle, itinerary7DaysArticle, itinerary5DaysArticle, itinerary4DaysArticle] : activeCategory === "travel-guide" ? [packingListGuideArticle, safetyWomenGuideArticle, tripBudgetGuideArticle, tripDurationGuideArticle, bestSeasonGuideArticle, preparationGuideArticle] : activeCategory === "destinations" ? [kandyTempleGuideArticle, sigiriyaRockGuideArticle] : [];
 
   useEffect(() => {
     document.title = `スリランカ旅行 ${category.label}｜スリランカ タクシーチャーターおすすめ3選`;
