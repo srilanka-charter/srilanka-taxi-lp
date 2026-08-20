@@ -43,6 +43,14 @@ const faqs = [
     question: "タクシーチャーターを選ぶときは何を比べればよいですか？",
     answer: "料金に何が含まれるか、日本語での連絡可否、ドライバーの経験、車種、キャンセル条件、旅程の柔軟さを確認しましょう。比較ページでは、個人旅行に向く3社を同じ視点で確認できます。",
   },
+  {
+    question: "スリランカ旅行は鉄道だけで周遊できますか？",
+    answer: "一部の都市間を鉄道で移動することはできますが、世界遺産、郊外ホテル、サファリ、空港送迎まで含めると、駅から先の移動や荷物の扱いを別に考える必要があります。絶景区間は列車、駅の前後や郊外は車という組み合わせが実用的です。",
+  },
+  {
+    question: "初めてのスリランカ旅行で、公共交通と専用車はどう組み合わせればよいですか？",
+    answer: "空港到着日、ホテルを移る日、長距離、早朝・夜間、複数の立ち寄りがある日は事前手配の車を検討し、市内の短距離や景色を楽しみたい列車区間に公共交通を使うと、旅の体験と時間管理を両立しやすくなります。",
+  },
 ];
 
 function Figure({ src, alt, caption, className = "", mediaClassName = "h-64 md:h-72" }: { src: string; alt: string; caption: string; className?: string; mediaClassName?: string }) {
@@ -126,7 +134,7 @@ export default function ArticleTransport() {
               <div className="flex items-center gap-3 mb-5"><span className="h-px w-12" style={{ backgroundColor: "#E8732A" }} /><span className="font-montserrat text-[10px] font-bold tracking-[0.24em]" style={{ color: "#F1A368" }}>TRANSPORT GUIDE · 01</span></div>
               <h1 className="font-serif-jp text-3xl sm:text-4xl md:text-5xl font-semibold leading-[1.35] text-white mb-5">{ARTICLE_TITLE}</h1>
               <p className="font-sans text-sm md:text-base leading-8 max-w-2xl" style={{ color: "#D5E0E7" }}>どの乗り物にも、その土地ならではの楽しさがあります。大切なのは、一つに絞ることではなく、旅程のなかで役割を決めて組み合わせることです。</p>
-              <div className="flex items-center gap-4 mt-7 text-[11px] font-montserrat tracking-[0.1em]" style={{ color: "#B8C5D0" }}><span>移動手段</span><span className="h-px w-5 bg-white/30" /><span>読了約8分</span></div>
+              <div className="flex items-center gap-4 mt-7 text-[11px] font-montserrat tracking-[0.1em]" style={{ color: "#B8C5D0" }}><span>移動手段</span><span className="h-px w-5 bg-white/30" /><span>読了約15分</span></div>
             </div>
           </div>
         </section>
@@ -151,6 +159,24 @@ export default function ArticleTransport() {
                 <tr className="border-t" style={{ borderColor: "rgba(255,255,255,0.1)" }}><td className="px-5 py-4 font-bold" style={{ color: "#F1A368" }}>専用車チャーター</td><td className="px-5 py-4">都市間移動・荷物が多い日・複数の立ち寄り</td><td className="px-5 py-4">旅程に合わせて調整しやすい</td><td className="px-5 py-4">旅程の土台を安定させる</td></tr>
               </tbody>
             </table>
+          </div>
+
+          <Heading label="DECISION FILTER">迷ったら、移動手段より先に「その日失いたくないもの」を決める</Heading>
+          <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>検索上位の記事には各手段のメリット・デメリットが並びますが、実際の旅程では「何が一番困るか」で選ぶ方が早く決まります。下の五つの質問に当てはめると、列車やバスを楽しむ日と、事前手配で移動を安定させる日を分けやすくなります。</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 mt-7">
+            {[
+              ["01", "到着時刻", "フライト・ホテル・サファリの時刻を守りたいなら、乗り換えを減らす。"],
+              ["02", "荷物", "スーツケースや子ども連れなら、車内に置ける手段を優先する。"],
+              ["03", "景色", "車窓を楽しみたい区間だけ、列車を旅の主役にする。"],
+              ["04", "立ち寄り", "遺跡・食事・展望を一日で結ぶなら、停車を調整できる車が向く。"],
+              ["05", "夜・早朝", "暗い時間や初めての空港では、合流方法を確認できる手配を使う。"],
+            ].map(([number, title, text]) => (
+              <div key={number} className="border p-4" style={{ borderColor: "rgba(232,115,42,0.30)", backgroundColor: "rgba(232,115,42,0.04)" }}>
+                <span className="font-montserrat text-[10px] font-bold tracking-[0.18em]" style={{ color: "#F1A368" }}>{number}</span>
+                <h3 className="font-serif-jp text-base font-bold text-white mt-2 mb-2">{title}</h3>
+                <p className="font-sans text-xs leading-6" style={{ color: "#B8C5D0" }}>{text}</p>
+              </div>
+            ))}
           </div>
 
           <Heading label="BEFORE YOU DECIDE">スリランカの移動手段を選ぶ前に、決めておきたい4つのこと</Heading>
@@ -193,6 +219,24 @@ export default function ArticleTransport() {
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>都市部の配車アプリを使うなら、<Link href="/articles/sri-lanka-uber-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">Uberの実用性と都市間移動の注意点</Link>、または現地発アプリの<Link href="/articles/sri-lanka-pickme-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">PickMe完全ガイド</Link>で、短距離と長距離の使い分けを確認しましょう。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>ただし、配車アプリは場所や時間帯によって車両の見つかりやすさが変わります。空港到着直後、早朝・夜間、地方のホテル、複数都市をまたぐ移動では「その場で呼ぶ」前提にせず、送迎や専用車をあらかじめ確保しておくと予定が立てやすくなります。</p>
 
+          <Heading label="BY SCENE">空港・市内・都市間・郊外で、使う手段を変える</Heading>
+          <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>「いちばん安い移動手段」を一つ決めるより、旅の場面ごとに役割を分ける方が、時間と費用を両立しやすくなります。下の表は、初めての個人旅行でも判断しやすいよう、移動の場面から考える早見表です。</p>
+          <div className="mt-7 overflow-x-auto border" style={{ borderColor: "rgba(232,115,42,0.36)" }}>
+            <table className="w-full min-w-[780px] text-left">
+              <thead style={{ backgroundColor: "rgba(232,115,42,0.12)" }}><tr className="font-montserrat text-[10px] tracking-[0.12em]" style={{ color: "#F1A368" }}><th className="px-5 py-4">旅の場面</th><th className="px-5 py-4">まず検討する手段</th><th className="px-5 py-4">組み合わせる手段</th><th className="px-5 py-4">判断のポイント</th></tr></thead>
+              <tbody className="font-sans text-sm" style={{ color: "#D7E0E6" }}>
+                {[
+                  ["空港から最初の宿", "ホテル送迎・事前予約の車", "都市部なら配車アプリ", "到着便・荷物・通信・待ち合わせを優先する。"],
+                  ["コロンボ・ゴールの市内", "Uber・PickMe・トゥクトゥク", "徒歩・短距離タクシー", "車両番号と料金を確認し、夜間はホテル送迎も検討する。"],
+                  ["キャンディ〜高原", "紅茶列車", "駅前後の送迎・専用車", "景色を楽しむ列車区間と、駅からホテルまでを分けて考える。"],
+                  ["文化三角地帯", "専用車・日帰り手配", "短距離トゥクトゥク", "遺跡が点在するため、暑さ・荷物・立ち寄りをまとめて調整する。"],
+                  ["サファリ・郊外", "宿・ジープとつながる車", "現地のサファリジープ", "早朝出発と終了後のホテル移動まで一つの流れで決める。"],
+                ].map((row) => <tr key={row[0]} className="border-t" style={{ borderColor: "rgba(255,255,255,0.12)" }}>{row.map((cell, index) => <td key={`${row[0]}-${index}`} className="px-5 py-4 align-top leading-7" style={{ color: index === 0 ? "#F1A368" : "#C7D3DB" }}>{cell}</td>)}</tr>)}
+              </tbody>
+            </table>
+          </div>
+          <p className="font-sans text-[15px] md:text-base leading-8 mt-7" style={{ color: "#C7D3DB" }}>空港の到着直後を詳しく比較する場合は、<Link href="/articles/colombo-airport-transfer-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">コロンボ空港送迎は必要？</Link>を確認してください。女性・一人旅で夜間や初日の移動に不安がある方は、<Link href="/articles/sri-lanka-safety-women-solo-travel-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">女性・一人旅の安全対策</Link>もあわせて読むと、移動の判断を整理しやすくなります。</p>
+
           <Heading label="LOCAL BUS">ローカルバス：時間に余裕がある日にこそ面白い</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>島内を広く結ぶローカルバスは、現地の人の暮らしに最も近い移動手段です。予定を詰め込みすぎず、途中下車や乗り換えも含めて旅を楽しめる人には、印象に残る体験になります。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>路線の種類、乗り方、荷物・混雑・予約の注意点は、<Link href="/articles/sri-lanka-long-distance-bus-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">スリランカの長距離バス完全ガイド</Link>で解説しています。</p>
@@ -217,6 +261,17 @@ export default function ArticleTransport() {
               </div>
             ))}
           </div>
+
+          <Heading label="COST × TIME">節約と快適さは、同じ日で両立させなくてよい</Heading>
+          <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>移動費を抑えるために、すべての区間をバスや列車にする必要はありません。逆に、すべてを専用車にする必要もありません。旅程のなかで「費用を抑えやすい日」と「時間と体力を守りたい日」を分けると、予算を使う場所が見えてきます。</p>
+          <div className="grid md:grid-cols-3 gap-4 mt-7">
+            {[
+              ["体験に使う日", "紅茶列車・海沿いの列車・町歩き", "列車やトゥクトゥクを使い、移動そのものを旅の一部にする。到着時刻は詰め込みすぎない。"],
+              ["節約に使う日", "近距離・日中・予定が少ない日", "ローカルバスや配車アプリを選択肢にし、荷物と帰り方を先に確認する。"],
+              ["時間を買う日", "空港・長距離・複数立ち寄り・早朝", "専用車や送迎で移動を固定し、観光・休憩・ホテル到着に余白を残す。"],
+            ].map(([title, subtitle, text]) => <div key={title} className="border p-6" style={{ borderColor: "rgba(255,255,255,0.14)", backgroundColor: "rgba(255,255,255,0.025)" }}><h3 className="font-serif-jp text-lg font-bold text-white">{title}</h3><p className="font-montserrat text-[10px] tracking-[0.12em] mt-3" style={{ color: "#F1A368" }}>{subtitle}</p><p className="font-sans text-sm leading-7 mt-4" style={{ color: "#B8C5D0" }}>{text}</p></div>)}
+          </div>
+          <p className="font-sans text-[15px] md:text-base leading-8 mt-7" style={{ color: "#C7D3DB" }}>移動費を含めた旅行予算の組み立ては、<Link href="/articles/sri-lanka-trip-budget-guide" className="underline decoration-[#E8732A] underline-offset-4 hover:text-white">スリランカ旅行の予算はいくら？</Link>で、航空券・ホテル・観光と分けて解説しています。</p>
 
           <Heading label="PRIVATE CHARTER">専用車チャーター：旅程を「できること」に変える移動手段</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>専用車の価値は、単に「楽に移動できる」ことだけではありません。ホテルを出て、途中で景色の良い場所に寄り、遺跡を訪ね、ランチをとり、次の街へ進む。目的地が点在するスリランカでは、移動の選択肢がそのまま旅程の自由度になります。</p>
@@ -304,6 +359,8 @@ export default function ArticleTransport() {
             <ol className="space-y-2 font-sans text-xs leading-6" style={{ color: "#9BAAB5" }}>
               <li>[1] <a className="underline underline-offset-4 hover:text-white" href="https://www.srilanka.travel/getting-around" target="_blank" rel="noopener noreferrer">Sri Lanka Tourism, Getting Around</a></li>
               <li>[2] <a className="underline underline-offset-4 hover:text-white" href="https://www.railway.gov.lk/web/" target="_blank" rel="noopener noreferrer">Sri Lanka Railways, Official Website</a></li>
+              <li>[3] <a className="underline underline-offset-4 hover:text-white" href="https://locotabi.jp/sri-jayawardenepura-kotte/guide/tp-gen-transportation" target="_blank" rel="noopener noreferrer">ロコタビ：スリランカの移動手段ガイド（2025年版）</a></li>
+              <li>[4] <a className="underline underline-offset-4 hover:text-white" href="https://aaa-fund.com/srilanka-transfer/" target="_blank" rel="noopener noreferrer">スリランカ旅行大全：スリランカ国内での移動手段はどうしたらいい？</a></li>
             </ol>
           </section>
         </article>
