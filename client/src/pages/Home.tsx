@@ -79,17 +79,17 @@ const services = [
     rankLabel: "1位",
     name: "ランカミー",
     nameEn: "LankaMe",
-    tagline: "業界最安値保証 × 日本人経営の安心感",
+    tagline: "業界最安値保証 × 日本人経営の安心感 × 政府公認の安心感",
     url: "https://srilankataxicharterservice.com/ja/",
     image: LANKAME_IMG,
     badge: "rank-gold",
     badgeText: "BEST CHOICE",
     price: "15,000円(税込)〜/日",
     priceNote: "5日チャーター(SEDAN) 77,000円(税込)〜\n利用日数が長くなるほど1日あたり金額は低下\n距離・車種・ドライバー・季節により金額変動",
-    highlight: "大手商社出身の日本人が経営。政府公認ドライバーのみ採用し、業界最安値保証の定額プランを提供。",
+    highlight: "大手商社出身の日本人が経営。スリランカ観光庁(SLTDA)認可の会社と提携し、政府公認ドライバーのみ採用し高い水準のサービスを提供。高い品質にも関わらず業界最安水準のプランを提供。",
     features: [
       "日本人スタッフ常駐・日本語で全対応",
-      "政府公認ドライバー中心に厳選採用",
+      "政府公認ドライバーを厳選採用",
       "定額・追加料金なし",
       "観光地同行・説明できるプラチナプラン",
       "旅程の無料相談・カスタマイズ対応",
@@ -173,7 +173,7 @@ const services = [
 const comparisonItems = [
   { feature: "日本語対応", lankame: "◎ 日本人スタッフ常駐", lankaride: "◎ 日本人スタッフ常駐", sltcs: "◎ 日本人スタッフ常駐" },
   { feature: "日本語ドライバー", lankame: "◎ 在籍", lankaride: "◎ 多数在籍", sltcs: "◎ 在籍" },
-  { feature: "政府公認ドライバー", lankame: "◎ 全員", lankaride: "◎ 多数", sltcs: "◎ 厳格審査通過" },
+  { feature: "政府公認ドライバー", lankame: "◎ 全員", lankaride: "◯ 多数", sltcs: "◯ 厳格審査通過" },
   { feature: "観光地同行・説明", lankame: "◎ プラチナプラン", lankaride: "◎ Pro Plan", sltcs: "○ 対応可" },
   { feature: "最安値保証", lankame: "◎ 高品質で業界最安水準", lankaride: "○ 競争力ある価格", sltcs: "◎ 業界最安値水準" },
   { feature: "追加料金", lankame: "◎ 一切なし", lankaride: "◎ なし", sltcs: "◎ 一切なし" },
@@ -688,7 +688,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 border-t border-l" style={{ borderColor: "rgba(255,255,255,0.14)" }}>
             {[
-              { number: "01", label: "QUALITY FIRST", title: "大手品質をお手頃価格で", service: "ランカミー", reason: "業界最安値保証で、大手旅行代理店より大幅に安い。プラチナプランでも観光ガイド付きで割安。", url: "https://srilankataxicharterservice.com/ja/", color: "#C9A84C" },
+              { number: "01", label: "QUALITY FIRST", title: "大手品質をお手頃価格で", service: "ランカミー", reason: "業界最安水準で、大手旅行代理店より大幅に安い。プラチナプランでも観光ガイド付きで割安。政府公認ドライバーを起用している安心感。", url: "https://srilankataxicharterservice.com/ja/", color: "#C9A84C" },
               { number: "02", label: "LANGUAGE SUPPORT", title: "日本語ドライバーが多い方がいい", service: "ランカライド", reason: "日本語ドライバーを最も多く抱えるサービス。スリランカ最大手との連携で品質も安定。", url: "https://srilankacarhirewithprivatedriver.com/ja/", color: "#B8C5D0" },
               { number: "03", label: "BEST VALUE", title: "とにかく費用を抑えたい", service: "SLTCS", reason: "業界最安値水準で圧倒的コスパ。7日前まで完全無料キャンセル・時間距離無制限の定額制で、とにかくコストを抑えたい方に最適。", url: "https://sltcs.srilanka-charter.com", color: "#C47A3A" },
             ].map((item, i) => (
