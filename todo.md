@@ -155,3 +155,6 @@
 - [x] 既存のGoogle広告タグとデータレイヤー設定を確認する
 - [x] Google Analytics 4測定ID G-S0VJJ3GYGCを既存タグへ統合する
 - [x] 本番ビルドのHTMLでGoogle広告・Google Analytics 4の両設定を検証して保存する
+- [x] 既存のGoogle広告・Google Analyticsタグ設定と統合方法を確認する
+- [x] Google Ads測定ID AW-17541144373を既存Googleタグへ統合する
+- [x] 本番ビルドのHTMLでGoogleタグの重複がなく3つの測定IDが設定されていることを検証して保存する
