@@ -10,9 +10,9 @@ import { MediaHeader } from "@/components/MediaHeader";
 const ARTICLE_TITLE = "スリランカのトゥクトゥク完全ガイド｜乗り方・料金・配車アプリ・安全な使い方";
 
 const images = {
-  hero: "/manus-storage/tuktuk-1_9860c65d.jpg",
-  ride: "/manus-storage/tuktuk-2_008f101f.jpg",
-  van: "/manus-storage/transport-van-thumb_7e18c597.png",
+  hero: "/manus-storage/tuktuk-generated-hero-town_ed413e23.png",
+  ride: "/manus-storage/tuktuk-generated-short-ride_6be07426.png",
+  van: "/manus-storage/tuktuk-generated-charter-van_117f8ff0.png",
 };
 
 const faqs = [
@@ -87,7 +87,7 @@ export default function ArticleTukTuk() {
           <Heading label="TUK-TUK BASICS">スリランカのトゥクトゥクとは？短距離移動を旅の体験にする三輪タクシー</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>トゥクトゥクは、町のなかを小回りよく移動できる三輪タクシーです。交通量の多いコロンボ、海辺のゴール、山岳部のエッラなどでも、ホテル・カフェ・駅・観光地の間を結ぶ足として活躍します。</p>
           <p className="font-sans text-[15px] md:text-base leading-8 mt-5" style={{ color: "#C7D3DB" }}>観光局は、多くのトゥクトゥクにメーターがないため、乗車前に料金を合意するよう案内しています。[1] 目的地が不安なときは、行き先を言葉だけで伝えるのではなく、地図アプリの画面を見せるとスムーズです。</p>
-          <div className="grid sm:grid-cols-2 gap-5 mt-8"><Figure src={images.hero} alt="スリランカで使われるトゥクトゥク" caption="トゥクトゥクは、町を短い距離でつなぐための気軽な移動手段です。" /><Figure src={images.ride} alt="スリランカのトゥクトゥクを利用する旅行者" caption="短距離の寄り道も、旅の風景として楽しめます。" /></div>
+          <div className="grid sm:grid-cols-2 gap-5 mt-8"><Figure src={images.hero} alt="スリランカの町を走る青いトゥクトゥク" caption="トゥクトゥクは、町を短い距離でつなぐための気軽な移動手段です。" /><Figure src="/manus-storage/tuktuk-generated-street-detail_1a57704b.png" alt="スリランカの路地に停車するトゥクトゥク" caption="短距離の寄り道も、旅の風景として楽しめます。" /></div>
 
           <Heading label="PRICE & PAYMENT">トゥクトゥクの料金：メーターか、乗車前の合意かを確認する</Heading>
           <p className="font-sans text-[15px] md:text-base leading-8" style={{ color: "#C7D3DB" }}>料金は、地域、時間帯、メーターの有無、道路状況で変わります。Sri Lanka Tourismは、観光客向けトゥクトゥクについて1km目Rs.50、その後Rs.30という案内を掲載しています。[1] これは参考目安であり、実際には乗る前にメーターが使われるか、総額はいくらかを確認することが大切です。</p>
