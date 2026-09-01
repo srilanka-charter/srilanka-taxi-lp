@@ -192,7 +192,7 @@ export default function Home() {
 
   // SEO: document.titleとキーワードを動的に設定
   useEffect(() => {
-    document.title = 'スリランカ タクシーチャーターおすすめ3選';
+    document.title = 'スリランカ個人旅行でおすすめのタクシーチャーター3選をランキング形式で紹介！';
     // キーワードmeta動的追加
     let meta = document.querySelector('meta[name="keywords"]') as HTMLMetaElement | null;
     if (!meta) {
