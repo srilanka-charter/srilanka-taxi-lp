@@ -491,7 +491,11 @@ export default function Home() {
                         <span className="text-xs whitespace-pre-line" style={{ color: "#8A9BA8" }}>{service.priceNote}</span>
                       </div>
 
-                      <p className="font-sans text-sm md:text-base leading-relaxed mb-5" style={{ color: "#B8C5D0" }}>{service.highlight}</p>
+                      <p className="font-sans text-sm md:text-base leading-relaxed mb-5" style={{ color: "#B8C5D0" }}>
+                        {service.name === "ランカミー" ? <>
+                          大手商社出身の日本人が経営。スリランカ観光庁(SLTDA)認可の会社と提携し、政府公認ドライバーのみ採用し高い水準のサービスを提供。高い品質にも関わらず業界最安水準のプランを提供。<a href="https://srilankataxicharterservice.com/ja/voice/" target="_blank" rel="noopener noreferrer" className="underline decoration-current underline-offset-4 transition-opacity hover:opacity-80" style={{ color: service.accentColor }}>HPの利用客のコメント</a>だけでなく第三者機関である<a href="https://www.tripadvisor.jp/Attraction_Review-g1500185-d34145093-Reviews-LankaMe-Katunayake_Negombo_Western_Province.html" target="_blank" rel="noopener noreferrer" className="underline decoration-current underline-offset-4 transition-opacity hover:opacity-80" style={{ color: service.accentColor }}>Trip Advisor</a>でも高評価を得ている点からも信頼感の高さが伺える。
+                        </> : service.highlight}
+                      </p>
 
                       {/* Features */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
