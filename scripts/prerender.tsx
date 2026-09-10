@@ -19,7 +19,7 @@ const projectRoot = process.cwd();
 const outputRoot = join(projectRoot, "dist", "public");
 
 const pages: Page[] = [
-  { path: "/", title: "スリランカ個人旅行でおすすめの観光タクシーチャーター3選をランキング形式で紹介！", description: "スリランカのタクシーチャーター（カーチャーター）でおすすめのサービス3選を比較。料金、対応、予約条件を確認し、個人旅行に合う専用車を選べます。", keywords: "スリランカタクシーチャーター,スリランカカーチャーター,スリランカ観光タクシー,スリランカ旅行", image: "/manus-storage/charter-1_ee4f51c5.png" },
+  { path: "/", title: "スリランカでおすすめのタクシーチャーター会社4社｜SLTDAライセンスの選び方", description: "スリランカ旅行で相談できるタクシーチャーター会社4社を紹介。料金は距離・日数・車種等に応じた見積もりです。日本語対応、SLTDAライセンス、第三者口コミの確認ポイントを解説します。", keywords: "スリランカタクシーチャーター,スリランカカーチャーター,SLTDA,スリランカ観光タクシー,スリランカ旅行", image: "/manus-storage/charter-1_ee4f51c5.png" },
   { path: "/articles/transport", title: "スリランカ旅行の移動手段｜列車・バス・トゥクトゥク・専用車を比較", description: "スリランカ旅行の移動手段を解説。列車、ローカルバス、トゥクトゥク、Uber、PickMe、タクシーチャーターの使い分けを紹介します。", keywords: "スリランカ 移動手段,スリランカ 交通,スリランカ タクシーチャーター" },
   { path: "/articles/itinerary", title: "スリランカ旅行モデルコース｜3泊4日・5日間・7日間の旅程", description: "スリランカ旅行の3泊4日、5日間、7日間モデルコースを紹介。世界遺産、高原、海岸を無理なくつなぐ個人旅行の旅程を解説します。", keywords: "スリランカ モデルコース,スリランカ旅行 日程,スリランカ 3泊4日" },
   { path: "/articles/travel-guide", title: "スリランカ個人旅行ガイド｜準備・安全・旅の基本", description: "スリランカを個人旅行で楽しむための準備、安全、移動、旅程の考え方を紹介します。", keywords: "スリランカ 個人旅行,スリランカ旅行 準備" },
