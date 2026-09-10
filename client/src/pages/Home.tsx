@@ -297,18 +297,23 @@ export default function Home() {
             </div>
           </RevealSection>
 
-          <div className="grid md:grid-cols-3 border-t border-l" style={{ borderColor: "rgba(255,255,255,0.14)" }}>
+          <div className="grid md:grid-cols-3 gap-3 md:gap-4">
             {[
               { label: "LANGUAGE", icon: <MessageCircle size={22} />, title: "日本語で、納得いくまで相談できるか", body: "日本人によって運営され、日本語で相談できるかを確認します。行き先・滞在時間・人数・希望車種を、誤解なく共有できる窓口があると、見積もりや旅程の確認が進めやすくなります。" },
               { label: "LICENSING", icon: <ShieldCheck size={22} />, title: "SLTDAのライセンスを確認できるか", body: "会社またはドライバーが、スリランカ政府観光開発庁（SLTDA）のライセンスを得てサービスを提供しているかを確認します。表示だけで判断せず、番号と有効性を依頼先に確認してください。" },
               { label: "REVIEWS", icon: <MessagesSquare size={22} />, title: "第三者機関の口コミを確認できるか", body: "自社サイトに載る情報だけでなく、Tripadvisorなど第三者機関の口コミも確認します。評価の数値だけでなく、直近の投稿内容、返信、利用条件に触れた記述まで読むことが大切です。" },
             ].map((item, index) => (
               <RevealSection key={item.label} delay={index * 0.12}>
-                <article className="group min-h-[330px] border-r border-b p-7 md:p-8 h-full transition-colors duration-300 hover:bg-white/[0.035]" style={{ borderColor: "rgba(255,255,255,0.14)" }}>
-                  <div className="flex items-start justify-end mb-10"><span className="w-10 h-10 flex items-center justify-center border" style={{ borderColor: "rgba(232,115,42,0.38)", color: "#E8732A" }}>{item.icon}</span></div>
-                  <span className="font-montserrat text-[9px] font-bold tracking-[0.18em] uppercase block mb-4" style={{ color: "#F1A368" }}>{item.label}</span>
-                  <h3 className="font-serif-jp text-lg md:text-xl font-bold text-white leading-relaxed mb-4">{item.title}</h3>
-                  <p className="font-sans text-sm leading-7" style={{ color: "#9BAAB5" }}>{item.body}</p>
+                <article className="group relative min-h-[355px] overflow-hidden border p-7 md:p-8 h-full transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.045]" style={{ borderColor: "rgba(201,168,76,0.28)", background: "linear-gradient(145deg, rgba(24,43,59,0.68), rgba(13,27,42,0.98) 72%)" }}>
+                  <span className="absolute inset-x-0 top-0 h-px" style={{ background: "linear-gradient(90deg, #C9A84C 0%, rgba(201,168,76,0.16) 54%, transparent 100%)" }} />
+                  <div className="relative flex h-full flex-col">
+                    <div className="flex items-center justify-between gap-4 border-b pb-5" style={{ borderColor: "rgba(255,255,255,0.11)" }}>
+                      <div className="flex min-w-0 items-center gap-3"><span className="h-px w-7 shrink-0" style={{ backgroundColor: "#C9A84C" }} /><span className="font-montserrat text-[10px] font-bold tracking-[0.2em] uppercase" style={{ color: "#F1A368" }}>{item.label}</span></div>
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-transform duration-300 group-hover:rotate-[-8deg]" style={{ borderColor: "rgba(232,115,42,0.5)", color: "#F1A368", backgroundColor: "rgba(232,115,42,0.06)" }}>{item.icon}</span>
+                    </div>
+                    <h3 className="font-serif-jp text-xl md:text-[1.35rem] font-bold text-white leading-[1.6] mt-7 mb-5">{item.title}</h3>
+                    <div className="mt-auto border-t pt-5" style={{ borderColor: "rgba(201,168,76,0.18)" }}><p className="font-sans text-sm leading-7" style={{ color: "#B8C5D0" }}>{item.body}</p></div>
+                  </div>
                 </article>
               </RevealSection>
             ))}
