@@ -46,6 +46,8 @@ const HERO_SLIDES = [
 
 const LANKAME_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663529989815/af4PKUY2YLtuM7VvgtZTdw/lankame-service-UzLuTxvg7SSRaNH9dU9HnY.webp";
 const LANKARIDE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663529989815/af4PKUY2YLtuM7VvgtZTdw/lankaride-service-fGCtGBg6LPxFHh7mvfqjXs.webp";
+const SRI_LANKA_TAXI_TOUR_IMG = "/manus-storage/sri-lanka-taxi-tour-card_6d80919a.jpg";
+const E_TOURS_IMG = "/manus-storage/e-tours-card_15b820a6.jpg";
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -74,6 +76,7 @@ type Service = {
   tagline: string;
   url: string;
   image?: string;
+  nofollow?: boolean;
   price: string;
   priceNote: string;
   highlight: string;
@@ -115,6 +118,8 @@ const services: Service[] = [
     nameEn: "SRI LANKA TAXI TOUR",
     tagline: "日本語で相談できる、希望に合わせたプライベートチャーター",
     url: "https://sltaxitour.com/contact/",
+    image: SRI_LANKA_TAXI_TOUR_IMG,
+    nofollow: true,
     price: "距離・日数・車種等に応じて見積もり",
     priceNote: "日程と希望ルートを共有し、公式サイトから料金・条件を確認できます。",
     highlight: "公式サイトでは、希望に従って効率よく巡るプランを無料で相談できると案内。日本語教育・滞在経験のあるドライバーが2名在籍する旨も掲載されています。",
@@ -158,6 +163,8 @@ const services: Service[] = [
     nameEn: "E-TOURS",
     tagline: "日本語スタッフへの相談と、日数・距離を軸にした見積もり導線",
     url: "https://tours.yasmeen.jp/",
+    image: E_TOURS_IMG,
+    nofollow: true,
     price: "距離・日数・車種等に応じて見積もり",
     priceNote: "公式サイトでは、タクシー料金は日数と距離で決まる旨が案内されています。",
     highlight: "公式サイトで日本人スタッフによる見積もり相談を案内。行き先や時間割をもとにしたオンライン料金計算・予約導線と、Tripadvisor掲載ページへのリンクが用意されています。",
@@ -361,7 +368,7 @@ export default function Home() {
                         <div><div className="font-montserrat text-[10px] font-bold tracking-[0.16em] uppercase mb-2" style={{ color: "#F1A368" }}>依頼前の確認</div>{service.checkpoints.map((checkpoint) => <div key={checkpoint} className="flex items-start gap-1.5 mb-1.5"><span className="text-xs" style={{ color: "#E8732A" }}>→</span><span className="text-xs leading-relaxed" style={{ color: "#B8C5D0" }}>{checkpoint}</span></div>)}</div>
                       </div>
 
-                      <a href={service.url} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2 ${service.ctaColor} text-white font-montserrat font-bold text-xs md:text-sm tracking-wider px-5 md:px-6 py-3 transition-all hover:scale-[1.02] hover:shadow-lg`} style={{ boxShadow: `0 0 20px ${service.glowColor}` }}>{service.ctaText}<ExternalLink size={14} /></a>
+                      <a href={service.url} target="_blank" rel={service.nofollow ? "nofollow noopener noreferrer" : "noopener noreferrer"} className={`inline-flex items-center gap-2 ${service.ctaColor} text-white font-montserrat font-bold text-xs md:text-sm tracking-wider px-5 md:px-6 py-3 transition-all hover:scale-[1.02] hover:shadow-lg`} style={{ boxShadow: `0 0 20px ${service.glowColor}` }}>{service.ctaText}<ExternalLink size={14} /></a>
                     </div>
                   </div>
                 </article>
@@ -430,14 +437,14 @@ export default function Home() {
             <span className="font-montserrat text-xs font-bold tracking-widest uppercase mb-6 block" style={{ color: "#E8732A" }}>START YOUR JOURNEY</span>
             <h2 className="font-serif-jp text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-6">旅程と希望を伝え、<br /><span style={{ color: "#E8732A" }}>見積もりから始めよう。</span></h2>
             <p className="font-serif-jp text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed" style={{ color: "#B8C5D0" }}>出発日、人数、立ち寄りたい場所、荷物量、希望車種を整理してから相談すると、比較しやすい見積もりを受け取りやすくなります。</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">{services.map((service) => <a key={service.name} href={service.url} target="_blank" rel="noopener noreferrer" className="glass-card p-5 text-left transition-all hover:-translate-y-1 group" style={{ border: `1px solid ${service.accentColor}40`, boxShadow: `0 0 20px ${service.glowColor}` }}><span className="font-montserrat text-[10px] font-bold tracking-[0.16em] uppercase block mb-3" style={{ color: service.accentColor }}>{service.nameEn}</span><span className="font-serif-jp text-sm font-bold text-white block mb-4">{service.name}</span><span className="font-montserrat text-[11px] font-bold tracking-wider uppercase flex items-center gap-1 group-hover:gap-2 transition-all" style={{ color: service.accentColor }}>公式サイトを見る <ExternalLink size={11} /></span></a>)}</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">{services.map((service) => <a key={service.name} href={service.url} target="_blank" rel={service.nofollow ? "nofollow noopener noreferrer" : "noopener noreferrer"} className="glass-card p-5 text-left transition-all hover:-translate-y-1 group" style={{ border: `1px solid ${service.accentColor}40`, boxShadow: `0 0 20px ${service.glowColor}` }}><span className="font-montserrat text-[10px] font-bold tracking-[0.16em] uppercase block mb-3" style={{ color: service.accentColor }}>{service.nameEn}</span><span className="font-serif-jp text-sm font-bold text-white block mb-4">{service.name}</span><span className="font-montserrat text-[11px] font-bold tracking-wider uppercase flex items-center gap-1 group-hover:gap-2 transition-all" style={{ color: service.accentColor }}>公式サイトを見る <ExternalLink size={11} /></span></a>)}</div>
             <p className="font-sans text-xs mt-8" style={{ color: "#8A9BA8" }}>※予約・見積もり・相談に関する条件は、各社の公式サイトでご確認ください。</p>
           </RevealSection>
         </div>
       </section>
 
       <footer className="py-10 px-4 md:px-8" style={{ backgroundColor: "#080E14", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-        <div className="max-w-6xl mx-auto"><div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8"><div><div className="font-display text-2xl text-white mb-1" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>SRI LANKA <span style={{ color: "#E8732A" }}>TAXI CHARTER</span></div><div className="font-sans text-xs" style={{ color: "#8A9BA8" }}>スリランカのタクシーチャーター会社と選び方ガイド</div></div><div className="flex flex-wrap gap-4 justify-center md:justify-end"><a href="/editorial-policy" className="font-sans text-xs hover:underline transition-all" style={{ color: "#8A9BA8" }}>比較方針・掲載基準</a>{services.map((service) => <a key={service.name} href={service.url} target="_blank" rel="noopener noreferrer" className="font-sans text-xs hover:underline transition-all" style={{ color: "#8A9BA8" }}>{service.name}</a>)}</div></div><div className="text-center font-sans text-xs" style={{ color: "#4A5568" }}>© 2025-2026 スリランカタクシーチャーター比較サイト. All rights reserved.</div></div>
+        <div className="max-w-6xl mx-auto"><div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8"><div><div className="font-display text-2xl text-white mb-1" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>SRI LANKA <span style={{ color: "#E8732A" }}>TAXI CHARTER</span></div><div className="font-sans text-xs" style={{ color: "#8A9BA8" }}>スリランカのタクシーチャーター会社と選び方ガイド</div></div><div className="flex flex-wrap gap-4 justify-center md:justify-end"><a href="/editorial-policy" className="font-sans text-xs hover:underline transition-all" style={{ color: "#8A9BA8" }}>比較方針・掲載基準</a>{services.map((service) => <a key={service.name} href={service.url} target="_blank" rel={service.nofollow ? "nofollow noopener noreferrer" : "noopener noreferrer"} className="font-sans text-xs hover:underline transition-all" style={{ color: "#8A9BA8" }}>{service.name}</a>)}</div></div><div className="text-center font-sans text-xs" style={{ color: "#4A5568" }}>© 2025-2026 スリランカタクシーチャーター比較サイト. All rights reserved.</div></div>
       </footer>
     </div>
   );
