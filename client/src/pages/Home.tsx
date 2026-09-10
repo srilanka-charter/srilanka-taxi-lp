@@ -288,10 +288,10 @@ export default function Home() {
         <div className="absolute inset-y-0 left-[8%] w-px" style={{ background: "linear-gradient(to bottom, transparent, rgba(232,115,42,0.34), transparent)" }} />
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <RevealSection>
-            <div className="max-w-4xl mb-14 md:mb-16 grid md:grid-cols-[150px_1fr] gap-5 md:gap-10 items-start">
+            <div className="mb-14 md:mb-16 border-t pt-7 md:pt-9 grid md:grid-cols-[190px_1fr] gap-5 md:gap-10 items-start" style={{ borderColor: "rgba(201,168,76,0.35)" }}>
               <div className="flex md:flex-col items-center md:items-start gap-3 md:gap-0"><span className="font-display text-6xl md:text-8xl leading-none" style={{ fontFamily: "'Bebas Neue', sans-serif", color: "#C9A84C" }}>01</span><span className="font-montserrat text-[9px] font-bold tracking-[0.2em] uppercase md:mt-3" style={{ color: "#8A9BA8" }}>SELECT WITH CARE</span></div>
               <div><span className="font-montserrat text-xs font-bold tracking-widest uppercase mb-4 block" style={{ color: "#C9A84C" }}>HOW TO SELECT</span>
-              <h2 className="font-serif-jp text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 md:whitespace-nowrap">スリランカでタクシーチャーターを選ぶ際の<span style={{ color: "#E8732A" }}>ポイント</span></h2>
+              <h2 className="font-serif-jp text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.25]">スリランカでタクシーチャーターを<br />選ぶ際の<span style={{ color: "#E8732A" }}>ポイント</span></h2>
               <p className="font-sans text-base md:text-lg leading-relaxed" style={{ color: "#B8C5D0" }}>旅行の満足度は、料金だけでは決まりません。問い合わせ前に、日本語で相談できる体制、SLTDAライセンス、そして自社外の口コミを一つずつ確認しましょう。</p>
               </div>
             </div>
