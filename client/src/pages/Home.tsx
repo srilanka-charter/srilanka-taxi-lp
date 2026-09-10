@@ -204,7 +204,7 @@ export default function Home() {
   const [showStickyBar, setShowStickyBar] = useState(false);
 
   useEffect(() => {
-    document.title = "スリランカでおすすめのタクシーチャーター会社4社｜SLTDAライセンスの選び方";
+    document.title = "スリランカのタクシーチャーター（カーチャーター）を選ぶ際のポイント(日本語対応/ライセンス/評価)とは？";
     let meta = document.querySelector('meta[name="keywords"]') as HTMLMetaElement | null;
     if (!meta) {
       meta = document.createElement("meta");
