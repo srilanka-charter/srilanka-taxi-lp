@@ -291,7 +291,7 @@ export default function Home() {
             <div className="max-w-4xl mb-14 md:mb-16 grid md:grid-cols-[150px_1fr] gap-5 md:gap-10 items-start">
               <div className="flex md:flex-col items-center md:items-start gap-3 md:gap-0"><span className="font-display text-6xl md:text-8xl leading-none" style={{ fontFamily: "'Bebas Neue', sans-serif", color: "#C9A84C" }}>01</span><span className="font-montserrat text-[9px] font-bold tracking-[0.2em] uppercase md:mt-3" style={{ color: "#8A9BA8" }}>SELECT WITH CARE</span></div>
               <div><span className="font-montserrat text-xs font-bold tracking-widest uppercase mb-4 block" style={{ color: "#C9A84C" }}>HOW TO SELECT</span>
-              <h2 className="font-serif-jp text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">スリランカでタクシーチャーターを<br className="hidden sm:block" />選ぶ際の<span style={{ color: "#E8732A" }}>ポイント</span></h2>
+              <h2 className="font-serif-jp text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 md:whitespace-nowrap">スリランカでタクシーチャーターを選ぶ際の<span style={{ color: "#E8732A" }}>ポイント</span></h2>
               <p className="font-sans text-base md:text-lg leading-relaxed" style={{ color: "#B8C5D0" }}>旅行の満足度は、料金だけでは決まりません。問い合わせ前に、日本語で相談できる体制、SLTDAライセンス、そして自社外の口コミを一つずつ確認しましょう。</p>
               </div>
             </div>
@@ -299,13 +299,13 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 border-t border-l" style={{ borderColor: "rgba(255,255,255,0.14)" }}>
             {[
-              { number: "01", label: "LANGUAGE", icon: <MessageCircle size={22} />, title: "日本語で、納得いくまで相談できるか", body: "日本人によって運営され、日本語で相談できるかを確認します。行き先・滞在時間・人数・希望車種を、誤解なく共有できる窓口があると、見積もりや旅程の確認が進めやすくなります。" },
-              { number: "02", label: "LICENSING", icon: <ShieldCheck size={22} />, title: "SLTDAのライセンスを確認できるか", body: "会社またはドライバーが、スリランカ政府観光開発庁（SLTDA）のライセンスを得てサービスを提供しているかを確認します。表示だけで判断せず、番号と有効性を依頼先に確認してください。" },
-              { number: "03", label: "REVIEWS", icon: <MessagesSquare size={22} />, title: "第三者機関の口コミを確認できるか", body: "自社サイトに載る情報だけでなく、Tripadvisorなど第三者機関の口コミも確認します。評価の数値だけでなく、直近の投稿内容、返信、利用条件に触れた記述まで読むことが大切です。" },
+              { label: "LANGUAGE", icon: <MessageCircle size={22} />, title: "日本語で、納得いくまで相談できるか", body: "日本人によって運営され、日本語で相談できるかを確認します。行き先・滞在時間・人数・希望車種を、誤解なく共有できる窓口があると、見積もりや旅程の確認が進めやすくなります。" },
+              { label: "LICENSING", icon: <ShieldCheck size={22} />, title: "SLTDAのライセンスを確認できるか", body: "会社またはドライバーが、スリランカ政府観光開発庁（SLTDA）のライセンスを得てサービスを提供しているかを確認します。表示だけで判断せず、番号と有効性を依頼先に確認してください。" },
+              { label: "REVIEWS", icon: <MessagesSquare size={22} />, title: "第三者機関の口コミを確認できるか", body: "自社サイトに載る情報だけでなく、Tripadvisorなど第三者機関の口コミも確認します。評価の数値だけでなく、直近の投稿内容、返信、利用条件に触れた記述まで読むことが大切です。" },
             ].map((item, index) => (
-              <RevealSection key={item.number} delay={index * 0.12}>
+              <RevealSection key={item.label} delay={index * 0.12}>
                 <article className="group min-h-[330px] border-r border-b p-7 md:p-8 h-full transition-colors duration-300 hover:bg-white/[0.035]" style={{ borderColor: "rgba(255,255,255,0.14)" }}>
-                  <div className="flex items-start justify-between mb-10"><span className="font-display text-5xl leading-none" style={{ color: "#E8732A" }}>{item.number}</span><span className="w-10 h-10 flex items-center justify-center border" style={{ borderColor: "rgba(232,115,42,0.38)", color: "#E8732A" }}>{item.icon}</span></div>
+                  <div className="flex items-start justify-end mb-10"><span className="w-10 h-10 flex items-center justify-center border" style={{ borderColor: "rgba(232,115,42,0.38)", color: "#E8732A" }}>{item.icon}</span></div>
                   <span className="font-montserrat text-[9px] font-bold tracking-[0.18em] uppercase block mb-4" style={{ color: "#F1A368" }}>{item.label}</span>
                   <h3 className="font-serif-jp text-lg md:text-xl font-bold text-white leading-relaxed mb-4">{item.title}</h3>
                   <p className="font-sans text-sm leading-7" style={{ color: "#9BAAB5" }}>{item.body}</p>
