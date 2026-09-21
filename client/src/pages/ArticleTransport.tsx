@@ -283,6 +283,25 @@ export default function ArticleTransport() {
             <Figure src={images.charterSigiriya} alt="シーギリヤロックを背景にした旅行者とドライバー" caption="遠方の観光地も、立ち寄りながら無理なくめぐれます。" className="sm:col-span-2" />
           </div>
 
+          <section className="relative overflow-hidden mt-10 border p-6 md:p-7" style={{ borderColor: "rgba(201,168,76,0.46)", background: "linear-gradient(115deg, rgba(201,168,76,0.13), rgba(15,25,35,0.9) 54%, rgba(232,115,42,0.10))" }}>
+            <div className="absolute top-0 left-0 h-px w-full" style={{ background: "linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.08))" }} />
+            <div className="relative flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-xl">
+                <p className="font-montserrat text-[10px] font-bold tracking-[0.22em]" style={{ color: "#C9A84C" }}>CHARTER COMPARISON</p>
+                <h3 className="font-serif-jp text-xl md:text-2xl font-bold leading-relaxed text-white mt-3">移動日が決まったら、<br className="sm:hidden" />サービスの違いを先に確認。</h3>
+                <p className="font-sans text-sm leading-7 mt-3" style={{ color: "#C7D3DB" }}>日本語で相談できるか、ライセンス情報を確認できるか、第三者の評価を見られるか。トップページでは、個人旅行で検討しやすい4社を同じ視点で紹介しています。</p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+                <a href="/#compare" className="inline-flex min-h-12 items-center justify-center gap-3 px-5 py-3 font-montserrat text-xs font-bold tracking-[0.08em] text-white transition-transform hover:-translate-y-0.5 active:scale-[0.97]" style={{ backgroundColor: "#E8732A", boxShadow: "0 10px 22px rgba(0,0,0,0.24)" }}>
+                  トップページで4社を比較する <ArrowRight size={15} />
+                </a>
+                <a href="/#license-check" className="inline-flex min-h-12 items-center justify-center gap-2 border px-5 py-3 font-montserrat text-xs font-bold tracking-[0.08em] text-white transition-colors hover:bg-white/10 active:scale-[0.97]" style={{ borderColor: "rgba(255,255,255,0.34)" }}>
+                  ライセンス確認のポイントを見る
+                </a>
+              </div>
+            </div>
+          </section>
+
           <Heading label="ITINERARY DESIGN">個人旅行でおすすめの組み合わせ</Heading>
           <div className="grid sm:grid-cols-3 gap-4">
             {[
@@ -346,11 +365,16 @@ export default function ArticleTransport() {
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)`, backgroundSize: "22px 22px" }} />
             <div className="relative z-10 max-w-2xl">
               <div className="flex items-center gap-3 mb-4"><span className="h-px w-10" style={{ backgroundColor: "#E8732A" }} /><span className="font-montserrat text-[10px] font-bold tracking-[0.22em]" style={{ color: "#F1A368" }}>PLAN YOUR JOURNEY</span></div>
-              <h2 className="font-serif-jp text-2xl md:text-3xl font-bold text-white leading-relaxed">移動を「制約」ではなく、<br />旅の自由に変えよう。</h2>
-              <p className="font-sans text-sm md:text-base leading-8 mt-5" style={{ color: "#D7E1E7" }}>日本語対応・料金の分かりやすさ・ドライバー品質を比較し、自分の旅程に合うタクシーチャーターを選びませんか。</p>
-              <a href="/#ranking" className="inline-flex items-center gap-3 mt-7 px-6 py-4 font-montserrat text-xs font-bold tracking-[0.12em] text-white transition-transform hover:-translate-y-0.5" style={{ backgroundColor: "#E8732A", boxShadow: "0 12px 26px rgba(0,0,0,0.25)" }}>
-                タクシーチャーターおすすめ3選を比較する <ArrowRight size={15} />
-              </a>
+              <h2 className="font-serif-jp text-2xl md:text-3xl font-bold text-white leading-relaxed">旅程に合うサービスを、<br />トップページで比較しよう。</h2>
+              <p className="font-sans text-sm md:text-base leading-8 mt-5" style={{ color: "#D7E1E7" }}>移動を任せる会社は、料金だけで決めず、日本語相談・ライセンス情報・第三者評価も確認することが大切です。個人旅行で検討しやすい4社の特徴を、トップページで見比べられます。</p>
+              <div className="flex flex-col sm:flex-row gap-3 mt-7">
+                <a href="/#compare" className="inline-flex w-full sm:w-auto min-h-14 items-center justify-center gap-3 px-6 py-4 font-montserrat text-xs font-bold tracking-[0.12em] text-white transition-transform hover:-translate-y-0.5 active:scale-[0.97]" style={{ backgroundColor: "#E8732A", boxShadow: "0 12px 26px rgba(0,0,0,0.25)" }}>
+                  トップページで4社を比較する <ArrowRight size={16} />
+                </a>
+                <a href="/#license-check" className="inline-flex w-full sm:w-auto min-h-14 items-center justify-center gap-2 border px-6 py-4 font-montserrat text-xs font-bold tracking-[0.08em] text-white transition-colors hover:bg-white/10 active:scale-[0.97]" style={{ borderColor: "rgba(255,255,255,0.36)" }}>
+                  選び方のポイントを確認する
+                </a>
+              </div>
             </div>
           </section>
 
