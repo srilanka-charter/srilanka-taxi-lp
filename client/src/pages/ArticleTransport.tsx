@@ -359,7 +359,7 @@ export default function ArticleTransport() {
             <ol className="space-y-2 font-sans text-xs leading-6" style={{ color: "#9BAAB5" }}>
               <li>[1] <a className="underline underline-offset-4 hover:text-white" href="https://www.srilanka.travel/getting-around" target="_blank" rel="noopener noreferrer">Sri Lanka Tourism, Getting Around</a></li>
               <li>[2] <a className="underline underline-offset-4 hover:text-white" href="https://www.railway.gov.lk/web/" target="_blank" rel="noopener noreferrer">Sri Lanka Railways, Official Website</a></li>
-              <li>[3] <a className="underline underline-offset-4 hover:text-white" href="https://locotabi.jp/sri-jayawardenepura-kotte/guide/tp-gen-transportation" target="_blank" rel="noopener noreferrer">ロコタビ：スリランカの移動手段ガイド（2025年版）</a></li>
+              <li>[3] <a className="underline underline-offset-4 hover:text-white" href="https://locotabi.jp/sri-jayawardenepura-kotte/guide/tp-gen-transportation" target="_blank" rel="nofollow noopener noreferrer">ロコタビ：スリランカの移動手段ガイド（2025年版）</a></li>
               <li>[4] <a className="underline underline-offset-4 hover:text-white" href="https://aaa-fund.com/srilanka-transfer/" target="_blank" rel="noopener noreferrer">スリランカ旅行大全：スリランカ国内での移動手段はどうしたらいい？</a></li>
             </ol>
           </section>
