@@ -329,7 +329,7 @@ export default function Home() {
               <div><span className="font-montserrat text-xs font-bold tracking-widest uppercase mb-4 block" style={{ color: "#C9A84C" }}>SERVICE GUIDE</span>
               <h2 className="font-serif-jp text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5">おすすめの<span style={{ color: "#E8732A" }}>タクシーチャーター会社</span></h2>
               <p className="font-sans text-base md:text-lg max-w-2xl" style={{ color: "#B8C5D0" }}>日本語対応、見積もり条件、ライセンス・口コミの確認ポイントを踏まえて、4社を紹介します。</p>
-              <p className="font-sans text-xs mt-4" style={{ color: "#8A9BA8" }}>※以下はご指定の掲載順であり、優劣や順位を示すものではありません。</p></div>
+              <p className="font-sans text-xs mt-4" style={{ color: "#8A9BA8" }}>※以下の掲載順は、優劣や順位を示すものではありません。</p></div>
             </div>
           </RevealSection>
 
