@@ -38,7 +38,7 @@ export default function EditorialPolicy() {
 
       <section className="mt-16 md:mt-20 border-l-2 pl-6 md:pl-8" style={{ borderColor: "#E8732A" }}>
         <h2 className="font-serif-jp text-2xl font-bold text-white">掲載サービスとの関係とご利用前の確認</h2>
-        <p className="font-sans text-[15px] leading-8 mt-5" style={{ color: "#C7D3DB" }}>当サイトは、掲載するタクシーチャーターサービスに関係する運営者によって制作・運営されています。そのため、掲載内容はサービス選びの参考情報として整理しつつ、利用を決める前には、各サービスの公式サイトで料金、車種、含まれる内容、予約条件、キャンセル条件を必ずご確認ください。</p>
+        <p className="font-sans text-[15px] leading-8 mt-5" style={{ color: "#C7D3DB" }}>掲載内容はサービス選びの参考情報として整理しつつ、利用を決める前には、各サービスの公式サイトで料金、車種、含まれる内容、予約条件、キャンセル条件を必ずご確認ください。</p>
         <p className="font-sans text-[15px] leading-8 mt-5" style={{ color: "#C7D3DB" }}>外部リンク先での予約・契約は、各サービスの条件に基づきます。当サイトでは、旅程や人数、ドライバー言語、時期によって変動する可能性がある情報を、確定価格・確定条件として保証するものではありません。</p>
       </section>
 
@@ -49,7 +49,7 @@ export default function EditorialPolicy() {
       <section className="mt-16 md:mt-20 relative overflow-hidden border p-7 md:p-10" style={{ borderColor: "rgba(232,115,42,0.5)", background: "linear-gradient(110deg, rgba(232,115,42,0.16), rgba(9,22,34,0.65)), #102132" }}>
         <span className="font-montserrat text-[10px] font-bold tracking-[0.2em]" style={{ color: "#F1A368" }}>COMPARE BEFORE YOU BOOK</span>
         <h2 className="font-serif-jp text-2xl md:text-3xl font-bold text-white leading-relaxed mt-3">条件を比べて、<br />自分の旅程に合う一台を選ぶ。</h2>
-        <Link href="/#ranking" className="inline-flex items-center gap-3 mt-7 px-6 py-4 font-montserrat text-xs font-bold tracking-[0.12em] text-white" style={{ backgroundColor: "#E8732A" }}>タクシーチャーターおすすめ3選を比較する <ArrowRight size={15} /></Link>
+        <Link href="/#compare" className="inline-flex items-center gap-3 mt-7 px-6 py-4 font-montserrat text-xs font-bold tracking-[0.12em] text-white" style={{ backgroundColor: "#E8732A" }}>タクシーチャーター4社を比較する <ArrowRight size={15} /></Link>
       </section>
     </main>
   </div>;
