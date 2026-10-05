@@ -211,7 +211,7 @@ export default function Home() {
       meta.name = "keywords";
       document.head.appendChild(meta);
     }
-    meta.content = "スリランカタクシーチャーター,スリランカカーチャーター,SLTDA,スリランカ観光タクシー,ランカミー,Sri Lanka Taxi Tour,ランカライド,E-tours,スリランカ旅行";
+    meta.content = "スリランカタクシーチャーター,スリランカカーチャーター,SLTDA,スリランカ観光タクシー,スリランカチャーター車";
   }, []);
 
   useEffect(() => {
@@ -266,7 +266,7 @@ export default function Home() {
             <motion.div key={`copy-${activeHeroSlide}`} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }}>
               <div className="flex items-center gap-3 mb-6"><span className="h-px w-10 md:w-16" style={{ backgroundColor: "#E8732A" }} /><span className="font-montserrat text-[10px] md:text-xs font-bold tracking-[0.24em] uppercase" style={{ color: "#F1A368" }}>{HERO_SLIDES[activeHeroSlide].eyebrow}</span></div>
               <p className="font-montserrat text-[10px] md:text-xs tracking-[0.2em] uppercase mb-5" style={{ color: "#B8C5D0" }}>{HERO_SLIDES[activeHeroSlide].location}</p>
-              <h1 className="font-serif-jp text-[2.7rem] sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.2] tracking-tight text-white whitespace-pre-line mb-6" style={{ textShadow: "0 5px 32px rgba(0,0,0,0.32)" }}>{HERO_SLIDES[activeHeroSlide].title}</h1>
+              <h1 className="font-serif-jp text-[2.7rem] sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.2] tracking-tight text-white mb-6" style={{ textShadow: "0 5px 32px rgba(0,0,0,0.32)" }}>スリランカを専用車で、周遊しよう！</h1>
               <p className="font-sans text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mb-8" style={{ color: "#D6DEE5" }}>{HERO_SLIDES[activeHeroSlide].description}</p>
             </motion.div>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
